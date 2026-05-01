@@ -31,6 +31,7 @@ export function OAuthButtons() {
         onClick={handleGoogleSignIn}
         variant="outline"
         className="w-full"
+        aria-label="使用 Google 账号登录"
       >
         <svg className="mr-2 h-4 w-4" viewBox="0 0 24 24">
           <path

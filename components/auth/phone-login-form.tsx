@@ -126,19 +126,22 @@ export function PhoneLoginForm() {
         </div>
 
         {mockHint && (
-          <p className="text-sm text-amber-600 bg-amber-50 px-3 py-2 rounded-md">
+          <p className="text-sm text-amber-600 bg-amber-50 px-3 py-2 rounded-md" role="status">
             {mockHint}
           </p>
         )}
 
         {error && (
-          <p className="text-sm text-red-500">{error}</p>
+          <p className="text-sm text-red-500" role="alert" aria-live="polite" id="login-error">
+            {error}
+          </p>
         )}
 
         <Button
           onClick={handleVerify}
           disabled={isLoading || !phone || !otp}
           className="w-full bg-brand hover:bg-brand-dark"
+          aria-describedby={error ? "login-error" : undefined}
         >
           {isLoading ? "登录中..." : "登录"}
         </Button>
