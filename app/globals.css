@@ -5,6 +5,18 @@
   --color-brand-light: #D9A06E;
   --color-brand-dark: #A66B3A;
   --color-preview-bg: #F4EFE8;
+  --color-preview-border: #DDD5C8;
+  --color-preview-skeleton: #EDE5DA;
+  --color-preview-tag-bg: #FEF0E2;
+  --color-preview-text-primary: #2A1A0A;
+  --color-preview-text-secondary: #7A6050;
+  --color-preview-text-tertiary: #9A8070;
+  --color-preview-text-dark: #3A2A1A;
+  --color-preview-skill-ready: #8A4A10;
+  --color-preview-skill-default: #5A3A20;
+  --color-preview-ready-bg: #FEF9F5;
+  --color-preview-empty-icon: #C8B89E;
+  --color-preview-empty-text: #A89880;
   --color-background: #FFFFFF;
   --color-foreground: #1A1A1A;
   --color-muted: #F5F5F5;
