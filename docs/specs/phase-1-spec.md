@@ -132,6 +132,30 @@ types/
 
 ## Code Style
 
+### 命名规范
+- 组件：PascalCase（`PhoneLoginForm.tsx`）
+- Hooks：camelCase 前缀 `use-`（`use-auth.ts`）
+- Server Actions：camelCase（`sendPhoneOtp`）
+- Zod schemas：camelCase 后缀 `Schema`（`phoneSchema`）
+
+### Tailwind 规范
+- 使用设计系统变量，避免任意值
+- ✅ `text-sm`, `gap-3`, `p-4`
+- ❌ `text-[13px]`, `gap-[7px]`, `p-[10px]`
+
+### API 错误格式（统一）
+```typescript
+// Server Actions 返回格式
+interface ActionResult<T = unknown> {
+  success: boolean;
+  data?: T;
+  error?: { code: string; message: string };
+}
+
+// 使用示例
+return { success: false, error: { code: "INVALID_PHONE", message: "手机号格式不正确" } };
+```
+
 ### 手机号处理
 ```typescript
 // 统一格式：+86 开头，去除空格和横线
@@ -174,20 +198,20 @@ export default async function ChatPage() {
 
 ## Testing Strategy
 
-Phase 1 引入以下测试：
+| 层级 | 工具 | 覆盖范围 | 验收标准 |
+|------|------|---------|---------|
+| 单元测试 | Vitest | `phoneSchema`、`otpSchema` 边界条件 | 所有边界条件覆盖 |
+| E2E | Playwright | 完整登录流程 | 5 个核心场景全部通过 |
 
-| 层级 | 工具 | 覆盖范围 | 状态 |
-|------|------|---------|------|
-| 单元测试 | Vitest | 手机号格式化、Zod 验证 | ⬜ Phase 1 引入 |
-| 集成测试 | Playwright | 完整登录流程：获取验证码 → 输入 → 登录 → 访问受保护页 | ⬜ Phase 1 引入 |
+**E2E 测试场景（5 个）**：
+1. ✅ 手机号格式校验（+86、空格、横线）→ 合法/非法各 3 组
+2. ✅ 验证码格式校验（6 位数字）→ 合法/非法各 2 组
+3. ✅ 未登录访问 `/chat` → 自动跳转 `/login`
+4. ✅ 已登录访问 `/login` → 自动跳转 `/chat`
+5. ✅ 登录后刷新页面 → Session 保持，不跳登录页
+6. ✅ 注销后访问 `/chat` → 跳转 `/login`
 
-**测试场景**：
-1. 手机号格式校验（+86、空格、横线）
-2. 验证码格式校验（6 位数字）
-3. 未登录用户访问 `/chat` → 跳转 `/login`
-4. 已登录用户访问 `/login` → 跳转 `/chat`
-5. 登录后刷新页面 → Session 保持
-6. 注销后访问 `/chat` → 跳转 `/login`
+**验证方式**：`pnpm test`（Vitest）+ `pnpm test:e2e`（Playwright）
 
 ---
 
@@ -198,16 +222,22 @@ Phase 1 引入以下测试：
 - 验证码输入框限制为 6 位数字
 - Session 通过 `middleware.ts` 自动刷新
 - 用户敏感操作（修改头像、注销）需要二次确认
+- 每次 commit 前运行 `pnpm type-check && pnpm lint && pnpm build`
+- API 返回统一错误格式 `{ code, message }`
+- UI 组件处理 loading、error、empty 三种状态
 
 ### Ask First
 - 修改 Supabase Auth 配置（Providers、Redirect URLs）
 - 修改 `users` 表 Schema
 - 添加新的 OAuth Provider
+- 添加新的 npm 依赖
 
 ### Never Do
 - 在前端暴露 `SUPABASE_SERVICE_ROLE_KEY`
 - 将用户密码/token 存入 localStorage
 - 跳过手机号格式验证直接调用 API
+- 在 client component 中直接访问 `process.env`（非 NEXT_PUBLIC_ 前缀）
+- 使用内联任意值（`text-[13px]` 等）替代设计系统变量
 
 ---
 
