@@ -1,7 +1,6 @@
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
-import { ChatContainer } from "@/components/chat/chat-container";
-import { PreviewPanel } from "@/components/preview/preview-panel";
+import { ChatLayout } from "@/components/chat/chat-layout";
 
 const INITIAL_GREETING =
   "嗨！我是小页 👋\n\n我会通过几轮简单的对话，帮你整理经历、提炼亮点，然后生成一个专属的个人主页。\n\n先告诉我——你想用这个主页来做什么呢？";
@@ -38,7 +37,6 @@ export default async function ChatPage() {
 
     messages = msgs || [];
   } else {
-    // Create new conversation with initial greeting
     const { data: newConv } = await supabase
       .from("conversations")
       .insert({
@@ -65,39 +63,9 @@ export default async function ChatPage() {
   }
 
   return (
-    <main className="h-screen flex flex-col bg-background overflow-hidden">
-      {/* Top bar */}
-      <div className="h-11 px-3.5 flex items-center justify-between border-b border-border shrink-0">
-        <div className="flex items-center gap-1.5">
-          <div className="w-6 h-6 rounded-md bg-brand flex items-center justify-center">
-            <span className="text-white text-[13px] font-serif font-semibold leading-none">
-              O
-            </span>
-          </div>
-          <span className="text-sm font-medium">One Page Me</span>
-        </div>
-        <div className="flex items-center gap-3">
-          <span className="text-[11px] text-muted-foreground">
-            对话模式下，小页会引导你整理信息
-          </span>
-        </div>
-      </div>
-
-      {/* Body */}
-      <div className="flex-1 flex overflow-hidden">
-        {/* Left: Chat */}
-        <div className="w-[44%] flex flex-col border-r border-border">
-          <ChatContainer
-            conversationId={conversation.id}
-            initialMessages={messages}
-          />
-        </div>
-
-        {/* Right: Preview */}
-        <div className="flex-1">
-          <PreviewPanel />
-        </div>
-      </div>
-    </main>
+    <ChatLayout
+      conversationId={conversation.id}
+      initialMessages={messages}
+    />
   );
 }
