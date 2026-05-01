@@ -1,3 +1,0 @@
-[    4661ms] [ERROR] Failed to load resource: the server responded with a status of 403 () @ https://vercel.com/api/user/permissions?projectIdOrName=one-page-me&slug=wavyren:0
-[    5601ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://one-page-me.vercel.app/:0
-[    9060ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://one-page-me.vercel.app/favicon.ico:0
