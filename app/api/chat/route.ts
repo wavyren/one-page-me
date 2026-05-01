@@ -2,6 +2,7 @@ import { NextRequest } from "next/server";
 import { createClient } from "@/lib/supabase/server";
 import { streamChat, extractFields } from "@/lib/ai/deepseek";
 import { SYSTEM_PROMPT_ZH, SYSTEM_PROMPT_EN } from "@/lib/ai/prompts";
+import { chatInputSchema } from "@/lib/validations/chat";
 
 const MOCK_STEPS = [
   {
@@ -71,8 +72,34 @@ const MOCK_STEPS = [
   },
 ];
 
+function jsonError(
+  code: string,
+  message: string,
+  status: number,
+  details?: unknown
+) {
+  return Response.json({ code, message, details }, { status });
+}
+
 export async function POST(req: NextRequest) {
-  const { conversationId, message } = await req.json();
+  let body: unknown;
+  try {
+    body = await req.json();
+  } catch {
+    return jsonError("INVALID_JSON", "请求体必须是有效的 JSON", 400);
+  }
+
+  const parseResult = chatInputSchema.safeParse(body);
+  if (!parseResult.success) {
+    return jsonError(
+      "VALIDATION_ERROR",
+      "请求参数校验失败",
+      400,
+      parseResult.error.issues
+    );
+  }
+
+  const { conversationId, message } = parseResult.data;
 
   const supabase = await createClient();
 
