@@ -65,45 +65,19 @@ export async function verifyPhoneOtp(
   token: string
 ): Promise<ActionResult<{ user?: unknown }>> {
   if (MOCK_OTP_ENABLED && token === MOCK_OTP_CODE) {
-    const admin = createAdminClient();
-
-    const { data: listData, error: listError } =
-      await admin.auth.admin.listUsers();
-    if (listError) {
-      return {
-        success: false,
-        error: { code: "OTP_VERIFY_FAILED", message: listError.message },
-      };
-    }
-
-    const existingUser = listData.users.find((u) => u.phone === phone);
-
-    if (existingUser) {
-      const { error: updateError } = await admin.auth.admin.updateUserById(
-        existingUser.id,
-        { password: MOCK_OTP_CODE }
-      );
-      if (updateError) {
-        return {
-          success: false,
-          error: { code: "OTP_VERIFY_FAILED", message: updateError.message },
-        };
-      }
-    } else {
-      const { error: createError } = await admin.auth.admin.createUser({
-        phone,
-        phone_confirm: true,
-        password: MOCK_OTP_CODE,
-      });
-      if (createError) {
-        return {
-          success: false,
-          error: { code: "OTP_VERIFY_FAILED", message: createError.message },
-        };
-      }
-    }
-
     const supabase = await createClient();
+
+    // Try sign up first (creates user if not exists)
+    const { error: signUpError } = await supabase.auth.signUp({
+      phone,
+      password: MOCK_OTP_CODE,
+      options: { data: { name: "用户" } },
+    });
+
+    // If user already exists, signUp returns an error — that's fine, we sign in below
+    // If phone verification is required, signUp may also return an error
+    // In either case, we attempt signInWithPassword
+
     const { data, error: signInError } =
       await supabase.auth.signInWithPassword({
         phone,
@@ -111,10 +85,56 @@ export async function verifyPhoneOtp(
       });
 
     if (signInError) {
-      return {
-        success: false,
-        error: { code: "OTP_VERIFY_FAILED", message: signInError.message },
-      };
+      // Fallback: try admin API if standard auth fails (e.g., phone not confirmed)
+      try {
+        const admin = createAdminClient();
+
+        const { data: listData, error: listError } =
+          await admin.auth.admin.listUsers();
+        if (listError) {
+          return {
+            success: false,
+            error: { code: "OTP_VERIFY_FAILED", message: listError.message },
+          };
+        }
+
+        const existingUser = listData.users.find((u) => u.phone === phone);
+
+        if (existingUser) {
+          await admin.auth.admin.updateUserById(existingUser.id, {
+            password: MOCK_OTP_CODE,
+            phone_confirm: true,
+          });
+        } else {
+          await admin.auth.admin.createUser({
+            phone,
+            phone_confirm: true,
+            password: MOCK_OTP_CODE,
+          });
+        }
+
+        const { data: retryData, error: retryError } =
+          await supabase.auth.signInWithPassword({
+            phone,
+            password: MOCK_OTP_CODE,
+          });
+
+        if (retryError) {
+          return {
+            success: false,
+            error: { code: "OTP_VERIFY_FAILED", message: retryError.message },
+          };
+        }
+
+        return { success: true, data: { user: retryData.user } };
+      } catch (adminErr) {
+        const message =
+          adminErr instanceof Error ? adminErr.message : "验证失败";
+        return {
+          success: false,
+          error: { code: "OTP_VERIFY_FAILED", message },
+        };
+      }
     }
 
     return { success: true, data: { user: data.user } };
