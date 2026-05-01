@@ -9,7 +9,7 @@
 | 项目 | 信息 |
 |------|------|
 | 项目名称 | One Page Me（小页） |
-| 当前阶段 | **Phase 0：项目初始化** |
+| 当前阶段 | **Phase 1：用户系统** |
 | 总阶段数 | Phase 0 ~ Phase 8（共 9 个阶段） |
 | 技术栈 | Next.js 15 + shadcn/ui + Tailwind CSS v4 + Zustand + Supabase + DeepSeek API + next-intl |
 | 开始日期 | 2026-05-01 |
@@ -21,8 +21,8 @@
 
 | Phase | 名称 | 状态 | 关键交付物 |
 |-------|------|------|-----------|
-| Phase 0 | 项目初始化 | 🟡 **进行中** | 项目框架可访问，CI Pipeline 绿色 |
-| Phase 1 | 用户系统 | ⬜ 未开始 | 三种登录方式正常注册/登录 |
+| Phase 0 | 项目初始化 | ✅ 已完成 | 项目框架可访问，CI Pipeline 绿色 |
+| **Phase 1** | **用户系统** | 🟡 **进行中 — Task 拆解 & 执行** | 三种登录方式正常注册/登录 |
 | Phase 2 | 核心对话引擎 | ⬜ 未开始 | 完整对话流程可运行 |
 | Phase 3 | 实时预览引擎 | ⬜ 未开始 | 预览实时填充，动画流畅 |
 | Phase 4 | 主页生成引擎 | ⬜ 未开始 | 从对话到生成主页完整走通 |
@@ -33,24 +33,20 @@
 
 ---
 
-## 三、当前阶段任务清单（Phase 0）
+## 三、Phase 1 任务清单（用户系统）
 
-> **阶段目标**：创建 Next.js 项目、配置 Supabase、配置 i18n、CI/CD、部署到 Vercel
+> **阶段目标**：手机号 OTP 登录、Google OAuth、Apple 登录（延后）、Profile 页、Session 管理
 
-| # | 任务 | 状态 | 验收标准 | 验证命令 | 备注 |
+| # | 任务 | 状态 | 验收标准 | 验证方式 | 备注 |
 |---|------|------|---------|---------|------|
-| 0.1 | 编写 Phase 0 技术 Spec | ✅ 已完成 | Spec 文档通过用户确认 | — | `docs/specs/phase-0-spec.md` |
-| 0.2 | 技术决策确认 | ✅ 已完成 | 8 项决策全部确认 | — | 见「关键决策记录」 |
-| 0.2a | 引导创建 GitHub 仓库 | ✅ 已完成 | 仓库 URL 已获取 | — | `wavyren/one-page-me` |
-| 0.2b | 引导创建 Supabase 项目 | ✅ 已完成 | Project URL + Keys 已获取 | — | `dkeukhabsnqkynvkjcde` |
-| 0.2c | 引导配置 Vercel 项目 | ✅ 已完成 | 生产域名已获取 | — | `one-page-me.vercel.app` |
-| 0.3 | 初始化 Next.js 15 + shadcn/ui | ✅ 已完成 | `pnpm dev` 启动成功 | `curl http://localhost:3000` | type-check/build/lint 全过 |
-| 0.4 | 配置 Tailwind CSS v4 + 品牌色 | ✅ 已完成 | 主色 #C9854A、预览背景 #F4EFE8 生效 | 视觉检查 | 已配置 CSS 变量 |
-| 0.5 | 配置 Supabase Client + Schema | ✅ 已完成 | 6 张表 + RLS 已在远程创建 | `supabase db push` | 迁移成功 |
-| 0.6 | 配置 next-intl 国际化 | ✅ 已完成 | middleware/messages/i18n 配置完成 | type-check 通过 | — |
-| 0.7 | 配置 GitHub Actions CI/CD | ✅ 已完成 | ci.yml 已 push | GitHub Actions 绿色 | — |
-| 0.8 | 验证 Vercel 自动部署 | 🔴 **阻塞 — 404 错误** | 生产环境可访问 | 访问生产 URL | **需排查** |
-| 0.9 | Phase 0 验证 & 收尾 | ⬜ 未开始 | 全部 checklist 通过 | 综合验证 | 等待 0.8 |
+| 1.1 | 编写 Phase 1 技术 Spec | ✅ 已完成 | Spec 通过用户确认 | — | `docs/specs/phase-1-spec.md` |
+| 1.2 | 技术决策确认 | ✅ 已完成 | 5 项决策全部确认 | — | D9=A, D10=实现, D11=延后, D12=2MB, D13=/chat |
+| 1.3 | Supabase Auth 配置 + middleware | 🟡 **进行中** | Session 刷新正常，路由保护生效 | 刷新页面测试 | 需配置 Dashboard Providers |
+| 1.4 | 手机号登录 UI + API | ⬜ 未开始 | 发送验证码 + 验证登录完整流程 | E2E 测试 | — |
+| 1.5 | Google OAuth 登录 | ⬜ 未开始 | Google 账号可登录 | 手动测试 | 需配置 Google Cloud Console |
+| 1.6 | Profile 页 + 头像上传 | ⬜ 未开始 | 可修改昵称和头像 | 手动测试 | — |
+| 1.7 | 用户菜单 + 注销 | ⬜ 未开始 | 下拉菜单显示头像和注销 | 手动测试 | — |
+| 1.8 | 测试 + 质量门禁 | ⬜ 未开始 | Vitest + Playwright 通过 | 自动化测试 | — |
 
 ---
 
@@ -66,6 +62,11 @@
 | D6 | Vercel 账号 | 2026-05-01 | **已配置，域名: https://one-page-me.vercel.app** | 部署配置 |
 | D7 | GitHub 仓库 | 2026-05-01 | **已创建: wavyren/one-page-me** | 代码托管、CI |
 | D8 | 数据库迁移工具 | 2026-05-01 | **Supabase CLI** | 迁移文件格式 |
+| D9 | 短信服务商 | 2026-05-01 | **方案 A：Supabase 内置短信（开发测试）** | 登录流程 |
+| D10 | Google OAuth | 2026-05-01 | **Phase 1 实现** | 登录方式 |
+| D11 | Apple 登录 | 2026-05-01 | **延后到后续阶段** | 登录方式 |
+| D12 | 头像限制 | 2026-05-01 | **最大 2MB，jpg/png/webp** | 文件上传 |
+| D13 | 登录后跳转 | 2026-05-01 | **跳转到 `/chat`** | 路由逻辑 |
 
 ---
 
@@ -75,7 +76,8 @@
 
 | # | 事项 | 提出时间 | 优先级 | 状态 | 备注 |
 |---|------|---------|--------|------|------|
-| 0.8 | Vercel 404 排查 | 2026-05-01 | 🔴 高 | ⏸️ 等待用户操作 | **需检查 Vercel Dashboard 项目配置** |
+| 1.3a | Supabase Dashboard Auth Providers 配置 | 2026-05-01 | 🔴 高 | ⏸️ 待用户操作 | 需启用 Phone + Google Provider |
+| 1.3b | Google Cloud Console OAuth 配置 | 2026-05-01 | 🔴 高 | ⏸️ 待用户操作 | 需创建 OAuth 客户端 |
 
 ---
 
@@ -83,7 +85,7 @@
 
 | # | 问题/风险 | 发现时间 | 严重程度 | 状态 | 解决方案 |
 |---|----------|---------|---------|------|---------|
-| P1 | Vercel 返回 404（NOT_FOUND） | 2026-05-01 | 🔴 高 | 排查中 | 检查项目是否正确连接 GitHub 仓库 |
+| — | — | — | — | — | — |
 
 ---
 
@@ -91,17 +93,13 @@
 
 | 条目 | 时间 | 触发 Skill | 关键动作 | 状态 |
 |------|------|-----------|---------|------|
-| #001 | 2026-05-01 | `spec-driven-development` | Phase 0 启动，读取 PRD，创建管理文档 | 完成 |
-| #002 | 2026-05-01 | `spec-driven-development` | 完成 Phase 0 Spec 初稿 | 完成 |
-| #003 | 2026-05-01 | `spec-driven-development` | 用户确认全部 8 项决策 | 完成 |
-| #004 | 2026-05-01 | `incremental-implementation` | 引导用户创建第三方服务 | 完成 |
-| #005 | 2026-05-01 | `incremental-implementation` + `debugging-and-error-recovery` | 手动初始化项目结构 | 完成 |
-| #006 | 2026-05-01 | `incremental-implementation` | 配置 Supabase/next-intl/CI/CD + push | 完成 |
-| #007 | 2026-05-01 | `debugging-and-error-recovery` | Supabase CLI 认证 + 迁移推送成功 | 完成 |
-| #008 | 2026-05-01 | `debugging-and-error-recovery` | Vercel 404 问题排查 | **进行中** |
+| #001~#009 | 2026-05-01 | 多个 | Phase 0 全部完成 | 完成 |
+| #010 | 2026-05-01 | `spec-driven-development` | Phase 1 启动，编写 Spec | 完成 |
+| #011 | 2026-05-01 | `spec-driven-development` | **用户确认全部 5 项决策**，Spec v1.0-final 生效 | 完成 |
+| #012 | 2026-05-01 | `planning-and-task-breakdown` + `incremental-implementation` | **开始 Task 拆解和代码执行** | **进行中** |
 
 **完整执行日志**：`docs/execution-log.md`
 
 ---
 
-*最后更新：2026-05-01 · 由 Kimi Code CLI 自动维护*
+*最后更新：2026-05-01 · Phase 1 执行中*
