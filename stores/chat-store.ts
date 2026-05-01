@@ -26,6 +26,7 @@ interface ChatState {
   isLoading: boolean;
   isReadyToGenerate: boolean;
   hint: string;
+  error: string | null;
 
   setConversationId: (id: string) => void;
   setMessages: (messages: Message[]) => void;
@@ -36,6 +37,7 @@ interface ChatState {
   setIsLoading: (loading: boolean) => void;
   setIsReadyToGenerate: (ready: boolean) => void;
   setHint: (hint: string) => void;
+  setError: (error: string | null) => void;
 }
 
 export const useChatStore = create<ChatState>((set) => ({
@@ -45,6 +47,7 @@ export const useChatStore = create<ChatState>((set) => ({
   isLoading: false,
   isReadyToGenerate: false,
   hint: "",
+  error: null,
 
   setConversationId: (id) => set({ conversationId: id }),
   setMessages: (messages) => set({ messages }),
@@ -82,4 +85,5 @@ export const useChatStore = create<ChatState>((set) => ({
   setIsLoading: (loading) => set({ isLoading: loading }),
   setIsReadyToGenerate: (ready) => set({ isReadyToGenerate: ready }),
   setHint: (hint) => set({ hint }),
+  setError: (error) => set({ error }),
 }));

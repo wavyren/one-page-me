@@ -5,6 +5,8 @@ import { useChatStore } from "@/stores/chat-store";
 import { MessageList } from "./message-list";
 import { ChatInput } from "./chat-input";
 import { FieldProgress } from "./field-progress";
+import { Button } from "@/components/ui/button";
+import { AlertCircle } from "lucide-react";
 
 interface ChatContainerProps {
   conversationId: string;
@@ -20,13 +22,16 @@ export function ChatContainer({
     setMessages,
     addMessage,
     appendToLastMessage,
+    updateLastMessage,
     setIsLoading,
     setExtractedData,
     setIsReadyToGenerate,
     setHint,
+    setError,
     isLoading,
     isReadyToGenerate,
     messages,
+    error,
   } = useChatStore();
 
   useEffect(() => {
@@ -37,17 +42,16 @@ export function ChatContainer({
         content: m.content,
       }))
     );
-  }, [conversationId, initialMessages, setConversationId, setMessages]);
+    setError(null);
+  }, [conversationId, initialMessages, setConversationId, setMessages, setError]);
 
   const handleSend = useCallback(
     async (message: string) => {
       if (isLoading || isReadyToGenerate) return;
 
-      // Add user message immediately
+      setError(null);
       addMessage({ role: "user", content: message });
       setIsLoading(true);
-
-      // Add empty assistant message for streaming
       addMessage({ role: "assistant", content: "" });
 
       try {
@@ -57,8 +61,19 @@ export function ChatContainer({
           body: JSON.stringify({ conversationId, message }),
         });
 
+        if (!response.ok) {
+          let errMsg = `请求失败 (${response.status})`;
+          try {
+            const errBody = await response.json();
+            errMsg = errBody.message || errMsg;
+          } catch {
+            /* ignore */
+          }
+          throw new Error(errMsg);
+        }
+
         if (!response.body) {
-          throw new Error("No response body");
+          throw new Error("服务器未返回数据");
         }
 
         const reader = response.body.getReader();
@@ -86,7 +101,6 @@ export function ChatContainer({
               if (extractedData.is_ready) {
                 setIsReadyToGenerate(true);
               }
-              // Update hint based on next step
               const hints: Record<number, string> = {
                 1: "告诉小页你的名字和背景",
                 2: "分享你最骄傲的一件事",
@@ -102,9 +116,11 @@ export function ChatContainer({
             }
           }
         }
-      } catch (error) {
-        console.error("Chat error:", error);
-        appendToLastMessage("\n\n（发送失败，请重试）");
+      } catch (err) {
+        const message =
+          err instanceof Error ? err.message : "发送失败，请重试";
+        setError(message);
+        updateLastMessage("\n\n（发送失败，请重试）");
         setIsLoading(false);
       }
     },
@@ -115,16 +131,38 @@ export function ChatContainer({
       messages,
       addMessage,
       appendToLastMessage,
+      updateLastMessage,
       setIsLoading,
       setExtractedData,
       setIsReadyToGenerate,
       setHint,
+      setError,
     ]
   );
 
   return (
     <div className="flex flex-col h-full">
       <FieldProgress />
+
+      {error && (
+        <div
+          className="mx-3 mt-2 px-3 py-2 bg-red-50 border border-red-200 rounded-lg flex items-center gap-2 text-sm text-red-700"
+          role="alert"
+        >
+          <AlertCircle className="w-4 h-4 shrink-0" />
+          <span className="flex-1">{error}</span>
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={() => setError(null)}
+            className="h-7 text-red-700 hover:text-red-900 hover:bg-red-100"
+            aria-label="关闭错误提示"
+          >
+            关闭
+          </Button>
+        </div>
+      )}
+
       <MessageList />
       <ChatInput onSend={handleSend} />
     </div>
