@@ -286,6 +286,82 @@ NEXT_PUBLIC_SENTRY_DSN=
 
 ---
 
+## 开发流程（强制 — 基于项目 Skills）
+
+本项目在 `.kimi/skills/` 下安装了 20 个 skills。任何新 Phase / Feature / 超过 30 分钟的改动，必须遵守以下流程。
+
+### 折中版 Gated Workflow
+
+```
+SPECIFY ──→ PLAN ──→ TASKS ──→ IMPLEMENT
+   │          │        │          │
+   ▼          ▼        ▼          ▼
+ Human      Human    Human      增量执行
+ reviews    reviews  reviews    （无需逐条确认）
+```
+
+**执行规则：**
+1. **Phase/Feature 开始前** → 读取 `.kimi/skills/` 下所有相关 SKILL.md，输出关键要求摘要
+2. **写 Spec** → 覆盖 Objective / Tech Stack / Commands / Structure / Code Style / Testing / Boundaries / Success Criteria → 人类审核
+3. **写 Plan + Tasks** → 拆解为 ≤ 5 个文件的增量，每条有 Acceptance + Verify → 人类审核
+4. **增量实现** → 每个增量执行前输出 checklist，执行后验证，单独 commit
+5. **Commit 前** → `pnpm type-check && pnpm lint && pnpm build` 全部通过
+
+### 关键 Skills 核心要求摘要
+
+**spec-driven-development**
+- 不写代码先写 spec（即使是两行的）
+- Spec 覆盖 6 个核心区域
+- 成功标准必须可测试
+- 不在 spec 外的功能
+
+**incremental-implementation**
+- 每次增量只做一件事
+- 每个增量后项目可编译、测试通过
+- 修改 ≤ 5 个文件
+- 简单优先：先 naive 实现，再优化
+- 范围纪律：不改无关代码
+
+**frontend-ui-engineering**
+- 不使用内联任意值（`text-[13px]` → 用设计系统变量）
+- 组件 ≤ 200 行，超过则拆分
+- 分离数据获取与展示（Container + Presentation）
+- 处理 loading / error / empty 三种状态
+- 移动端优先（320px → 768px → 1024px → 1440px）
+- Keyboard accessibility（Tab 可达，不用 div 模拟按钮）
+- ARIA 标签（`aria-label`, `role`, `htmlFor`）
+- 不用颜色作为唯一状态指示器
+
+**api-and-interface-design**
+- Contract First：先定义接口再实现
+- 统一错误格式：`{ code, message, details? }`
+- 边界验证：API 输入用 Zod 校验
+- 命名一致：REST 资源复数、camelCase 参数
+
+**planning-and-task-breakdown**
+- 进入 Plan Mode 前不写代码
+- 任务按依赖排序，不是按重要性
+- 每条任务有验收标准和验证步骤
+
+### 增量执行 Checklist（每次增量前必须输出）
+
+```
+【本次增量】[描述]
+【涉及 Skills】[skill1, skill2]
+【Checklist】
+- [ ] 修改 ≤ 5 个文件
+- [ ] 有 loading / error / empty 状态（UI 增量）
+- [ ] 有 Zod 校验（API 增量）
+- [ ] 有统一错误格式（API 增量）
+- [ ] 移动端适配（UI 增量）
+- [ ] Keyboard accessible（UI 增量）
+- [ ] pnpm type-check 通过
+- [ ] pnpm lint 通过
+- [ ] pnpm build 通过
+```
+
+---
+
 ## 开发约定
 
 > 以下约定来自 PRD 中的设计决策，在代码实现阶段应遵循。
