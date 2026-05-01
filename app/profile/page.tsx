@@ -21,7 +21,7 @@ export default async function ProfilePage() {
     .single();
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center bg-[#F4EFE8] p-4">
+    <main className="flex min-h-screen flex-col items-center justify-center bg-preview-bg p-4" aria-label="个人资料页面">
       <div className="w-full max-w-md space-y-6">
         <ProfileForm
           user={{

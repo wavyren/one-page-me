@@ -59,10 +59,7 @@ export function AvatarUpload({
 
   return (
     <div className="flex flex-col items-center gap-3">
-      <Avatar
-        className="h-24 w-24 cursor-pointer ring-2 ring-brand/20"
-        onClick={() => inputRef.current?.click()}
-      >
+      <Avatar className="h-24 w-24 ring-2 ring-brand/20" aria-hidden="true">
         <AvatarImage src={currentAvatarUrl || undefined} />
         <AvatarFallback className="text-2xl bg-brand/10 text-brand">
           {name?.[0] || "?"}

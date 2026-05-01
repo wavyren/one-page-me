@@ -8,6 +8,7 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { AvatarUpload } from "./avatar-upload";
 import { updateProfile } from "@/lib/actions/profile";
+import { CheckCircle, XCircle } from "lucide-react";
 
 interface ProfileFormProps {
   user: {
@@ -79,13 +80,22 @@ export function ProfileForm({ user }: ProfileFormProps) {
           </div>
 
           {message && (
-            <p
-              className={`text-sm text-center ${
-                message.includes("成功") ? "text-green-500" : "text-red-500"
+            <div
+              className={`flex items-center justify-center gap-1.5 text-sm ${
+                message.includes("成功")
+                  ? "text-green-600"
+                  : "text-red-600"
               }`}
+              role={message.includes("成功") ? "status" : "alert"}
+              aria-live="polite"
             >
-              {message}
-            </p>
+              {message.includes("成功") ? (
+                <CheckCircle className="w-4 h-4" aria-hidden="true" />
+              ) : (
+                <XCircle className="w-4 h-4" aria-hidden="true" />
+              )}
+              <span>{message}</span>
+            </div>
           )}
 
           <Button
