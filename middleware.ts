@@ -1,14 +1,5 @@
-import createMiddleware from "next-intl/middleware";
 import { type NextRequest, NextResponse } from "next/server";
 import { createServerClient } from "@supabase/ssr";
-import { locales, defaultLocale } from "./i18n";
-
-const intlMiddleware = createMiddleware({
-  locales,
-  defaultLocale,
-  localePrefix: "as-needed",
-  localeDetection: false,
-});
 
 // Routes that require authentication
 const protectedRoutes = ["/chat", "/profile"];
@@ -16,8 +7,7 @@ const protectedRoutes = ["/chat", "/profile"];
 const authRoutes = ["/login"];
 
 export default async function middleware(request: NextRequest) {
-  // Run next-intl middleware first
-  const response = intlMiddleware(request);
+  const response = NextResponse.next();
 
   // Create Supabase client with cookie handling
   const supabase = createServerClient(
