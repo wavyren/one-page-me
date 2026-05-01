@@ -1,0 +1,15 @@
+{
+  "metadata": {
+    "title": "One Page Me — Your Personal Homepage",
+    "description": "Generate your beautiful personal homepage through AI conversation"
+  },
+  "nav": {
+    "chat": "Chat",
+    "preview": "Preview"
+  },
+  "home": {
+    "title": "One Page Me",
+    "subtitle": "Your personal homepage generator",
+    "cta": "Get Started"
+  }
+}

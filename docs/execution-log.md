@@ -10,9 +10,8 @@
 |------|------|
 | 启动时间 | 2026-05-01 |
 | 当前阶段 | Phase 0：项目初始化 |
-| 当前状态 | **Task 0.3 进行中 — pnpm install 后台安装依赖** |
+| 当前状态 | **Task 0.3 已完成，进入 Task 0.4-0.9** |
 | 当前触发 Skill | `incremental-implementation` |
-| 后台任务 | `bash-rul0avh1` — pnpm install |
 
 ---
 
@@ -72,15 +71,6 @@
 2. 记录环境变量到「关键决策记录」
 3. 启动 Task 0.3：初始化 Next.js 15 + shadcn/ui
 
-**当前任务队列**：
-1. 🟡 Task 0.3：初始化 Next.js 15 + shadcn/ui（当前执行）
-2. ⬜ Task 0.4：配置 Tailwind CSS v4 + 品牌色
-3. ⬜ Task 0.5：配置 Supabase Client + Schema
-4. ⬜ Task 0.6：配置 next-intl 国际化
-5. ⬜ Task 0.7：配置 GitHub Actions CI/CD
-6. ⬜ Task 0.8：配置 Vercel 部署（二次确认）
-7. ⬜ Task 0.9：Phase 0 验证 & 收尾
-
 ---
 
 ### [2026-05-01] Entry #005 — Task 0.3 执行中：手动初始化项目结构
@@ -101,29 +91,65 @@
 9. ✅ 创建 `app/layout.tsx`（根布局、metadata）
 10. ✅ 创建 `app/page.tsx`（首页占位）
 11. ✅ 创建 `lib/utils.ts`（`cn()` 工具函数）
-12. 🔄 启动 `pnpm install` 后台安装依赖（任务 ID: `bash-rul0avh1`）
-
-**已创建文件清单**：
-```
-package.json
-tsconfig.json
-next.config.ts
-postcss.config.mjs
-.gitignore
-next-env.d.ts
-app/globals.css
-app/layout.tsx
-app/page.tsx
-lib/utils.ts
-```
-
-**阻塞状态**：等待 `pnpm install` 完成。完成后将：
-1. 运行 `pnpm type-check` 验证 TypeScript
-2. 运行 `pnpm build` 验证构建
-3. 运行 `pnpm lint` 验证 lint
-4. 初始化 shadcn/ui（`npx shadcn@latest init --yes --defaults`）
-5. 提交 Git（原子提交）
+12. ✅ 创建 `components.json`（shadcn/ui 配置）
+13. ✅ 创建 `eslint.config.mjs`（Flat Config，忽略 `.next/`、`node_modules/`、`next-env.d.ts`）
+14. 🔄 启动 `pnpm install` 后台安装依赖（任务 ID: `bash-rul0avh1`）
 
 ---
 
-*最后更新：2026-05-01 · pnpm install 后台运行中*
+### [2026-05-01] Entry #006 — pnpm install 完成，质量门禁验证
+
+**触发原因**：后台任务 `bash-rul0avh1` 完成通知。
+
+**执行动作**：
+1. ✅ `pnpm type-check` — 通过（零 TypeScript 错误）
+2. ✅ `pnpm build` — 通过（Next.js 15.5.15，编译 2.1s，静态页面生成成功）
+3. ❌ `pnpm lint` — 失败（`next lint` 已弃用，Next.js 16 将移除）
+4. 🔧 修复 lint：创建 `eslint.config.mjs` + 安装 `@eslint/eslintrc` + 修改 `package.json` lint 脚本
+5. 🔧 修复 lint：添加 `.next/`、`node_modules/`、`next-env.d.ts` 到 ignores
+6. ✅ `pnpm lint` — 通过（零错误）
+7. ✅ `git init` + `git add -A` + `git commit`（原子提交，40 个文件）
+8. ✅ `git remote add origin`（SSH 方式）
+9. ❌ `git push` — 失败（远程仓库已有初始内容）
+10. 🔧 `git pull origin main --allow-unrelated-histories --no-rebase` — 产生 `.gitignore` 冲突
+11. 🔧 解决冲突：保留本地优化版 `.gitignore`
+12. ✅ `git push origin main` — 成功
+
+**质量门禁结果**：
+- [x] `pnpm type-check`：通过
+- [x] `pnpm build`：通过
+- [x] `pnpm lint`：通过
+- [x] Git 提交 + Push：成功
+
+**Task 0.3 验收**：✅ 通过
+
+---
+
+### [2026-05-01] Entry #007 — Task 0.4 + 0.5 + 0.6 并行执行中
+
+**触发原因**：Task 0.3 完成，进入下一个增量。
+
+**Skill 引用**：`incremental-implementation` — "Build in thin vertical slices — implement one piece, test it, verify it, then expand."
+
+**当前任务队列**：
+1. ✅ Task 0.3：初始化 Next.js 15 + shadcn/ui
+2. 🟡 Task 0.4：配置 Tailwind CSS v4 + 品牌色（品牌色已在 globals.css 中配置，需确认是否完整）
+3. 🟡 Task 0.5：配置 Supabase Client + Schema
+4. 🟡 Task 0.6：配置 next-intl 国际化
+5. ⬜ Task 0.7：配置 GitHub Actions CI/CD
+6. ⬜ Task 0.8：配置 Vercel 部署（二次确认）
+7. ⬜ Task 0.9：Phase 0 验证 & 收尾
+
+**下一步**：
+1. 创建 `.env.local`（Supabase 环境变量）
+2. 创建 `lib/supabase/client.ts` 和 `lib/supabase/server.ts`
+3. 创建 Supabase 迁移文件（6 张表 + RLS）
+4. 配置 next-intl：`middleware.ts` + `i18n.ts` + `messages/zh.json` + `messages/en.json`
+5. 更新 `app/layout.tsx` 支持国际化
+6. 创建 `.github/workflows/ci.yml`
+7. Git commit + push
+8. 验证 Vercel 自动部署
+
+---
+
+*最后更新：2026-05-01 · Task 0.3 完成，继续执行 Task 0.4-0.9*
