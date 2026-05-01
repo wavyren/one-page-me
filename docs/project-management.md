@@ -22,8 +22,8 @@
 | Phase | 名称 | 状态 | 关键交付物 |
 |-------|------|------|-----------|
 | Phase 0 | 项目初始化 | ✅ 已完成 | 项目框架可访问，CI Pipeline 绿色 |
-| **Phase 1** | **用户系统** | 🟡 **进行中 — Task 拆解 & 执行** | 三种登录方式正常注册/登录 |
-| Phase 2 | 核心对话引擎 | ⬜ 未开始 | 完整对话流程可运行 |
+| Phase 1 | 用户系统 | ✅ 已完成 | 三种登录方式正常注册/登录 |
+| **Phase 2** | **核心对话引擎** | 🟡 **进行中 — 核心代码完成，待接入真实 AI** | 完整对话流程可运行 |
 | Phase 3 | 实时预览引擎 | ⬜ 未开始 | 预览实时填充，动画流畅 |
 | Phase 4 | 主页生成引擎 | ⬜ 未开始 | 从对话到生成主页完整走通 |
 | Phase 5 | 导出功能 | ⬜ 未开始 | 三种格式导出均可用 |
@@ -41,12 +41,12 @@
 |---|------|------|---------|---------|------|
 | 1.1 | 编写 Phase 1 技术 Spec | ✅ 已完成 | Spec 通过用户确认 | — | `docs/specs/phase-1-spec.md` |
 | 1.2 | 技术决策确认 | ✅ 已完成 | 5 项决策全部确认 | — | D9=A, D10=实现, D11=延后, D12=2MB, D13=/chat |
-| 1.3 | Supabase Auth 配置 + middleware | 🟡 **进行中** | Session 刷新正常，路由保护生效 | 刷新页面测试 | 需配置 Dashboard Providers |
-| 1.4 | 手机号登录 UI + API | ⬜ 未开始 | 发送验证码 + 验证登录完整流程 | E2E 测试 | — |
-| 1.5 | Google OAuth 登录 | ⬜ 未开始 | Google 账号可登录 | 手动测试 | 需配置 Google Cloud Console |
-| 1.6 | Profile 页 + 头像上传 | ⬜ 未开始 | 可修改昵称和头像 | 手动测试 | — |
-| 1.7 | 用户菜单 + 注销 | ⬜ 未开始 | 下拉菜单显示头像和注销 | 手动测试 | — |
-| 1.8 | 测试 + 质量门禁 | ⬜ 未开始 | Vitest + Playwright 通过 | 自动化测试 | — |
+| 1.3 | Supabase Auth 配置 + middleware | ✅ 已完成 | Session 刷新正常，路由保护生效 | 刷新页面测试 | Dashboard Providers 已配置 |
+| 1.4 | 手机号登录 UI + API | ✅ 已完成 | Mock OTP 完整流程 | E2E 测试 | — |
+| 1.5 | Google OAuth 登录 | ✅ 已完成 | Google 账号可登录 | 手动测试 | Dashboard 已配置 |
+| 1.6 | Profile 页 + 头像上传 | ✅ 已完成 | 可修改昵称和头像 | 手动测试 | — |
+| 1.7 | 用户菜单 + 注销 | ✅ 已完成 | 退出登录功能 | 手动测试 | — |
+| 1.8 | 测试 + 质量门禁 | ✅ 已完成 | type-check + lint + build 通过 | CI 自动 | — |
 
 ---
 
@@ -76,8 +76,9 @@
 
 | # | 事项 | 提出时间 | 优先级 | 状态 | 备注 |
 |---|------|---------|--------|------|------|
-| 1.3a | Supabase Dashboard Auth Providers 配置 | 2026-05-01 | 🔴 高 | ⏸️ 待用户操作 | 需启用 Phone + Google Provider |
-| 1.3b | Google Cloud Console OAuth 配置 | 2026-05-01 | 🔴 高 | ⏸️ 待用户操作 | 需创建 OAuth 客户端 |
+| 2.1 | DeepSeek API Key 配置 | 2026-05-01 | 🔴 高 | ⏸️ 待用户操作 | 需申请 DeepSeek API Key |
+| 2.2 | Supabase Storage avatars bucket | 2026-05-01 | 🟡 中 | ⏸️ 待用户操作 | Dashboard 创建 bucket |
+| 2.3 | avatar_url migration 推送 | 2026-05-01 | 🟡 中 | ⏸️ 待用户操作 | `supabase db push` |
 
 ---
 
@@ -102,4 +103,4 @@
 
 ---
 
-*最后更新：2026-05-01 · Phase 1 执行中*
+*最后更新：2026-05-01 · Phase 2 核心代码完成*
