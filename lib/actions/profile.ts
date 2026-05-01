@@ -1,11 +1,12 @@
 "use server";
 
 import { createClient } from "@/lib/supabase/server";
+import { ActionResult } from "./auth";
 
 export async function updateProfile(data: {
   name?: string;
   avatar_url?: string;
-}) {
+}): Promise<ActionResult> {
   const supabase = await createClient();
   const {
     data: { user },
@@ -13,7 +14,10 @@ export async function updateProfile(data: {
   } = await supabase.auth.getUser();
 
   if (authError || !user) {
-    return { success: false, error: "未登录" };
+    return {
+      success: false,
+      error: { code: "AUTH_NOT_FOUND", message: "未登录" },
+    };
   }
 
   const { error } = await supabase
@@ -25,7 +29,10 @@ export async function updateProfile(data: {
     .eq("id", user.id);
 
   if (error) {
-    return { success: false, error: error.message };
+    return {
+      success: false,
+      error: { code: "PROFILE_UPDATE_FAILED", message: error.message },
+    };
   }
 
   await supabase.auth.updateUser({

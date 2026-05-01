@@ -31,12 +31,12 @@ export function PhoneLoginForm() {
     setIsLoading(false);
 
     if (!response.success) {
-      setError(response.error || "发送失败，请重试");
+      setError(response.error?.message || "发送失败，请重试");
       return;
     }
 
-    if (response.mock && response.mockCode) {
-      setMockHint(`开发模式：验证码固定为 ${response.mockCode}`);
+    if (response.data?.mock && response.data?.mockCode) {
+      setMockHint(`开发模式：验证码固定为 ${response.data.mockCode}`);
     }
 
     // Start countdown
@@ -71,13 +71,13 @@ export function PhoneLoginForm() {
     setIsLoading(false);
 
     if (!response.success) {
-      setError(response.error || "验证失败，请重试");
+      setError(response.error?.message || "验证失败，请重试");
       return;
     }
 
     const syncResult = await syncAuthUser();
     if (!syncResult.success) {
-      console.error("Sync user error:", syncResult.error);
+      console.error("Sync user error:", syncResult.error?.message);
     }
 
     router.push("/chat");

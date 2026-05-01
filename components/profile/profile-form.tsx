@@ -38,7 +38,7 @@ export function ProfileForm({ user }: ProfileFormProps) {
       setMessage("保存成功");
       router.refresh();
     } else {
-      setMessage(result.error || "保存失败");
+      setMessage(result.error?.message || "保存失败");
     }
   };
 
