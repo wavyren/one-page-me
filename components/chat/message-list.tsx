@@ -13,7 +13,12 @@ export function MessageList() {
   }, [messages, isLoading]);
 
   return (
-    <div className="flex-1 overflow-y-auto p-3 flex flex-col gap-2.5">
+    <div
+      className="flex-1 overflow-y-auto p-3 flex flex-col gap-2"
+      role="log"
+      aria-live="polite"
+      aria-label="对话消息"
+    >
       {messages.map((msg, i) => (
         <div
           key={i}
@@ -22,16 +27,19 @@ export function MessageList() {
         >
           {msg.role === "assistant" ? (
             <div className="flex gap-2 items-start">
-              <div className="w-6 h-6 rounded-full bg-brand flex items-center justify-center text-white text-[9px] shrink-0 mt-0.5">
+              <div
+                className="w-6 h-6 rounded-full bg-brand flex items-center justify-center text-white text-xs shrink-0 mt-0.5"
+                aria-hidden="true"
+              >
                 小页
               </div>
-              <div className="bg-muted rounded-r-xl rounded-bl-xl px-3 py-2.5 text-[13px] leading-relaxed max-w-[87%] whitespace-pre-wrap text-foreground">
+              <div className="bg-muted rounded-r-xl rounded-bl-xl px-3 py-2 text-sm leading-relaxed max-w-lg whitespace-pre-wrap text-foreground">
                 {msg.content}
               </div>
             </div>
           ) : (
             <div className="flex justify-end">
-              <div className="bg-brand text-white rounded-l-xl rounded-br-xl px-3 py-2.5 text-[13px] leading-relaxed max-w-[87%] whitespace-pre-wrap">
+              <div className="bg-brand text-white rounded-l-xl rounded-br-xl px-3 py-2 text-sm leading-relaxed max-w-lg whitespace-pre-wrap">
                 {msg.content}
               </div>
             </div>

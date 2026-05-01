@@ -28,7 +28,7 @@ export function ChatInput({ onSend }: ChatInputProps) {
   };
 
   return (
-    <div className="p-2.5 border-t border-border flex gap-2 items-center shrink-0">
+    <div className="p-2 border-t border-border flex gap-2 items-center shrink-0">
       <Input
         value={text}
         onChange={(e) => setText(e.target.value)}
@@ -39,12 +39,14 @@ export function ChatInput({ onSend }: ChatInputProps) {
             : "输入你的回答，按 Enter 发送…"
         }
         disabled={isLoading || isReadyToGenerate}
-        className="h-9 text-[13px]"
+        aria-label="消息输入"
+        className="h-9 text-sm"
       />
       <Button
         onClick={handleSend}
         disabled={isLoading || isReadyToGenerate || !text.trim()}
-        className="h-9 px-4 bg-brand hover:bg-brand-dark text-white text-[13px] shrink-0"
+        aria-label="发送消息"
+        className="h-9 px-4 bg-brand hover:bg-brand-dark text-white text-sm shrink-0"
       >
         发送
       </Button>

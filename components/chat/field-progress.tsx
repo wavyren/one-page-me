@@ -28,21 +28,28 @@ export function FieldProgress() {
   const currentStep = collectedFields.length;
 
   return (
-    <div className="px-3 py-1.5 border-b border-border shrink-0 min-h-[30px] flex items-center flex-wrap gap-1">
-      <span className="text-[11px] text-muted-foreground mr-1">收集进度：</span>
+    <div
+      className="px-3 py-1.5 border-b border-border shrink-0 min-h-8 flex items-center flex-wrap gap-1"
+      role="progressbar"
+      aria-label="信息收集进度"
+      aria-valuenow={currentStep}
+      aria-valuemin={0}
+      aria-valuemax={totalSteps}
+    >
+      <span className="text-xs text-muted-foreground mr-1">收集进度：</span>
       {collectedFields.map((key) => {
         const config = FIELD_CONFIG[key];
         return (
           <span
             key={key}
-            className={`text-[11px] px-2 py-0.5 rounded-full ${config.bg} ${config.text} animate-[fadeUp_0.3s_ease]`}
+            className={`text-xs px-2 py-0.5 rounded-full ${config.bg} ${config.text} animate-[fadeUp_0.3s_ease]`}
           >
             ✓ {config.label}
           </span>
         );
       })}
       {collectedFields.length === 0 && (
-        <span className="text-[11px] text-muted-foreground">
+        <span className="text-xs text-muted-foreground">
           开始聊天后，小页会在这里记录收集到的信息
         </span>
       )}
