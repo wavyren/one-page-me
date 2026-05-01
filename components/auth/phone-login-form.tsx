@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { sendPhoneOtp, verifyPhoneOtp } from "@/lib/actions/auth";
+import { sendPhoneOtp, verifyPhoneOtp, syncAuthUser } from "@/lib/actions/auth";
 import { phoneSchema, otpSchema } from "@/lib/validations/auth";
 
 export function PhoneLoginForm() {
@@ -73,6 +73,11 @@ export function PhoneLoginForm() {
     if (!response.success) {
       setError(response.error || "验证失败，请重试");
       return;
+    }
+
+    const syncResult = await syncAuthUser();
+    if (!syncResult.success) {
+      console.error("Sync user error:", syncResult.error);
     }
 
     router.push("/chat");

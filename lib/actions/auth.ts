@@ -103,3 +103,56 @@ export async function verifyPhoneOtp(phone: string, token: string) {
 
   return { success: true, user: data.user };
 }
+
+export async function syncAuthUser() {
+  const supabase = await createClient();
+  const {
+    data: { user },
+    error: authError,
+  } = await supabase.auth.getUser();
+
+  if (authError || !user) {
+    return { success: false, error: authError?.message || "未登录" };
+  }
+
+  const name =
+    user.user_metadata?.name ||
+    user.user_metadata?.full_name ||
+    user.user_metadata?.user_name ||
+    null;
+
+  const { data: existingUser } = await supabase
+    .from("users")
+    .select("id, name")
+    .eq("id", user.id)
+    .single();
+
+  if (existingUser) {
+    const { error: updateError } = await supabase
+      .from("users")
+      .update({
+        phone: user.phone,
+        email: user.email,
+        name: name || existingUser.name,
+      })
+      .eq("id", user.id);
+
+    if (updateError) {
+      return { success: false, error: updateError.message };
+    }
+  } else {
+    const { error: insertError } = await supabase.from("users").insert({
+      id: user.id,
+      phone: user.phone,
+      email: user.email,
+      name,
+      preferred_language: "zh",
+    });
+
+    if (insertError) {
+      return { success: false, error: insertError.message };
+    }
+  }
+
+  return { success: true };
+}
