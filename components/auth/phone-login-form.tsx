@@ -16,6 +16,7 @@ export function PhoneLoginForm() {
   const [countdown, setCountdown] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
+  const [mockHint, setMockHint] = useState("");
 
   const handleSendOtp = async () => {
     setError("");
@@ -32,6 +33,10 @@ export function PhoneLoginForm() {
     if (!response.success) {
       setError(response.error || "发送失败，请重试");
       return;
+    }
+
+    if (response.mock && response.mockCode) {
+      setMockHint(`开发模式：验证码固定为 ${response.mockCode}`);
     }
 
     // Start countdown
@@ -114,6 +119,12 @@ export function PhoneLoginForm() {
             disabled={isLoading}
           />
         </div>
+
+        {mockHint && (
+          <p className="text-sm text-amber-600 bg-amber-50 px-3 py-2 rounded-md">
+            {mockHint}
+          </p>
+        )}
 
         {error && (
           <p className="text-sm text-red-500">{error}</p>
