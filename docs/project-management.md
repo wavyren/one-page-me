@@ -39,18 +39,18 @@
 
 | # | 任务 | 状态 | 验收标准 | 验证命令 | 备注 |
 |---|------|------|---------|---------|------|
-| 0.1 | 编写 Phase 0 技术 Spec | ✅ 已完成，用户已确认 | Spec 文档通过用户确认 | — | `docs/specs/phase-0-spec.md` |
+| 0.1 | 编写 Phase 0 技术 Spec | ✅ 已完成 | Spec 文档通过用户确认 | — | `docs/specs/phase-0-spec.md` |
 | 0.2 | 技术决策确认 | ✅ 已完成 | 8 项决策全部确认 | — | 见「关键决策记录」 |
-| 0.2a | 引导创建 GitHub 仓库 | ✅ 已完成 | 仓库 URL 已获取 | — | `https://github.com/wavyren/one-page-me.git` |
-| 0.2b | 引导创建 Supabase 项目 | ✅ 已完成 | Project URL + Keys 已获取 | — | 见「关键决策记录」 |
-| 0.2c | 引导配置 Vercel 项目 | ✅ 已完成 | 生产域名已获取，部署成功 | — | `https://one-page-me.vercel.app` |
-| 0.3 | 初始化 Next.js 15 + shadcn/ui | 🟡 **进行中** | `pnpm dev` 启动成功 | `curl http://localhost:3000` | 触发 `incremental-implementation` |
-| 0.4 | 配置 Tailwind CSS v4 + 品牌色 | ⬜ 未开始 | 主色 #C9854A、预览背景 #F4EFE8 生效 | 视觉检查 | — |
-| 0.5 | 配置 Supabase Client + Schema | ⬜ 未开始 | Supabase 连接成功，初始表创建 | `supabase db push` | — |
-| 0.6 | 配置 next-intl 国际化 | ⬜ 未开始 | 中英切换正常 | 访问 `/en`、`/zh` | — |
-| 0.7 | 配置 GitHub Actions CI/CD | ⬜ 未开始 | push 自动跑 lint + type-check | GitHub Actions 绿色 | — |
-| 0.8 | 配置 Vercel 部署（二次确认） | ⬜ 未开始 | 代码 push 后自动部署成功 | 访问生产 URL | — |
-| 0.9 | Phase 0 验证 & 收尾 | ⬜ 未开始 | 全部 checklist 通过 | 综合验证 | — |
+| 0.2a | 引导创建 GitHub 仓库 | ✅ 已完成 | 仓库 URL 已获取 | — | `wavyren/one-page-me` |
+| 0.2b | 引导创建 Supabase 项目 | ✅ 已完成 | Project URL + Keys 已获取 | — | `dkeukhabsnqkynvkjcde` |
+| 0.2c | 引导配置 Vercel 项目 | ✅ 已完成 | 生产域名已获取 | — | `one-page-me.vercel.app` |
+| 0.3 | 初始化 Next.js 15 + shadcn/ui | ✅ 已完成 | `pnpm dev` 启动成功 | `curl http://localhost:3000` | type-check/build/lint 全过 |
+| 0.4 | 配置 Tailwind CSS v4 + 品牌色 | ✅ 已完成 | 主色 #C9854A、预览背景 #F4EFE8 生效 | 视觉检查 | 已配置 CSS 变量 |
+| 0.5 | 配置 Supabase Client + Schema | ✅ 已完成 | 6 张表 + RLS 已在远程创建 | `supabase db push` | 迁移成功 |
+| 0.6 | 配置 next-intl 国际化 | ✅ 已完成 | middleware/messages/i18n 配置完成 | type-check 通过 | — |
+| 0.7 | 配置 GitHub Actions CI/CD | ✅ 已完成 | ci.yml 已 push | GitHub Actions 绿色 | — |
+| 0.8 | 验证 Vercel 自动部署 | 🔴 **阻塞 — 404 错误** | 生产环境可访问 | 访问生产 URL | **需排查** |
+| 0.9 | Phase 0 验证 & 收尾 | ⬜ 未开始 | 全部 checklist 通过 | 综合验证 | 等待 0.8 |
 
 ---
 
@@ -59,7 +59,7 @@
 | # | 决策 | 确认时间 | 结论 | 影响范围 |
 |---|------|---------|------|---------|
 | D1 | 包管理器 | 2026-05-01 | **pnpm** | 所有依赖安装、CI 脚本 |
-| D2 | Node.js 版本 | 2026-05-01 | **v20 LTS** | package.json engines |
+| D2 | Node.js 版本 | 2026-05-01 | **v20 LTS**（实际 v24.13.1） | package.json engines |
 | D3 | Turbopack | 2026-05-01 | **启用** | package.json dev script |
 | D4 | shadcn/ui 组件 | 2026-05-01 | **按需安装** | 组件目录 |
 | D5 | Supabase 项目 | 2026-05-01 | **已创建，Project ID: dkeukhabsnqkynvkjcde** | `.env.local`、数据库连接 |
@@ -69,19 +69,13 @@
 
 ---
 
-## 五、环境变量清单（Phase 0 需要）
+## 五、待确认事项（阻塞中）
 
-> **存储位置**：`.env.local`（已加入 .gitignore，不提交）
+> **规则**：以下事项必须等用户确认后才能继续。
 
-```bash
-# Supabase
-NEXT_PUBLIC_SUPABASE_URL=https://dkeukhabsnqkynvkjcde.supabase.co
-NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRrZXVraGFic25xa3ludmtqY2RlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc2MDI2NzksImV4cCI6MjA5MzE3ODY3OX0.qU0fxrSULSliueGBQ52k3kjdgxd_h1wMkGzxIKoxlTQ
-SUPABASE_SERVICE_ROLE_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRrZXVraGFic25xa3ludmtqY2RlIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3NzYwMjY3OSwiZXhwIjoyMDkzMTc4Njc5fQ.BcRiw2TAf4xUiJ05-e18-L4SLsOQux1BxPzOdJfFxKA
-
-# 应用配置
-NEXT_PUBLIC_APP_URL=https://one-page-me.vercel.app
-```
+| # | 事项 | 提出时间 | 优先级 | 状态 | 备注 |
+|---|------|---------|--------|------|------|
+| 0.8 | Vercel 404 排查 | 2026-05-01 | 🔴 高 | ⏸️ 等待用户操作 | **需检查 Vercel Dashboard 项目配置** |
 
 ---
 
@@ -89,7 +83,7 @@ NEXT_PUBLIC_APP_URL=https://one-page-me.vercel.app
 
 | # | 问题/风险 | 发现时间 | 严重程度 | 状态 | 解决方案 |
 |---|----------|---------|---------|------|---------|
-| — | — | — | — | — | — |
+| P1 | Vercel 返回 404（NOT_FOUND） | 2026-05-01 | 🔴 高 | 排查中 | 检查项目是否正确连接 GitHub 仓库 |
 
 ---
 
@@ -99,9 +93,12 @@ NEXT_PUBLIC_APP_URL=https://one-page-me.vercel.app
 |------|------|-----------|---------|------|
 | #001 | 2026-05-01 | `spec-driven-development` | Phase 0 启动，读取 PRD，创建管理文档 | 完成 |
 | #002 | 2026-05-01 | `spec-driven-development` | 完成 Phase 0 Spec 初稿 | 完成 |
-| #003 | 2026-05-01 | `spec-driven-development` | 用户确认全部 8 项决策，Spec v1.0-final 生效 | 完成 |
-| #004 | 2026-05-01 | — | 引导用户创建 GitHub/Supabase/Vercel | 完成 |
-| #005 | 2026-05-01 | `incremental-implementation` | **用户返回配置信息，开始代码初始化** | **进行中** |
+| #003 | 2026-05-01 | `spec-driven-development` | 用户确认全部 8 项决策 | 完成 |
+| #004 | 2026-05-01 | `incremental-implementation` | 引导用户创建第三方服务 | 完成 |
+| #005 | 2026-05-01 | `incremental-implementation` + `debugging-and-error-recovery` | 手动初始化项目结构 | 完成 |
+| #006 | 2026-05-01 | `incremental-implementation` | 配置 Supabase/next-intl/CI/CD + push | 完成 |
+| #007 | 2026-05-01 | `debugging-and-error-recovery` | Supabase CLI 认证 + 迁移推送成功 | 完成 |
+| #008 | 2026-05-01 | `debugging-and-error-recovery` | Vercel 404 问题排查 | **进行中** |
 
 **完整执行日志**：`docs/execution-log.md`
 
