@@ -1,0 +1,551 @@
+- generic [active] [ref=e1]:
+  - link "Skip to content":
+    - /url: "#geist-skip-nav"
+  - main [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]:
+        - generic [ref=e6]:
+          - generic [ref=e9]:
+            - link "haitaoren08-6009's projects Hobby" [ref=e10] [cursor=pointer]:
+              - /url: /haitaoren08-6009s-projects
+              - img [ref=e11]
+              - generic [ref=e12]:
+                - generic [ref=e13]: haitaoren08-6009's projects
+                - generic [ref=e15]: Hobby
+            - button [ref=e16] [cursor=pointer]:
+              - img [ref=e18]
+          - button "Find… F" [ref=e21]:
+            - generic [ref=e23]:
+              - img [ref=e25]
+              - generic [ref=e27]: Find…
+              - generic [ref=e29]: F
+        - navigation [ref=e31]:
+          - generic [ref=e32]:
+            - generic:
+              - generic:
+                - link "Other Overview":
+                  - /url: /haitaoren08-6009s-projects/one-page-me
+                  - generic:
+                    - img "Other":
+                      - img "Other"
+                  - generic:
+                    - generic: Overview
+                - link "Deployments":
+                  - /url: /haitaoren08-6009s-projects/one-page-me/deployments
+                  - generic:
+                    - img
+                  - generic:
+                    - generic: Deployments
+                - link "Logs":
+                  - /url: /haitaoren08-6009s-projects/one-page-me/logs
+                  - generic:
+                    - img
+                  - generic:
+                    - generic: Logs
+                - link "Analytics":
+                  - /url: /haitaoren08-6009s-projects/one-page-me/analytics
+                  - generic:
+                    - img
+                  - generic:
+                    - generic: Analytics
+                - link "Speed Insights":
+                  - /url: /haitaoren08-6009s-projects/one-page-me/speed-insights
+                  - generic:
+                    - img
+                  - generic:
+                    - generic: Speed Insights
+                - link "Observability":
+                  - /url: /haitaoren08-6009s-projects/one-page-me/observability
+                  - generic:
+                    - img
+                  - generic:
+                    - generic: Observability
+                  - generic:
+                    - img
+                - link "Firewall":
+                  - /url: /haitaoren08-6009s-projects/one-page-me/firewall
+                  - generic:
+                    - img
+                  - generic:
+                    - generic: Firewall
+                  - generic:
+                    - img
+                - link "CDN":
+                  - /url: /haitaoren08-6009s-projects/one-page-me/cdn
+                  - generic:
+                    - img
+                  - generic:
+                    - generic: CDN
+                  - generic:
+                    - img
+                - separator
+                - link "Environment Variables":
+                  - /url: /haitaoren08-6009s-projects/one-page-me/settings/environment-variables
+                  - generic:
+                    - img
+                  - generic:
+                    - generic: Environment Variables
+                - link "Domains":
+                  - /url: /haitaoren08-6009s-projects/one-page-me/settings/domains
+                  - generic:
+                    - img
+                  - generic:
+                    - generic: Domains
+                - link "Integrations":
+                  - /url: /haitaoren08-6009s-projects/one-page-me/settings/integrations
+                  - generic:
+                    - img
+                  - generic:
+                    - generic: Integrations
+                - link "Storage":
+                  - /url: /haitaoren08-6009s-projects/one-page-me/stores
+                  - generic:
+                    - img
+                  - generic:
+                    - generic: Storage
+                - link "Flags":
+                  - /url: /haitaoren08-6009s-projects/one-page-me/flags
+                  - generic:
+                    - img
+                  - generic:
+                    - generic: Flags
+                  - generic:
+                    - img
+                - link "Agent":
+                  - /url: /haitaoren08-6009s-projects/one-page-me/agent
+                  - generic:
+                    - img
+                  - generic:
+                    - generic: Agent
+                  - generic:
+                    - img
+                - link "AI Gateway":
+                  - /url: /haitaoren08-6009s-projects/one-page-me/ai-gateway
+                  - generic:
+                    - img
+                  - generic:
+                    - generic: AI Gateway
+                  - generic:
+                    - img
+                - link "Sandboxes":
+                  - /url: /haitaoren08-6009s-projects/one-page-me/sandboxes
+                  - generic:
+                    - img
+                  - generic:
+                    - generic: Sandboxes
+                - link "Workflows":
+                  - /url: /haitaoren08-6009s-projects/one-page-me/workflows
+                  - generic:
+                    - img
+                  - generic:
+                    - generic: Workflows
+                - separator
+                - link "Usage":
+                  - /url: /haitaoren08-6009s-projects/one-page-me/usage
+                  - generic:
+                    - img
+                  - generic:
+                    - generic: Usage
+                - link "Support":
+                  - /url: /haitaoren08-6009s-projects/one-page-me/support
+                  - generic:
+                    - img
+                  - generic:
+                    - generic: Support
+                - link "Settings":
+                  - /url: /haitaoren08-6009s-projects/one-page-me/settings
+                  - generic:
+                    - img
+                  - generic:
+                    - generic: Settings
+                  - generic:
+                    - img
+            - generic [ref=e1251]:
+              - button "Settings" [ref=e1253] [cursor=pointer]:
+                - img [ref=e1255]
+                - generic [ref=e1257]: Settings
+              - generic [ref=e1259]:
+                - link "General" [ref=e1260] [cursor=pointer]:
+                  - /url: /haitaoren08-6009s-projects/one-page-me/settings/general
+                  - generic [ref=e1262]: General
+                - link "Build and Deployment" [ref=e1263] [cursor=pointer]:
+                  - /url: /haitaoren08-6009s-projects/one-page-me/settings/build-and-deployment
+                  - generic [ref=e1265]: Build and Deployment
+                - link "Environments" [ref=e1266] [cursor=pointer]:
+                  - /url: /haitaoren08-6009s-projects/one-page-me/settings/environments
+                  - generic [ref=e1268]: Environments
+                - link "Git" [ref=e1269] [cursor=pointer]:
+                  - /url: /haitaoren08-6009s-projects/one-page-me/settings/git
+                  - generic [ref=e1271]: Git
+                - link "Deployment Protection" [ref=e1272] [cursor=pointer]:
+                  - /url: /haitaoren08-6009s-projects/one-page-me/settings/deployment-protection
+                  - generic [ref=e1274]: Deployment Protection
+                - link "Functions" [ref=e1275] [cursor=pointer]:
+                  - /url: /haitaoren08-6009s-projects/one-page-me/settings/functions
+                  - generic [ref=e1277]: Functions
+                - link "Cron Jobs" [ref=e1278] [cursor=pointer]:
+                  - /url: /haitaoren08-6009s-projects/one-page-me/settings/cron-jobs
+                  - generic [ref=e1280]: Cron Jobs
+                - link "Microfrontends" [ref=e1281] [cursor=pointer]:
+                  - /url: /haitaoren08-6009s-projects/one-page-me/settings/microfrontends
+                  - generic [ref=e1283]: Microfrontends
+                - link "Project Members" [ref=e1284] [cursor=pointer]:
+                  - /url: /haitaoren08-6009s-projects/one-page-me/settings/project-members
+                  - generic [ref=e1286]: Project Members
+                - link "Drains" [ref=e1287] [cursor=pointer]:
+                  - /url: /haitaoren08-6009s-projects/one-page-me/settings/drains
+                  - generic [ref=e1289]: Drains
+                - link "Security" [ref=e1290] [cursor=pointer]:
+                  - /url: /haitaoren08-6009s-projects/one-page-me/settings/security
+                  - generic [ref=e1292]: Security
+                - link "Connectivity" [ref=e1293] [cursor=pointer]:
+                  - /url: /haitaoren08-6009s-projects/one-page-me/settings/connectivity
+                  - generic [ref=e1295]: Connectivity
+                - link "Advanced" [ref=e1296] [cursor=pointer]:
+                  - /url: /haitaoren08-6009s-projects/one-page-me/settings/advanced
+                  - generic [ref=e1298]: Advanced
+        - generic [ref=e183]:
+          - button "Avatar for haitaoren08-6009 haitaoren08-6009" [ref=e184] [cursor=pointer]:
+            - img "Avatar for haitaoren08-6009" [ref=e185]:
+              - img "Avatar for haitaoren08-6009" [ref=e186]
+            - generic [ref=e188]: haitaoren08-6009
+            - img [ref=e190]
+          - button "3 unseen notifications" [ref=e1299] [cursor=pointer]:
+            - generic [ref=e195]:
+              - generic [ref=e196]:
+                - img
+              - img [ref=e1300]
+      - button [ref=e198] [cursor=pointer]:
+        - img [ref=e199]
+    - generic [ref=e202]:
+      - generic [ref=e203]:
+        - generic [ref=e206]:
+          - link "Other one-page-me" [ref=e207] [cursor=pointer]:
+            - /url: /haitaoren08-6009s-projects/one-page-me
+            - img "Other" [ref=e208]:
+              - img "Other" [ref=e209]
+            - generic [ref=e211]: one-page-me
+          - button [ref=e212] [cursor=pointer]:
+            - img [ref=e214]
+          - link "Back to team view" [ref=e218] [cursor=pointer]:
+            - /url: /haitaoren08-6009s-projects/~/settings/build-and-deployment
+            - img [ref=e220]
+        - generic [ref=e222]:
+          - generic [ref=e1510]:
+            - link "Project Settings" [ref=e1511] [cursor=pointer]:
+              - /url: /haitaoren08-6009s-projects/one-page-me/settings
+            - img [ref=e1512]
+          - generic [ref=e224]: Build and Deployment
+        - button "Open page actions menu" [ref=e226] [cursor=pointer]:
+          - img [ref=e228]
+      - generic [ref=e1514]:
+        - generic [ref=e1516]:
+          - generic [ref=e1517]:
+            - heading "Framework Settings" [level=4] [ref=e1518]:
+              - generic [ref=e1519]:
+                - link "Framework Settings" [ref=e1520] [cursor=pointer]:
+                  - /url: "#framework-settings"
+                  - generic [ref=e1521]: Framework Settings
+                - img [ref=e1522]
+            - paragraph [ref=e1524]: When using a framework for a new project, it will be automatically detected. As a result, several project settings are automatically configured to achieve the best result. You can override them below.
+            - generic [ref=e1526]:
+              - generic [ref=e1529]:
+                - generic [ref=e1531]: Framework Preset
+                - combobox [ref=e1532]:
+                  - generic [ref=e1533]:
+                    - generic:
+                      - img
+                    - searchbox "Framework Preset" [ref=e1534]: Next.js
+                    - button "Open menu" [ref=e1535] [cursor=pointer]:
+                      - img [ref=e1536]
+              - generic [ref=e1538]:
+                - generic [ref=e1539]:
+                  - generic [ref=e1540]:
+                    - heading "Build Command" [level=5] [ref=e1541]
+                    - img [ref=e1544]
+                  - generic "Build Command" [ref=e1549]:
+                    - 'textbox "`npm run build` or `next build`" [disabled] [ref=e1551]'
+                - generic [ref=e1552]:
+                  - heading "Override" [level=5] [ref=e1554]
+                  - generic "Override Build Command" [ref=e1557]:
+                    - checkbox "Override Build Command" [ref=e1558]
+              - generic [ref=e1561]:
+                - generic [ref=e1562]:
+                  - generic [ref=e1563]:
+                    - heading "Output Directory" [level=5] [ref=e1564]
+                    - img [ref=e1567]
+                  - generic "Output Directory" [ref=e1572]:
+                    - textbox "Next.js default" [disabled] [ref=e1574]
+                - generic [ref=e1575]:
+                  - heading "Override" [level=5] [ref=e1577]
+                  - generic "Override Output Directory" [ref=e1580]:
+                    - checkbox "Override Output Directory" [ref=e1581]
+              - generic [ref=e1584]:
+                - generic [ref=e1585]:
+                  - generic [ref=e1586]:
+                    - heading "Install Command" [level=5] [ref=e1587]
+                    - img [ref=e1590]
+                  - generic "Install Command" [ref=e1595]:
+                    - 'textbox "`yarn install`, `pnpm install`, `npm install`, or `bun install`" [disabled] [ref=e1597]'
+                - generic [ref=e1598]:
+                  - heading "Override" [level=5] [ref=e1600]
+                  - generic "Override Install Command" [ref=e1603]:
+                    - checkbox "Override Install Command" [ref=e1604]
+              - generic [ref=e1607]:
+                - generic [ref=e1608]:
+                  - generic [ref=e1609]:
+                    - heading "Development Command" [level=5] [ref=e1610]
+                    - img [ref=e1613]
+                  - generic "Development Command" [ref=e1618]:
+                    - textbox "next" [disabled] [ref=e1620]
+                - generic [ref=e1621]:
+                  - heading "Override" [level=5] [ref=e1623]
+                  - generic "Override Development Command" [ref=e1626]:
+                    - checkbox "Override Development Command" [ref=e1627]
+          - generic [ref=e1630]:
+            - generic [ref=e1632]:
+              - text: Learn more about
+              - link "Build and Development Settings" [ref=e1633] [cursor=pointer]:
+                - /url: /docs/deployments/configure-a-build#build-and-development-settings
+                - text: Build and Development Settings
+                - img [ref=e1634]
+            - button "Save" [disabled] [ref=e1639]:
+              - generic [ref=e1640]: Save
+        - generic [ref=e1642]:
+          - generic [ref=e1643]:
+            - heading "Root Directory" [level=4] [ref=e1644]:
+              - generic [ref=e1645]:
+                - link "Root Directory" [ref=e1646] [cursor=pointer]:
+                  - /url: "#root-directory"
+                  - generic [ref=e1647]: Root Directory
+                - img [ref=e1648]
+            - paragraph [ref=e1650]: The directory within your project, where your code is located. Leave this field empty if your code is not located in a subdirectory.
+            - generic [ref=e1651]:
+              - textbox "./" [ref=e1654]
+              - generic [ref=e1655]:
+                - paragraph [ref=e1656]:
+                  - text: Include files outside the root directory in the
+                  - link "Build Step" [ref=e1657] [cursor=pointer]:
+                    - /url: /docs/deployments/build-step
+                    - text: Build Step
+                    - img [ref=e1658]
+                  - text: .
+                - generic "Enabled" [ref=e1660]:
+                  - paragraph [ref=e1662]: Enabled
+                  - checkbox "Include files outside the root directory in the Build Step . Enabled" [checked] [ref=e1663]
+              - separator [ref=e1666]
+              - generic [ref=e1667]:
+                - paragraph [ref=e1668]:
+                  - link "Skip deployments" [ref=e1669] [cursor=pointer]:
+                    - /url: /docs/monorepos#skipping-unaffected-projects
+                    - text: Skip deployments
+                    - img [ref=e1670]
+                  - text: when there are no changes to the root directory or its dependencies.
+                - generic "Disabled" [ref=e1672]:
+                  - paragraph [ref=e1674]: Disabled
+                  - checkbox "Skip deployments when there are no changes to the root directory or its dependencies. Disabled" [disabled] [ref=e1675]
+          - generic [ref=e1678]:
+            - paragraph [ref=e1680]:
+              - text: Learn more about
+              - link "Root Directory" [ref=e1681] [cursor=pointer]:
+                - /url: /docs/deployments/configure-a-build#root-directory
+                - text: Root Directory
+                - img [ref=e1682]
+            - button "Save" [disabled] [ref=e1687]:
+              - generic [ref=e1688]: Save
+        - generic [ref=e1690]:
+          - generic [ref=e1691]:
+            - heading "Ignored Build Step" [level=4] [ref=e1692]:
+              - generic [ref=e1693]:
+                - link "Ignored Build Step" [ref=e1694] [cursor=pointer]:
+                  - /url: "#ignored-build-step"
+                  - generic [ref=e1695]: Ignored Build Step
+                - img [ref=e1696]
+            - paragraph [ref=e1698]: Vercel skips builds for commits with a previously deployed SHA. Override with a shell command that exits 1 (build) or 0 (skip).
+            - generic [ref=e1701]:
+              - generic [ref=e1702]: Behavior
+              - generic [ref=e1703]:
+                - combobox "Behavior" [ref=e1704] [cursor=pointer]:
+                  - option "Automatic" [selected]
+                  - option "Only build production"
+                  - option "Only build pre-production"
+                  - option "Only build if there are changes"
+                  - option "Only build if there are changes in a folder"
+                  - option "Don’t build anything"
+                  - option "Run my Bash script"
+                  - option "Run my Node script"
+                  - option "Custom"
+                - generic:
+                  - img
+          - generic [ref=e1705]:
+            - paragraph [ref=e1707]:
+              - text: Learn more about
+              - link "Ignored Build Step" [ref=e1708] [cursor=pointer]:
+                - /url: /docs/project-configuration/git-settings#ignored-build-step
+                - text: Ignored Build Step
+                - img [ref=e1709]
+            - button "Save" [disabled] [ref=e1714]:
+              - generic [ref=e1715]: Save
+        - generic [ref=e1717]:
+          - generic [ref=e1718]:
+            - heading "Node.js Version" [level=4] [ref=e1719]:
+              - generic [ref=e1720]:
+                - link "Node.js Version" [ref=e1721] [cursor=pointer]:
+                  - /url: "#node.js-version"
+                  - generic [ref=e1722]: Node.js Version
+                - img [ref=e1723]
+            - paragraph [ref=e1725]: The Node.js version used during builds and for Serverless Functions. Redeploy to apply changes.
+            - generic [ref=e1730]:
+              - combobox [ref=e1731] [cursor=pointer]:
+                - option "24.x" [selected]
+                - option "22.x"
+                - option "20.x"
+              - generic:
+                - img
+          - generic [ref=e1732]:
+            - paragraph [ref=e1734]:
+              - text: Learn more about
+              - link "Node.js Version" [ref=e1735] [cursor=pointer]:
+                - /url: /docs/functions/serverless-functions/runtimes/node-js#node.js-version
+                - text: Node.js Version
+                - img [ref=e1736]
+            - button "Save" [disabled] [ref=e1741]:
+              - generic [ref=e1742]: Save
+        - generic [ref=e1744]:
+          - generic [ref=e1745]:
+            - heading "On-Demand Concurrent Builds" [level=4] [ref=e1746]:
+              - generic [ref=e1747]:
+                - link "On-Demand Concurrent Builds" [ref=e1748] [cursor=pointer]:
+                  - /url: "#on-demand-concurrent-builds"
+                  - generic [ref=e1749]: On-Demand Concurrent Builds
+                - img [ref=e1750]
+            - paragraph [ref=e1752]: Skip the build queue and build deployments immediately. Usage costs apply per build minute.
+            - radiogroup "On-Demand Concurrent Builds" [ref=e1753]:
+              - list [ref=e1754]:
+                - generic [ref=e1756] [cursor=pointer]:
+                  - radio "Run all builds immediately Skip the queue for all builds" [ref=e1758]
+                  - generic [ref=e1760]:
+                    - generic [ref=e1761]: Run all builds immediately
+                    - generic [ref=e1762]: Skip the queue for all builds
+                - generic [ref=e1764] [cursor=pointer]:
+                  - radio "Run up to one build per branch New deployments within a branch are queued" [ref=e1766]
+                  - generic [ref=e1768]:
+                    - generic [ref=e1769]: Run up to one build per branch
+                    - generic [ref=e1770]: New deployments within a branch are queued
+                - generic [ref=e1772] [cursor=pointer]:
+                  - radio "Disable on-demand concurrent builds Builds are queued, maximum of one at a time" [checked] [ref=e1774]
+                  - generic [ref=e1776]:
+                    - generic [ref=e1777]: Disable on-demand concurrent builds
+                    - generic [ref=e1778]: Builds are queued, maximum of one at a time
+          - paragraph [ref=e1781]:
+            - text: This feature is available on the
+            - link "Pro plan" [ref=e1782] [cursor=pointer]:
+              - /url: /pricing
+              - text: Pro plan
+              - img [ref=e1783]
+        - generic [ref=e1787]:
+          - generic [ref=e1788]:
+            - heading "Build Machine" [level=4] [ref=e1789]:
+              - generic [ref=e1790]:
+                - link "Build Machine" [ref=e1791] [cursor=pointer]:
+                  - /url: "#build-machine"
+                  - generic [ref=e1792]: Build Machine
+                - img [ref=e1793]
+            - paragraph [ref=e1795]: Your team has not selected a default build machine.
+            - generic [ref=e1796]:
+              - generic [ref=e1797]:
+                - combobox [ref=e1798]:
+                  - generic [ref=e1799]:
+                    - searchbox "Build machine source" [ref=e1800]: Team Default (None)
+                    - button "Open menu" [ref=e1801] [cursor=pointer]:
+                      - img [ref=e1802]
+                - link "Set Team Default" [ref=e1804] [cursor=pointer]:
+                  - /url: /haitaoren08-6009s-projects/~/settings/build-and-deployment
+                  - generic [ref=e1805]: Set Team Default
+              - generic [ref=e1807]:
+                - img [ref=e1809]
+                - generic [ref=e1811]:
+                  - text: Your team has not selected a default build machine. This project will begin using elastic build machines soon.
+                  - link "Learn more about build machine types" [ref=e1812] [cursor=pointer]:
+                    - /url: /docs/builds/managing-builds#build-machine-types
+                    - text: Learn more about build machine types
+                    - img [ref=e1813]
+          - generic [ref=e1817]:
+            - text: Learn more about
+            - link "build machine types" [ref=e1818] [cursor=pointer]:
+              - /url: /docs/builds/managing-builds#build-machine-types
+              - text: build machine types
+              - img [ref=e1819]
+            - text: and
+            - link "pricing" [ref=e1821] [cursor=pointer]:
+              - /url: /docs/builds/managing-builds#on-demand-concurrent-builds-pricing
+              - text: pricing
+              - img [ref=e1822]
+        - generic [ref=e1826]:
+          - generic [ref=e1827]:
+            - heading "Deployment Checks" [level=4] [ref=e1828]:
+              - generic [ref=e1829]:
+                - link "Deployment Checks" [ref=e1830] [cursor=pointer]:
+                  - /url: "#deployment-checks"
+                  - generic [ref=e1831]: Deployment Checks
+                - img [ref=e1832]
+            - generic [ref=e1834]:
+              - paragraph [ref=e1835]: No checks configured
+              - generic [ref=e1837]:
+                - paragraph [ref=e1838]: Use events or statuses from your checks provider to determine when a deployment is promoted to Production.
+                - button "Add Checks" [ref=e1840] [cursor=pointer]:
+                  - img [ref=e1842]
+                  - generic [ref=e1844]: Add Checks
+          - paragraph [ref=e1847]:
+            - text: Learn more about
+            - link "Deployment Checks" [ref=e1848] [cursor=pointer]:
+              - /url: /docs/deployment-checks
+              - text: Deployment Checks
+              - img [ref=e1849]
+        - generic [ref=e1853]:
+          - generic [ref=e1854]:
+            - heading "Rolling Releases" [level=4] [ref=e1856]:
+              - link "Rolling Releases" [ref=e1857] [cursor=pointer]:
+                - /url: "#rolling-releases"
+                - generic [ref=e1858]: Rolling Releases
+                - img [ref=e1859]
+            - paragraph [ref=e1861]: Roll out changes gradually by defining a traffic percentage for each stage.
+            - generic [ref=e1863] [cursor=pointer]:
+              - generic [ref=e1864]: Disabled
+              - checkbox "Disabled" [ref=e1865]
+          - generic [ref=e1869]:
+            - paragraph [ref=e1870]:
+              - text: This feature is available on the
+              - link "Pro plan" [ref=e1871] [cursor=pointer]:
+                - /url: /pricing
+                - text: Pro plan
+                - img [ref=e1872]
+            - button "Save" [disabled] [ref=e1874]:
+              - generic [ref=e1875]: Save
+        - generic [ref=e1877]:
+          - generic [ref=e1878]:
+            - heading "Prioritize Production Builds" [level=4] [ref=e1879]:
+              - generic [ref=e1880]:
+                - link "Prioritize Production Builds" [ref=e1881] [cursor=pointer]:
+                  - /url: "#prioritize-production-builds"
+                  - generic [ref=e1882]: Prioritize Production Builds
+                - img [ref=e1883]
+            - paragraph [ref=e1885]: Run Production builds before Pre-Production builds.
+            - generic [ref=e1886] [cursor=pointer]:
+              - checkbox "Enabled" [checked] [ref=e1888]
+              - text: Enabled
+          - generic [ref=e1891]:
+            - paragraph [ref=e1893]:
+              - text: Learn more about
+              - link "Prioritize Production Builds" [ref=e1894] [cursor=pointer]:
+                - /url: /docs/deployments/concurrent-builds#prioritize-production-builds
+                - text: Prioritize Production Builds
+                - img [ref=e1895]
+            - button "Save" [disabled] [ref=e1900]:
+              - generic [ref=e1901]: Save
+  - alert [ref=e1250]
+  - generic:
+    - generic:
+      - generic:
+        - generic:
+          - img

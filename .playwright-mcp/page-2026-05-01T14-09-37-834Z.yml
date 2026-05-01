@@ -1,0 +1,712 @@
+- generic [active] [ref=e1]:
+  - link "Skip to content":
+    - /url: "#geist-skip-nav"
+  - main [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]:
+        - generic [ref=e6]:
+          - generic [ref=e9]:
+            - link "haitaoren08-6009's projects Hobby" [ref=e10] [cursor=pointer]:
+              - /url: /haitaoren08-6009s-projects
+              - img [ref=e11]
+              - generic [ref=e12]:
+                - generic [ref=e13]: haitaoren08-6009's projects
+                - generic [ref=e15]: Hobby
+            - button [ref=e16] [cursor=pointer]:
+              - img [ref=e18]
+          - button "Find… F" [ref=e21]:
+            - generic [ref=e23]:
+              - img [ref=e25]
+              - generic [ref=e27]: Find…
+              - generic [ref=e29]: F
+        - navigation [ref=e31]:
+          - generic [ref=e34]:
+            - link "Other Overview" [ref=e35] [cursor=pointer]:
+              - /url: /haitaoren08-6009s-projects/one-page-me
+              - img "Other" [ref=e37]:
+                - img "Other" [ref=e38]
+              - generic [ref=e40]: Overview
+            - link "Deployments" [ref=e41] [cursor=pointer]:
+              - /url: /haitaoren08-6009s-projects/one-page-me/deployments
+              - img [ref=e43]
+              - generic [ref=e46]: Deployments
+            - link "Logs" [ref=e47] [cursor=pointer]:
+              - /url: /haitaoren08-6009s-projects/one-page-me/logs
+              - img [ref=e49]
+              - generic [ref=e52]: Logs
+            - link "Analytics" [ref=e53] [cursor=pointer]:
+              - /url: /haitaoren08-6009s-projects/one-page-me/analytics
+              - img [ref=e55]
+              - generic [ref=e58]: Analytics
+            - link "Speed Insights" [ref=e59] [cursor=pointer]:
+              - /url: /haitaoren08-6009s-projects/one-page-me/speed-insights
+              - img [ref=e61]
+              - generic [ref=e64]: Speed Insights
+            - link "Observability" [ref=e65] [cursor=pointer]:
+              - /url: /haitaoren08-6009s-projects/one-page-me/observability
+              - img [ref=e67]
+              - generic [ref=e70]: Observability
+              - img [ref=e72]
+            - link "Firewall" [ref=e74] [cursor=pointer]:
+              - /url: /haitaoren08-6009s-projects/one-page-me/firewall
+              - img [ref=e76]
+              - generic [ref=e80]: Firewall
+              - img [ref=e82]
+            - link "CDN" [ref=e84] [cursor=pointer]:
+              - /url: /haitaoren08-6009s-projects/one-page-me/cdn
+              - img [ref=e86]
+              - generic [ref=e89]: CDN
+              - img [ref=e91]
+            - separator [ref=e93]
+            - link "Environment Variables" [ref=e94] [cursor=pointer]:
+              - /url: /haitaoren08-6009s-projects/one-page-me/settings/environment-variables
+              - img [ref=e96]
+              - generic [ref=e99]: Environment Variables
+            - link "Domains" [ref=e100] [cursor=pointer]:
+              - /url: /haitaoren08-6009s-projects/one-page-me/settings/domains
+              - img [ref=e102]
+              - generic [ref=e105]: Domains
+            - link "Integrations" [ref=e106] [cursor=pointer]:
+              - /url: /haitaoren08-6009s-projects/one-page-me/settings/integrations
+              - img [ref=e108]
+              - generic [ref=e111]: Integrations
+            - link "Storage" [ref=e112] [cursor=pointer]:
+              - /url: /haitaoren08-6009s-projects/one-page-me/stores
+              - img [ref=e114]
+              - generic [ref=e117]: Storage
+            - link "Flags" [ref=e118] [cursor=pointer]:
+              - /url: /haitaoren08-6009s-projects/one-page-me/flags
+              - img [ref=e120]
+              - generic [ref=e123]: Flags
+              - img [ref=e125]
+            - link "Agent" [ref=e127] [cursor=pointer]:
+              - /url: /haitaoren08-6009s-projects/one-page-me/agent
+              - img [ref=e129]
+              - generic [ref=e132]: Agent
+              - img [ref=e134]
+            - link "AI Gateway" [ref=e136] [cursor=pointer]:
+              - /url: /haitaoren08-6009s-projects/one-page-me/ai-gateway
+              - img [ref=e138]
+              - generic [ref=e141]: AI Gateway
+              - img [ref=e143]
+            - link "Sandboxes" [ref=e145] [cursor=pointer]:
+              - /url: /haitaoren08-6009s-projects/one-page-me/sandboxes
+              - img [ref=e147]
+              - generic [ref=e150]: Sandboxes
+            - link "Workflows" [ref=e151] [cursor=pointer]:
+              - /url: /haitaoren08-6009s-projects/one-page-me/workflows
+              - img [ref=e153]
+              - generic [ref=e156]: Workflows
+            - separator [ref=e157]
+            - link "Usage" [ref=e158] [cursor=pointer]:
+              - /url: /haitaoren08-6009s-projects/one-page-me/usage
+              - img [ref=e160]
+              - generic [ref=e163]: Usage
+            - link "Support" [ref=e164] [cursor=pointer]:
+              - /url: /haitaoren08-6009s-projects/one-page-me/support
+              - img [ref=e166]
+              - generic [ref=e169]: Support
+            - link "Settings" [ref=e170] [cursor=pointer]:
+              - /url: /haitaoren08-6009s-projects/one-page-me/settings
+              - img [ref=e172]
+              - generic [ref=e175]: Settings
+              - img [ref=e177]
+        - generic [ref=e183]:
+          - button "Avatar for haitaoren08-6009 haitaoren08-6009" [ref=e184] [cursor=pointer]:
+            - img "Avatar for haitaoren08-6009" [ref=e185]:
+              - img "Avatar for haitaoren08-6009" [ref=e186]
+            - generic [ref=e188]: haitaoren08-6009
+            - img [ref=e190]
+          - img [ref=e194]
+      - button [ref=e197] [cursor=pointer]:
+        - img [ref=e198]
+    - generic [ref=e201]:
+      - generic [ref=e202]:
+        - generic [ref=e205]:
+          - link "Other one-page-me" [ref=e206] [cursor=pointer]:
+            - /url: /haitaoren08-6009s-projects/one-page-me
+            - img "Other" [ref=e207]:
+              - img "Other" [ref=e208]
+            - generic [ref=e210]: one-page-me
+          - button [ref=e211] [cursor=pointer]:
+            - img [ref=e213]
+          - link "Back to team view" [ref=e217] [cursor=pointer]:
+            - /url: /haitaoren08-6009s-projects/~/deployments
+            - img [ref=e219]
+        - generic [ref=e223]: Deployments
+        - button "Open page actions menu" [ref=e225] [cursor=pointer]:
+          - img [ref=e227]
+      - generic [ref=e232]:
+        - generic [ref=e233]:
+          - combobox [ref=e235]:
+            - generic [ref=e236]:
+              - generic:
+                - img
+              - searchbox "All Branches…" [ref=e237]
+              - button "Open menu" [ref=e238] [cursor=pointer]:
+                - img [ref=e239]
+          - combobox [ref=e242]:
+            - generic [ref=e243]:
+              - generic:
+                - img
+              - searchbox "All Authors…" [ref=e244]
+              - button "Open menu" [ref=e245] [cursor=pointer]:
+                - img [ref=e246]
+          - button "Menu" [ref=e250] [cursor=pointer]:
+            - generic [ref=e251]:
+              - generic [ref=e253]: All Environments
+              - img [ref=e255]
+          - button "Select Date Range" [ref=e260] [cursor=pointer]:
+            - img [ref=e262]
+            - generic [ref=e264]: Select Date Range
+          - button "Filter by deployment status. 5 of 6 statuses selected" [ref=e267] [cursor=pointer]:
+            - generic [ref=e268]:
+              - generic [ref=e276]: Status
+              - generic "5 of 6 statuses selected" [ref=e277]:
+                - generic [ref=e278]: 5/6
+            - img [ref=e281]
+        - generic [ref=e285]:
+          - generic [ref=e287]:
+            - link [ref=e288] [cursor=pointer]:
+              - /url: /haitaoren08-6009s-projects/one-page-me/GNhTQaTzqnsb51Jv1mWPBBDTVUui
+            - generic [ref=e290]:
+              - link "GNhTQaTzq" [ref=e293] [cursor=pointer]:
+                - /url: /haitaoren08-6009s-projects/one-page-me/GNhTQaTzqnsb51Jv1mWPBBDTVUui
+                - paragraph [ref=e294]: GNhTQaTzq
+              - generic [ref=e296]:
+                - text: Production
+                - generic [ref=e299]:
+                  - img [ref=e301]
+                  - text: Current
+            - generic [ref=e304]:
+              - generic "This deployment is ready." [ref=e306]:
+                - generic [ref=e310]: Ready
+              - generic [ref=e314]: 58s
+            - generic [ref=e317]:
+              - generic [ref=e318]:
+                - img [ref=e319]
+                - link "main" [ref=e321] [cursor=pointer]:
+                  - /url: https://github.com/wavyren/one-page-me/tree/main
+              - generic [ref=e322]:
+                - img [ref=e323]
+                - 'link "e3a24f6 feat: Phase 3 — 主页生成引擎" [ref=e325] [cursor=pointer]':
+                  - /url: https://github.com/wavyren/one-page-me/commit/e3a24f68d4609ff53c58ab41ad0177e2e6b9b5c8
+                  - generic [ref=e326]: e3a24f6
+                  - 'generic "feat: Phase 3 — 主页生成引擎" [ref=e327]'
+            - generic [ref=e328]:
+              - generic [ref=e330]:
+                - generic [ref=e332] [cursor=pointer]: 9m ago by wavyren
+                - img "github/wavyren" [ref=e337] [cursor=pointer]:
+                  - img "github/wavyren" [ref=e338]
+              - button "Deployment Actions" [ref=e340] [cursor=pointer]:
+                - img [ref=e344]
+          - generic [ref=e347]:
+            - link [ref=e348] [cursor=pointer]:
+              - /url: /haitaoren08-6009s-projects/one-page-me/FpqvQF9b9rnKGQxq7vpGVdwiJsBg
+            - generic [ref=e350]:
+              - link "FpqvQF9b9" [ref=e353] [cursor=pointer]:
+                - /url: /haitaoren08-6009s-projects/one-page-me/FpqvQF9b9rnKGQxq7vpGVdwiJsBg
+                - paragraph [ref=e354]: FpqvQF9b9
+              - generic [ref=e356]:
+                - text: Production
+                - img [ref=e358]
+            - generic [ref=e361]:
+              - generic "This deployment is ready." [ref=e363]:
+                - generic [ref=e367]: Ready
+              - generic [ref=e371]: 45s
+            - generic [ref=e374]:
+              - generic [ref=e375]:
+                - img [ref=e376]
+                - link "main" [ref=e378] [cursor=pointer]:
+                  - /url: https://github.com/wavyren/one-page-me/tree/main
+              - generic [ref=e379]:
+                - img [ref=e380]
+                - 'link "be1fa6d docs: mark phase 2 complete, deepseek api configured and tested" [ref=e382] [cursor=pointer]':
+                  - /url: https://github.com/wavyren/one-page-me/commit/be1fa6d39235380443dfc1201f6ec434e2939bd6
+                  - generic [ref=e383]: be1fa6d
+                  - 'generic "docs: mark phase 2 complete, deepseek api configured and tested" [ref=e384]'
+            - generic [ref=e385]:
+              - generic [ref=e387]:
+                - generic [ref=e389] [cursor=pointer]: 57m ago by wavyren
+                - img "github/wavyren" [ref=e394] [cursor=pointer]:
+                  - img "github/wavyren" [ref=e395]
+              - button "Deployment Actions" [ref=e397] [cursor=pointer]:
+                - img [ref=e401]
+          - generic [ref=e404]:
+            - link [ref=e405] [cursor=pointer]:
+              - /url: /haitaoren08-6009s-projects/one-page-me/BjVQySNc8VT9oAkS39Qfb2MhZojX
+            - generic [ref=e407]:
+              - link "BjVQySNc8" [ref=e410] [cursor=pointer]:
+                - /url: /haitaoren08-6009s-projects/one-page-me/BjVQySNc8VT9oAkS39Qfb2MhZojX
+                - paragraph [ref=e411]: BjVQySNc8
+              - generic [ref=e413]:
+                - text: Production
+                - img [ref=e415]
+            - generic [ref=e418]:
+              - generic "This deployment is ready." [ref=e420]:
+                - generic [ref=e424]: Ready
+              - generic [ref=e428]: 45s
+            - generic [ref=e431]:
+              - generic [ref=e432]:
+                - img [ref=e433]
+                - link "main" [ref=e435] [cursor=pointer]:
+                  - /url: https://github.com/wavyren/one-page-me/tree/main
+              - generic [ref=e436]:
+                - img [ref=e437]
+                - 'link "28e9a72 fix(phase1): add accessibility to profile page and components" [ref=e439] [cursor=pointer]':
+                  - /url: https://github.com/wavyren/one-page-me/commit/28e9a72e8830f3e7622635f12c2fa5f7ac028418
+                  - generic [ref=e440]: 28e9a72
+                  - 'generic "fix(phase1): add accessibility to profile page and components" [ref=e441]'
+            - generic [ref=e442]:
+              - generic [ref=e444]:
+                - generic [ref=e446] [cursor=pointer]: 1h ago by wavyren
+                - img "github/wavyren" [ref=e451] [cursor=pointer]:
+                  - img "github/wavyren" [ref=e452]
+              - button "Deployment Actions" [ref=e454] [cursor=pointer]:
+                - img [ref=e458]
+          - generic [ref=e461]:
+            - link [ref=e462] [cursor=pointer]:
+              - /url: /haitaoren08-6009s-projects/one-page-me/3hUKv1bowfr22dzrWr7kjGgKHpNC
+            - generic [ref=e464]:
+              - link "3hUKv1bow" [ref=e467] [cursor=pointer]:
+                - /url: /haitaoren08-6009s-projects/one-page-me/3hUKv1bowfr22dzrWr7kjGgKHpNC
+                - paragraph [ref=e468]: 3hUKv1bow
+              - generic [ref=e470]:
+                - text: Production
+                - img [ref=e472]
+            - generic [ref=e475]:
+              - generic "This deployment is ready." [ref=e477]:
+                - generic [ref=e481]: Ready
+              - generic [ref=e485]: 43s
+            - generic [ref=e488]:
+              - generic [ref=e489]:
+                - img [ref=e490]
+                - link "main" [ref=e492] [cursor=pointer]:
+                  - /url: https://github.com/wavyren/one-page-me/tree/main
+              - generic [ref=e493]:
+                - img [ref=e494]
+                - 'link "fe58b3a fix(phase2): split preview panel, add design tokens, clean arbitrary values" [ref=e496] [cursor=pointer]':
+                  - /url: https://github.com/wavyren/one-page-me/commit/fe58b3a25d65a2a9ff1fc3914ecdd91acc3fe5fe
+                  - generic [ref=e497]: fe58b3a
+                  - 'generic "fix(phase2): split preview panel, add design tokens, clean arbitrary values" [ref=e498]'
+            - generic [ref=e499]:
+              - generic [ref=e501]:
+                - generic [ref=e503] [cursor=pointer]: 1h ago by wavyren
+                - img "github/wavyren" [ref=e508] [cursor=pointer]:
+                  - img "github/wavyren" [ref=e509]
+              - button "Deployment Actions" [ref=e511] [cursor=pointer]:
+                - img [ref=e515]
+          - generic [ref=e518]:
+            - link [ref=e519] [cursor=pointer]:
+              - /url: /haitaoren08-6009s-projects/one-page-me/EMgLdnnYBQKRQf7joBE3cyYwgD8k
+            - generic [ref=e521]:
+              - link "EMgLdnnYB" [ref=e524] [cursor=pointer]:
+                - /url: /haitaoren08-6009s-projects/one-page-me/EMgLdnnYBQKRQf7joBE3cyYwgD8k
+                - paragraph [ref=e525]: EMgLdnnYB
+              - generic [ref=e527]:
+                - text: Production
+                - img [ref=e529]
+            - generic [ref=e532]:
+              - generic "This deployment is ready." [ref=e534]:
+                - generic [ref=e538]: Ready
+              - generic [ref=e542]: 40s
+            - generic [ref=e545]:
+              - generic [ref=e546]:
+                - img [ref=e547]
+                - link "main" [ref=e549] [cursor=pointer]:
+                  - /url: https://github.com/wavyren/one-page-me/tree/main
+              - generic [ref=e550]:
+                - img [ref=e551]
+                - 'link "8830cce docs: add development workflow and skills compliance to AGENTS.md" [ref=e553] [cursor=pointer]':
+                  - /url: https://github.com/wavyren/one-page-me/commit/8830cce9e65523b21102cd5d69d1984f1afe3395
+                  - generic [ref=e554]: 8830cce
+                  - 'generic "docs: add development workflow and skills compliance to AGENTS.md" [ref=e555]'
+            - generic [ref=e556]:
+              - generic [ref=e558]:
+                - generic [ref=e560] [cursor=pointer]: 1h ago by wavyren
+                - img "github/wavyren" [ref=e565] [cursor=pointer]:
+                  - img "github/wavyren" [ref=e566]
+              - button "Deployment Actions" [ref=e568] [cursor=pointer]:
+                - img [ref=e572]
+          - generic [ref=e575]:
+            - link [ref=e576] [cursor=pointer]:
+              - /url: /haitaoren08-6009s-projects/one-page-me/HpFmia8Wu5z4cSLxpAwJbYG9yTZR
+            - generic [ref=e578]:
+              - link "HpFmia8Wu" [ref=e581] [cursor=pointer]:
+                - /url: /haitaoren08-6009s-projects/one-page-me/HpFmia8Wu5z4cSLxpAwJbYG9yTZR
+                - paragraph [ref=e582]: HpFmia8Wu
+              - generic [ref=e584]:
+                - text: Production
+                - img [ref=e586]
+            - generic [ref=e589]:
+              - generic "This deployment is ready." [ref=e591]:
+                - generic [ref=e595]: Ready
+              - generic [ref=e599]: 49s
+            - generic [ref=e602]:
+              - generic [ref=e603]:
+                - img [ref=e604]
+                - link "main" [ref=e606] [cursor=pointer]:
+                  - /url: https://github.com/wavyren/one-page-me/tree/main
+              - generic [ref=e607]:
+                - img [ref=e608]
+                - 'link "03f736f docs: update project-management.md — phase 1 complete, phase 2 in progress" [ref=e610] [cursor=pointer]':
+                  - /url: https://github.com/wavyren/one-page-me/commit/03f736f2713654830608f572e2b9b826918e0212
+                  - generic [ref=e611]: 03f736f
+                  - 'generic "docs: update project-management.md — phase 1 complete, phase 2 in progress" [ref=e612]'
+            - generic [ref=e613]:
+              - generic [ref=e615]:
+                - generic [ref=e617] [cursor=pointer]: 2h ago by wavyren
+                - img "github/wavyren" [ref=e622] [cursor=pointer]:
+                  - img "github/wavyren" [ref=e623]
+              - button "Deployment Actions" [ref=e625] [cursor=pointer]:
+                - img [ref=e629]
+          - generic [ref=e632]:
+            - link [ref=e633] [cursor=pointer]:
+              - /url: /haitaoren08-6009s-projects/one-page-me/2Xv32prn1DuJmPGZ1DXorRrWdN8g
+            - generic [ref=e635]:
+              - link "2Xv32prn1" [ref=e638] [cursor=pointer]:
+                - /url: /haitaoren08-6009s-projects/one-page-me/2Xv32prn1DuJmPGZ1DXorRrWdN8g
+                - paragraph [ref=e639]: 2Xv32prn1
+              - generic [ref=e641]:
+                - text: Production
+                - img [ref=e643]
+            - generic [ref=e646]:
+              - generic "This deployment is ready." [ref=e648]:
+                - generic [ref=e652]: Ready
+              - generic [ref=e656]: 46s
+            - generic [ref=e659]:
+              - generic [ref=e660]:
+                - img [ref=e661]
+                - link "main" [ref=e663] [cursor=pointer]:
+                  - /url: https://github.com/wavyren/one-page-me/tree/main
+              - generic [ref=e664]:
+                - img [ref=e665]
+                - 'link "a4e37fa feat: phase 2 — core chat engine with SSE streaming + real-time preview" [ref=e667] [cursor=pointer]':
+                  - /url: https://github.com/wavyren/one-page-me/commit/a4e37fafbdce7ac46fbf1f986577d6bf5406922e
+                  - generic [ref=e668]: a4e37fa
+                  - 'generic "feat: phase 2 — core chat engine with SSE streaming + real-time preview" [ref=e669]'
+            - generic [ref=e670]:
+              - generic [ref=e672]:
+                - generic [ref=e674] [cursor=pointer]: 2h ago by wavyren
+                - img "github/wavyren" [ref=e679] [cursor=pointer]:
+                  - img "github/wavyren" [ref=e680]
+              - button "Deployment Actions" [ref=e682] [cursor=pointer]:
+                - img [ref=e686]
+          - generic [ref=e689]:
+            - link [ref=e690] [cursor=pointer]:
+              - /url: /haitaoren08-6009s-projects/one-page-me/7kaDEkHhJmKLGaT7QGLHAJVf2ky2
+            - generic [ref=e692]:
+              - link "7kaDEkHhJ" [ref=e695] [cursor=pointer]:
+                - /url: /haitaoren08-6009s-projects/one-page-me/7kaDEkHhJmKLGaT7QGLHAJVf2ky2
+                - paragraph [ref=e696]: 7kaDEkHhJ
+              - generic [ref=e698]:
+                - text: Production
+                - img [ref=e700]
+            - generic [ref=e703]:
+              - generic "This deployment is ready." [ref=e705]:
+                - generic [ref=e709]: Ready
+              - generic [ref=e713]: 46s
+            - generic [ref=e716]:
+              - generic [ref=e717]:
+                - img [ref=e718]
+                - link "main" [ref=e720] [cursor=pointer]:
+                  - /url: https://github.com/wavyren/one-page-me/tree/main
+              - generic [ref=e721]:
+                - img [ref=e722]
+                - 'link "4a456a5 feat: slice 1.3 + 1.4 — oauth callback, user sync, avatar upload, profile page" [ref=e724] [cursor=pointer]':
+                  - /url: https://github.com/wavyren/one-page-me/commit/4a456a54b1d576a1d449cb8b6ddc7ab7c2fbe0fc
+                  - generic [ref=e725]: 4a456a5
+                  - 'generic "feat: slice 1.3 + 1.4 — oauth callback, user sync, avatar upload, profile page" [ref=e726]'
+            - generic [ref=e727]:
+              - generic [ref=e729]:
+                - generic [ref=e731] [cursor=pointer]: 6h ago by wavyren
+                - img "github/wavyren" [ref=e736] [cursor=pointer]:
+                  - img "github/wavyren" [ref=e737]
+              - button "Deployment Actions" [ref=e739] [cursor=pointer]:
+                - img [ref=e743]
+          - generic [ref=e746]:
+            - link [ref=e747] [cursor=pointer]:
+              - /url: /haitaoren08-6009s-projects/one-page-me/GejN67RbpJNkoiU3nFc5MqRjdBru
+            - generic [ref=e749]:
+              - link "GejN67Rbp" [ref=e752] [cursor=pointer]:
+                - /url: /haitaoren08-6009s-projects/one-page-me/GejN67RbpJNkoiU3nFc5MqRjdBru
+                - paragraph [ref=e753]: GejN67Rbp
+              - generic [ref=e755]:
+                - text: Production
+                - img [ref=e757]
+            - generic [ref=e760]:
+              - generic "This deployment is ready." [ref=e762]:
+                - generic [ref=e766]: Ready
+              - generic [ref=e770]: 42s
+            - generic [ref=e773]:
+              - generic [ref=e774]:
+                - img [ref=e775]
+                - link "main" [ref=e777] [cursor=pointer]:
+                  - /url: https://github.com/wavyren/one-page-me/tree/main
+              - generic [ref=e778]:
+                - img [ref=e779]
+                - 'link "b27bad0 feat: mock OTP for development (no Twilio required)" [ref=e781] [cursor=pointer]':
+                  - /url: https://github.com/wavyren/one-page-me/commit/b27bad0ebd93a20c68f9d79fb43b14850fd34afd
+                  - generic [ref=e782]: b27bad0
+                  - 'generic "feat: mock OTP for development (no Twilio required)" [ref=e783]'
+            - generic [ref=e784]:
+              - generic [ref=e786]:
+                - generic [ref=e788] [cursor=pointer]: 6h ago by wavyren
+                - img "github/wavyren" [ref=e793] [cursor=pointer]:
+                  - img "github/wavyren" [ref=e794]
+              - button "Deployment Actions" [ref=e796] [cursor=pointer]:
+                - img [ref=e800]
+          - generic [ref=e803]:
+            - link [ref=e804] [cursor=pointer]:
+              - /url: /haitaoren08-6009s-projects/one-page-me/7XmmgVJVGEvDhViL9UzGD1iKfQ7o
+            - generic [ref=e806]:
+              - link "7XmmgVJVG" [ref=e809] [cursor=pointer]:
+                - /url: /haitaoren08-6009s-projects/one-page-me/7XmmgVJVGEvDhViL9UzGD1iKfQ7o
+                - paragraph [ref=e810]: 7XmmgVJVG
+              - generic [ref=e812]:
+                - text: Production
+                - img [ref=e814]
+            - generic [ref=e817]:
+              - generic "This deployment is ready." [ref=e819]:
+                - generic [ref=e823]: Ready
+              - generic [ref=e827]: 49s
+            - generic [ref=e830]:
+              - generic [ref=e831]:
+                - img [ref=e832]
+                - link "main" [ref=e834] [cursor=pointer]:
+                  - /url: https://github.com/wavyren/one-page-me/tree/main
+              - generic [ref=e835]:
+                - img [ref=e836]
+                - 'link "e9434b2 feat: slice 1.2 phone otp + oauth ui, zod v4 fixes" [ref=e838] [cursor=pointer]':
+                  - /url: https://github.com/wavyren/one-page-me/commit/e9434b22c7514af4c86b2c9d154abdf120ddac33
+                  - generic [ref=e839]: e9434b2
+                  - 'generic "feat: slice 1.2 phone otp + oauth ui, zod v4 fixes" [ref=e840]'
+            - generic [ref=e841]:
+              - generic [ref=e843]:
+                - generic [ref=e845] [cursor=pointer]: 7h ago by wavyren
+                - img "github/wavyren" [ref=e850] [cursor=pointer]:
+                  - img "github/wavyren" [ref=e851]
+              - button "Deployment Actions" [ref=e853] [cursor=pointer]:
+                - img [ref=e857]
+          - generic [ref=e860]:
+            - link [ref=e861] [cursor=pointer]:
+              - /url: /haitaoren08-6009s-projects/one-page-me/5C8VCXTxdGX2wjQSobaqXBkLz2Ud
+            - generic [ref=e863]:
+              - link "5C8VCXTxd" [ref=e866] [cursor=pointer]:
+                - /url: /haitaoren08-6009s-projects/one-page-me/5C8VCXTxdGX2wjQSobaqXBkLz2Ud
+                - paragraph [ref=e867]: 5C8VCXTxd
+              - generic [ref=e869]:
+                - text: Production
+                - img [ref=e871]
+            - generic [ref=e874]:
+              - generic "This deployment is ready." [ref=e876]:
+                - generic [ref=e880]: Ready
+              - generic [ref=e884]: 37s
+            - generic [ref=e887]:
+              - generic [ref=e888]:
+                - img [ref=e889]
+                - link "main" [ref=e891] [cursor=pointer]:
+                  - /url: https://github.com/wavyren/one-page-me/tree/main
+              - generic [ref=e892]:
+                - img [ref=e893]
+                - 'link "d4b3e2c chore: add .env.example template with all required environment variables" [ref=e895] [cursor=pointer]':
+                  - /url: https://github.com/wavyren/one-page-me/commit/d4b3e2cb7be1ac5f1e6189ae5db707917fc0d9e8
+                  - generic [ref=e896]: d4b3e2c
+                  - 'generic "chore: add .env.example template with all required environment variables" [ref=e897]'
+            - generic [ref=e898]:
+              - generic [ref=e900]:
+                - generic [ref=e902] [cursor=pointer]: 7h ago by wavyren
+                - img "github/wavyren" [ref=e907] [cursor=pointer]:
+                  - img "github/wavyren" [ref=e908]
+              - button "Deployment Actions" [ref=e910] [cursor=pointer]:
+                - img [ref=e914]
+          - generic [ref=e917]:
+            - link [ref=e918] [cursor=pointer]:
+              - /url: /haitaoren08-6009s-projects/one-page-me/7kiCXf71e22XTBTcFZh8kcPYdUJA
+            - generic [ref=e920]:
+              - link "7kiCXf71e" [ref=e923] [cursor=pointer]:
+                - /url: /haitaoren08-6009s-projects/one-page-me/7kiCXf71e22XTBTcFZh8kcPYdUJA
+                - paragraph [ref=e924]: 7kiCXf71e
+              - generic [ref=e926]:
+                - text: Production
+                - img [ref=e928]
+            - generic [ref=e931]:
+              - generic "This deployment is ready." [ref=e933]:
+                - generic [ref=e937]: Ready
+              - generic [ref=e941]: 46s
+            - generic [ref=e945]:
+              - img [ref=e947]
+              - generic [ref=e949]:
+                - text: Redeploy of
+                - link "HywVDSQcB" [ref=e950] [cursor=pointer]:
+                  - /url: /haitaoren08-6009s-projects/one-page-me/HywVDSQcB2wwfX4gPEVjfoG2XvQ9
+                  - code [ref=e951]: HywVDSQcB
+            - generic [ref=e952]:
+              - generic [ref=e954]:
+                - generic [ref=e956] [cursor=pointer]: 7h ago by haitaoren08-6009
+                - img "haitaoren08-6009 Avatar" [ref=e960] [cursor=pointer]:
+                  - img "haitaoren08-6009 Avatar" [ref=e961]
+              - button "Deployment Actions" [ref=e963] [cursor=pointer]:
+                - img [ref=e967]
+          - generic [ref=e970]:
+            - link [ref=e971] [cursor=pointer]:
+              - /url: /haitaoren08-6009s-projects/one-page-me/HywVDSQcB2wwfX4gPEVjfoG2XvQ9
+            - generic [ref=e973]:
+              - link "HywVDSQcB" [ref=e976] [cursor=pointer]:
+                - /url: /haitaoren08-6009s-projects/one-page-me/HywVDSQcB2wwfX4gPEVjfoG2XvQ9
+                - paragraph [ref=e977]: HywVDSQcB
+              - generic [ref=e979]: Production
+            - generic [ref=e981]:
+              - generic "This deployment had an error." [ref=e983]:
+                - generic [ref=e987]: Error
+              - generic [ref=e991]: 42s
+            - generic [ref=e995]:
+              - img [ref=e997]
+              - generic [ref=e999]:
+                - text: Redeploy of
+                - link "8t8KfC6Tx" [ref=e1000] [cursor=pointer]:
+                  - /url: /haitaoren08-6009s-projects/one-page-me/8t8KfC6TxbPG8Mr8zJE7vj2NAxnS
+                  - code [ref=e1001]: 8t8KfC6Tx
+            - generic [ref=e1002]:
+              - generic [ref=e1004]:
+                - generic [ref=e1006] [cursor=pointer]: 7h ago by haitaoren08-6009
+                - img "haitaoren08-6009 Avatar" [ref=e1010] [cursor=pointer]:
+                  - img "haitaoren08-6009 Avatar" [ref=e1011]
+              - button "Deployment Actions" [ref=e1013] [cursor=pointer]:
+                - img [ref=e1017]
+          - generic [ref=e1020]:
+            - link [ref=e1021] [cursor=pointer]:
+              - /url: /haitaoren08-6009s-projects/one-page-me/6c4XAbrGPA1KRHQQkpmuKs3rj2DD
+            - generic [ref=e1023]:
+              - link "6c4XAbrGP" [ref=e1026] [cursor=pointer]:
+                - /url: /haitaoren08-6009s-projects/one-page-me/6c4XAbrGPA1KRHQQkpmuKs3rj2DD
+                - paragraph [ref=e1027]: 6c4XAbrGP
+              - generic [ref=e1029]:
+                - text: Production
+                - img [ref=e1031]
+            - generic [ref=e1034]:
+              - generic "This deployment is ready." [ref=e1036]:
+                - generic [ref=e1040]: Ready
+              - generic [ref=e1044]: 4s
+            - generic [ref=e1048]:
+              - img [ref=e1050]
+              - generic [ref=e1052]:
+                - text: Redeploy of
+                - link "67njJ1a52" [ref=e1053] [cursor=pointer]:
+                  - /url: /haitaoren08-6009s-projects/one-page-me/67njJ1a52q4SrS73kbSBNvu3DWk4
+                  - code [ref=e1054]: 67njJ1a52
+            - generic [ref=e1055]:
+              - generic [ref=e1057]:
+                - generic [ref=e1059] [cursor=pointer]: 7h ago by haitaoren08-6009
+                - img "haitaoren08-6009 Avatar" [ref=e1063] [cursor=pointer]:
+                  - img "haitaoren08-6009 Avatar" [ref=e1064]
+              - button "Deployment Actions" [ref=e1066] [cursor=pointer]:
+                - img [ref=e1070]
+          - generic [ref=e1073]:
+            - link [ref=e1074] [cursor=pointer]:
+              - /url: /haitaoren08-6009s-projects/one-page-me/8t8KfC6TxbPG8Mr8zJE7vj2NAxnS
+            - generic [ref=e1076]:
+              - link "8t8KfC6Tx" [ref=e1079] [cursor=pointer]:
+                - /url: /haitaoren08-6009s-projects/one-page-me/8t8KfC6TxbPG8Mr8zJE7vj2NAxnS
+                - paragraph [ref=e1080]: 8t8KfC6Tx
+              - generic [ref=e1082]: Production
+            - generic [ref=e1084]:
+              - generic "This deployment had an error." [ref=e1086]:
+                - generic [ref=e1090]: Error
+              - generic [ref=e1094]: 38s
+            - generic [ref=e1097]:
+              - generic [ref=e1098]:
+                - img [ref=e1099]
+                - link "main" [ref=e1101] [cursor=pointer]:
+                  - /url: https://github.com/wavyren/one-page-me/tree/main
+              - generic [ref=e1102]:
+                - img [ref=e1103]
+                - 'link "707da49 feat: configure Supabase, next-intl i18n, and CI/CD" [ref=e1105] [cursor=pointer]':
+                  - /url: https://github.com/wavyren/one-page-me/commit/707da49d54117a8e6c478dc2d923cb634208813c
+                  - generic [ref=e1106]: 707da49
+                  - 'generic "feat: configure Supabase, next-intl i18n, and CI/CD" [ref=e1107]'
+            - generic [ref=e1108]:
+              - generic [ref=e1110]:
+                - generic [ref=e1112] [cursor=pointer]: 8h ago by wavyren
+                - img "github/wavyren" [ref=e1117] [cursor=pointer]:
+                  - img "github/wavyren" [ref=e1118]
+              - button "Deployment Actions" [ref=e1120] [cursor=pointer]:
+                - img [ref=e1124]
+          - generic [ref=e1127]:
+            - link [ref=e1128] [cursor=pointer]:
+              - /url: /haitaoren08-6009s-projects/one-page-me/2TYkypMpURdeXa7nSjQp9gHRH1T2
+            - generic [ref=e1130]:
+              - link "2TYkypMpU" [ref=e1133] [cursor=pointer]:
+                - /url: /haitaoren08-6009s-projects/one-page-me/2TYkypMpURdeXa7nSjQp9gHRH1T2
+                - paragraph [ref=e1134]: 2TYkypMpU
+              - generic [ref=e1136]: Production
+            - generic [ref=e1138]:
+              - generic "This deployment had an error." [ref=e1140]:
+                - generic [ref=e1144]: Error
+              - generic [ref=e1148]: 39s
+            - generic [ref=e1151]:
+              - generic [ref=e1152]:
+                - img [ref=e1153]
+                - link "main" [ref=e1155] [cursor=pointer]:
+                  - /url: https://github.com/wavyren/one-page-me/tree/main
+              - generic [ref=e1156]:
+                - img [ref=e1157]
+                - 'link "09c55b7 merge: resolve .gitignore conflict, keep local Next.js-optimized version" [ref=e1159] [cursor=pointer]':
+                  - /url: https://github.com/wavyren/one-page-me/commit/09c55b7425d1411138b69d7387fe06cd105b7ff2
+                  - generic [ref=e1160]: 09c55b7
+                  - 'generic "merge: resolve .gitignore conflict, keep local Next.js-optimized version" [ref=e1161]'
+            - generic [ref=e1162]:
+              - generic [ref=e1164]:
+                - generic [ref=e1166] [cursor=pointer]: 8h ago by wavyren
+                - img "github/wavyren" [ref=e1171] [cursor=pointer]:
+                  - img "github/wavyren" [ref=e1172]
+              - button "Deployment Actions" [ref=e1174] [cursor=pointer]:
+                - img [ref=e1178]
+          - generic [ref=e1181]:
+            - link [ref=e1182] [cursor=pointer]:
+              - /url: /haitaoren08-6009s-projects/one-page-me/67njJ1a52q4SrS73kbSBNvu3DWk4
+            - generic [ref=e1184]:
+              - link "67njJ1a52" [ref=e1187] [cursor=pointer]:
+                - /url: /haitaoren08-6009s-projects/one-page-me/67njJ1a52q4SrS73kbSBNvu3DWk4
+                - paragraph [ref=e1188]: 67njJ1a52
+              - generic [ref=e1190]:
+                - text: Production
+                - img [ref=e1192]
+            - generic [ref=e1195]:
+              - generic "This deployment is ready." [ref=e1197]:
+                - generic [ref=e1201]: Ready
+              - generic [ref=e1205]: 4s
+            - generic [ref=e1208]:
+              - generic [ref=e1209]:
+                - img [ref=e1210]
+                - link "main" [ref=e1212] [cursor=pointer]:
+                  - /url: https://github.com/wavyren/one-page-me/tree/main
+              - generic [ref=e1213]:
+                - img [ref=e1214]
+                - link "58e2817 Initial commit" [ref=e1216] [cursor=pointer]:
+                  - /url: https://github.com/wavyren/one-page-me/commit/58e28175de3a421d8a23e751cc75575c88d02c38
+                  - generic [ref=e1217]: "58e2817"
+                  - img [ref=e1219]
+                  - generic "Initial commit" [ref=e1222]
+            - generic [ref=e1223]:
+              - generic [ref=e1225]:
+                - generic [ref=e1227] [cursor=pointer]: 8h ago by wavyren
+                - img "github/wavyren" [ref=e1232] [cursor=pointer]:
+                  - img "github/wavyren" [ref=e1233]
+              - button "Deployment Actions" [ref=e1235] [cursor=pointer]:
+                - img [ref=e1239]
+        - generic [ref=e1241]:
+          - paragraph [ref=e1242]:
+            - text: Deployment Retention is enabled for this project — some deployments will be deleted after a set time period.
+            - link "Learn more" [ref=e1243] [cursor=pointer]:
+              - /url: /docs/security/deployment-retention
+              - text: Learn more
+              - img [ref=e1244]
+          - button "View Recently Deleted" [ref=e1246] [cursor=pointer]:
+            - generic [ref=e1247]: View Recently Deleted
+  - alert [ref=e1249]
+  - generic:
+    - generic:
+      - generic:
+        - generic:
+          - img

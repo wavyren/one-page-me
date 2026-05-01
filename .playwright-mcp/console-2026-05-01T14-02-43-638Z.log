@@ -1,0 +1,210 @@
+[    1779ms] [WARNING] iso_swr: SSR fetch failed for "/v1/dashboard/projects/one-page-me?teamId=wavyren" {error: iso_swr_fetch_error, message: The request is missing an authentication token} @ https://vercel.com/wavyren/one-page-me:543
+[    1780ms] [WARNING] iso_swr: SSR fetch failed for "/api/v2/teams/wavyren" {error: iso_swr_fetch_error, message: The request is missing an authentication token} @ https://vercel.com/wavyren/one-page-me:543
+[    1780ms] [WARNING] iso_swr: SSR fetch failed for "/api/v8/projects?includePermissions=false&latestDeployments=0&limit=10&search=&slug=wavyren" {error: iso_swr_fetch_error, message: The request is missing an authentication token} @ https://vercel.com/wavyren/one-page-me:543
+[    1784ms] [WARNING] iso_swr: SSR fetch failed for "/api/v6/deployments?limit=10&projectId=one-page-me&rollbackCandidate=true&teamId=wavyren" {error: iso_swr_fetch_error, message: The request is missing an authentication token} @ https://vercel.com/wavyren/one-page-me:622
+[    1819ms] [WARNING] iso_swr: SSR fetch failed for "/api/v9/projects/one-page-me?activeBranches=1&latestDeployments=1&rollbackInfo=true&teamId=wavyren" {error: iso_swr_fetch_error, message: The request is missing an authentication token} @ https://vercel.com/wavyren/one-page-me:712
+[    1820ms] [WARNING] iso_swr: SSR fetch failed for "/dashboard/projects/one-page-me/production-checklist?teamId=wavyren" {error: iso_swr_fetch_error, message: The request is missing an authentication token} @ https://vercel.com/wavyren/one-page-me:712
+[    1820ms] [WARNING] iso_swr: SSR fetch failed for "/api/v6/deployments?limit=10&projectId=one-page-me&state=INITIALIZING%2CREADY%2CERROR%2CBUILDING%2CQUEUED&target=preview&teamId=wavyren" {error: iso_swr_fetch_error, message: The request is missing an authentication token} @ https://vercel.com/wavyren/one-page-me:791
+[    2354ms] [LOG] %c
+▲
+
+    ________   _ __ _          ____           __
+   /  _/ __/  (_) /( )_____   / __/___ ______/ /_
+   / // /_   / / __/// ___/  / /_/ __ `/ ___/ __/
+ _/ // __/  / / /_  (__  )  / __/ /_/ (__  ) /_
+/___/_/    /_/\__/ /____/  /_/  \__,_/____/\__/
+    _ __ _                         _    __                    __
+   (_) /( )_____   ____  ____     | |  / /__  _____________  / /
+  / / __/// ___/  / __ \/ __ \    | | / / _ \/ ___/ ___/ _ \/ /
+ / / /_  (__  )  / /_/ / / / /    | |/ /  __/ /  / /__/  __/ /
+/_/\__/ /____/   \____/_/ /_/     |___/\___/_/   \___/\___/_/
+  
+
+Hello!
+
+- Open Source https://vercel.com/oss
+- Careers https://vercel.com/careers
+- Status https://vercel-status.com
+
+ font-family: "Geist Mono", monospace; white-space: pre; line-height: 1; @ https://vercel.com/_next/static/chunks/1l29vw7u8_irq.js?dpl=dpl_FytX35esWCjMt1Gv3BuzwhpmzwUH:78
+[   12741ms] [WARNING] iso_swr[warn] [client] fallback error for key: "/api/v2/teams/wavyren" {error: iso_swr_fetch_error, message: The request is missing an authentication token} @ https://vercel.com/_next/static/chunks/3sa7hjtn52jp3.js?dpl=dpl_FytX35esWCjMt1Gv3BuzwhpmzwUH:6
+[   12859ms] [WARNING] iso_swr[warn] [client] fallback error for key: "/v1/dashboard/projects/one-page-me?teamId=wavyren" {error: iso_swr_fetch_error, message: The request is missing an authentication token} @ https://vercel.com/_next/static/chunks/3sa7hjtn52jp3.js?dpl=dpl_FytX35esWCjMt1Gv3BuzwhpmzwUH:6
+[   13308ms] [ERROR] Failed to load resource: the server responded with a status of 403 () @ https://vercel.com/api/v1/dashboard/projects/one-page-me?teamId=wavyren:0
+[   13308ms] [ERROR] Failed to load resource: the server responded with a status of 403 () @ https://vercel.com/api/v1/notifications/push:0
+[   13358ms] [LOG] Ignored request error TypeError: Failed to fetch
+    at window.fetch (https://vercel.com/wavyren/one-page-me:1:23407)
+    at revalidateOnFocus (https://vercel.com/_next/static/chunks/2kyy8wvujdqo6.js?dpl=dpl_FytX35esWCjMt1Gv3BuzwhpmzwUH:2:1127)
+    at o (https://vercel.com/_next/static/chunks/2zp60u0qafzj7.js?dpl=dpl_FytX35esWCjMt1Gv3BuzwhpmzwUH:2:6985)
+    at https://vercel.com/_next/static/chunks/2zp60u0qafzj7.js?dpl=dpl_FytX35esWCjMt1Gv3BuzwhpmzwUH:2:11832
+    at https://vercel.com/_next/static/chunks/2zp60u0qafzj7.js?dpl=dpl_FytX35esWCjMt1Gv3BuzwhpmzwUH:2:13332
+    at iR (https://vercel.com/_next/static/chunks/1l29vw7u8_irq.js?dpl=dpl_FytX35esWCjMt1Gv3BuzwhpmzwUH:79:103096)
+    at up (https://vercel.com/_next/static/chunks/1l29vw7u8_irq.js?dpl=dpl_FytX35esWCjMt1Gv3BuzwhpmzwUH:79:111266)
+    at uP (https://vercel.com/_next/static/chunks/1l29vw7u8_irq.js?dpl=dpl_FytX35esWCjMt1Gv3BuzwhpmzwUH:79:123843)
+    at up (https://vercel.com/_next/static/chunks/1l29vw7u8_irq.js?dpl=dpl_FytX35esWCjMt1Gv3BuzwhpmzwUH:79:111253)
+    at uP (https://vercel.com/_next/static/chunks/1l29vw7u8_irq.js?dpl=dpl_FytX35esWCjMt1Gv3BuzwhpmzwUH:79:123843) @ https://vercel.com/_next/static/chunks/2yy9n1bucph70.js?dpl=dpl_FytX35esWCjMt1Gv3BuzwhpmzwUH:4
+[   13359ms] [LOG] Ignored request error TypeError: A network error has occurred. Please check your connection and try again.
+    at w (https://vercel.com/_next/static/chunks/1yg2h7o9_0h3v.js?dpl=dpl_FytX35esWCjMt1Gv3BuzwhpmzwUH:21:4598)
+    at async ei (https://vercel.com/_next/static/chunks/2k96uv0zvw5ep.js?dpl=dpl_FytX35esWCjMt1Gv3BuzwhpmzwUH:3:4533)
+    at async https://vercel.com/_next/static/chunks/2zp60u0qafzj7.js?dpl=dpl_FytX35esWCjMt1Gv3BuzwhpmzwUH:2:11862 @ https://vercel.com/_next/static/chunks/2yy9n1bucph70.js?dpl=dpl_FytX35esWCjMt1Gv3BuzwhpmzwUH:4
+[   13359ms] [LOG] Ignored request error TypeError: A network error has occurred. Please check your connection and try again.
+    at w (https://vercel.com/_next/static/chunks/1yg2h7o9_0h3v.js?dpl=dpl_FytX35esWCjMt1Gv3BuzwhpmzwUH:21:4598)
+    at async revalidateIfStale (https://vercel.com/_next/static/chunks/2k96uv0zvw5ep.js?dpl=dpl_FytX35esWCjMt1Gv3BuzwhpmzwUH:3:85869)
+    at async https://vercel.com/_next/static/chunks/2zp60u0qafzj7.js?dpl=dpl_FytX35esWCjMt1Gv3BuzwhpmzwUH:2:11862 @ https://vercel.com/_next/static/chunks/2yy9n1bucph70.js?dpl=dpl_FytX35esWCjMt1Gv3BuzwhpmzwUH:4
+[   13609ms] [ERROR] The script resource is behind a redirect, which is disallowed. @ :0
+[   13779ms] [LOG] %c
+▲
+
+ _____ _              _                    _   _             __
+|_   _| |__   ___    / \   __ _  ___ _ __ | |_(_) ___       / /
+  | | | '_ \ / _ \  / _ \ / _` |/ _ \ '_ \| __| |/ __|     / /
+  | | | | | |  __/ / ___ \ (_| |  __/ | | | |_| | (__     /_/
+  |_| |_| |_|\___|/_/   \_\__, |\___|_| |_|\__|_|\___|    (_)
+                           |___/
+ ___        __               _                   _                 _
+|_ _|_ __  / _|_ __ __ _ ___| |_ _ __ _   _  ___| |_ _   _ _ __ ___
+ | || '_ \| |_| '__/ _` / __| __| '__| | | |/ __| __| | | | '__/ _ \
+ | || | | |  _| | | (_| \__ \ |_| |  | |_| | (__| |_| |_| | | |  __/
+|___|_| |_|_| |_|  \__,_|___/\__|_|   \__,_|\___|\__|\__,_|_|  \___|
+  
+
+Hello!
+
+- Open Source https://vercel.com/oss
+- Careers https://vercel.com/careers
+- Status https://vercel-status.com
+
+ font-family: "Geist Mono", monospace; white-space: pre; line-height: 1; @ https://vercel.com/_next/static/chunks/1l29vw7u8_irq.js?dpl=dpl_FytX35esWCjMt1Gv3BuzwhpmzwUH:78
+[   15065ms] [WARNING] [GSI_LOGGER]: Your client application uses one of the Google One Tap prompt UI status methods that may stop functioning when FedCM becomes mandatory. Refer to the migration guide to update your code accordingly and opt-in to FedCM to test your changes. Learn more: https://developers.google.com/identity/gsi/web/guides/fedcm-migration?s=dc#display_moment and https://developers.google.com/identity/gsi/web/guides/fedcm-migration?s=dc#skipped_moment @ https://accounts.google.com/gsi/client:84
+[   15067ms] [ERROR] Not signed in with the identity provider. @ https://vercel.com/login?next=%2Fwavyren%2Fone-page-me:0
+[   17001ms] [WARNING] Deprecated API for given entry type. @ https://vercel.com/_next/static/chunks/24660xudx800e.js?dpl=dpl_FytX35esWCjMt1Gv3BuzwhpmzwUH:18
+[   17004ms] [ERROR] Failed to load resource: the server responded with a status of 403 () @ https://vercel.com/api/jwt:0
+[   17799ms] [WARNING] The resource https://vercel.com/_next/static/media/adobe-light.406_7oryl71va.svg?dpl=dpl_FytX35esWCjMt1Gv3BuzwhpmzwUH was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://vercel.com/login?next=%2Fwavyren%2Fone-page-me:0
+[   17799ms] [WARNING] The resource https://vercel.com/_next/static/media/stripe-light.2l_1jctpe6k_4.svg?dpl=dpl_FytX35esWCjMt1Gv3BuzwhpmzwUH was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://vercel.com/login?next=%2Fwavyren%2Fone-page-me:0
+[   17799ms] [WARNING] The resource https://vercel.com/_next/static/media/stripe-dark.16ozjth2vgb_3.svg?dpl=dpl_FytX35esWCjMt1Gv3BuzwhpmzwUH was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://vercel.com/login?next=%2Fwavyren%2Fone-page-me:0
+[   17799ms] [WARNING] The resource https://vercel.com/_next/static/media/ebay-dark.34mho2a18qqlt.svg?dpl=dpl_FytX35esWCjMt1Gv3BuzwhpmzwUH was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://vercel.com/login?next=%2Fwavyren%2Fone-page-me:0
+[   17799ms] [WARNING] The resource https://vercel.com/_next/static/media/ebay-light.3ft_ki8203ov0.svg?dpl=dpl_FytX35esWCjMt1Gv3BuzwhpmzwUH was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://vercel.com/login?next=%2Fwavyren%2Fone-page-me:0
+[   19064ms] [ERROR] [GSI_LOGGER]: FedCM get() rejects with NetworkError: Error retrieving a token. @ https://vercel.com/_next/static/chunks/1ybvobrl9vt1e.js?dpl=dpl_FytX35esWCjMt1Gv3BuzwhpmzwUH:1
+[   19648ms] [ERROR] Failed to load resource: the server responded with a status of 429 () @ https://o205439.ingest.sentry.io/api/1323670/envelope/?sentry_key=d00780d432ac4ccf882f60dd02062e14&sentry_version=7&sentry_client=sentry.javascript.browser%2F7.111.0:0
+[   22700ms] [WARNING] The resource https://vercel.com/_next/static/media/adobe-light.406_7oryl71va.svg?dpl=dpl_FytX35esWCjMt1Gv3BuzwhpmzwUH was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://vercel.com/login?next=%2Fwavyren%2Fone-page-me:0
+[   22700ms] [WARNING] The resource https://vercel.com/_next/static/media/stripe-light.2l_1jctpe6k_4.svg?dpl=dpl_FytX35esWCjMt1Gv3BuzwhpmzwUH was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://vercel.com/login?next=%2Fwavyren%2Fone-page-me:0
+[   22700ms] [WARNING] The resource https://vercel.com/_next/static/media/stripe-dark.16ozjth2vgb_3.svg?dpl=dpl_FytX35esWCjMt1Gv3BuzwhpmzwUH was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://vercel.com/login?next=%2Fwavyren%2Fone-page-me:0
+[   22700ms] [WARNING] The resource https://vercel.com/_next/static/media/ebay-dark.34mho2a18qqlt.svg?dpl=dpl_FytX35esWCjMt1Gv3BuzwhpmzwUH was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://vercel.com/login?next=%2Fwavyren%2Fone-page-me:0
+[   22700ms] [WARNING] The resource https://vercel.com/_next/static/chunks/09f00n8m302ia.css?dpl=dpl_FytX35esWCjMt1Gv3BuzwhpmzwUH was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://vercel.com/login?next=%2Fwavyren%2Fone-page-me:0
+[   22700ms] [WARNING] The resource https://vercel.com/_next/static/media/ebay-light.3ft_ki8203ov0.svg?dpl=dpl_FytX35esWCjMt1Gv3BuzwhpmzwUH was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://vercel.com/login?next=%2Fwavyren%2Fone-page-me:0
+[   26362ms] [INFO] Slow network is detected. See https://www.chromestatus.com/feature/5636954674692096 for more details. Fallback font will be used while loading: https://fonts.gstatic.com/s/googlesans/v62/4UaRrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iq2vgCIhM907w.woff2 @ https://accounts.google.com/v3/signin/identifier?opparams=%253F&dsh=S1863630010%3A1777644188926004&client_id=258013614557-nema0dumfbottebi6to7aqi85qot9pvs.apps.googleusercontent.com&o2v=2&redirect_uri=https%3A%2F%2Fvercel.com%2Fapi%2Fregistration%2Fgoogle%2Fcallback&response_type=code&scope=openid+profile+email&service=lso&state=5881042c861c32f5e1bc6338da63adbe6a77b08b1f06c2b09d2da3464d34ab48e0b5cbcfeedba52c843797a3710c7711e97c151b5fb0c576c11f6e8f14f88ef8db3db81d0e05b29629a32aeed278a9a3a17ebbce4aee5fecc49e72dfd8a9357d4d84d8a7c2051c6144e786bca90dba8908e8170a364c64b43adf2751e331805704dde531c64b8e09b98b5a8dcc6cc31514f035a1028d67c1bb0a2f50b7b5505b8fcd03336a26c21d946582c629b42fa22d4b897a768516a72274a94eef969af27c2e16bdeea31288af0fff6872052df5dd276c53c1b95f87995fbaa6148c6f2ac56bf641434b59de3194e40993d7ac76c41b9287f0ac314ad62b7e2a696cbc8666163e001aa06f8475a15331e9c979a9f77a9e817902fa9cbbb8f06e0a20f22626b69b6fd4ae715eef280b48bee5e851d7102a75736b0c55aa83f04085a9be20477b3903e1040b8c0b6eba11f286ad940b676a4ec4d1b4ab81dc71c89b3a2e250bd55c22f252ec720bdf08&flowName=GeneralOAuthFlow&continue=https%3A%2F%2Faccounts.google.com%2Fsignin%2Foauth%2Fconsent%3Fauthuser%3Dunknown%26part%3DAJi8hAOvQvaOhRFikXbXDoJkG5tjeVogdBn_BaJpBUv16ucZLR8WBbMByCiLEG9JOfjLAxUXKAxEURoxohM4aOD5j1T2j0mDGJnzJIgRdgoDumhHsvBpB1pa-d32zXUCyNDEDemzxlXgLTKZSlGl229Ps2NT--o-do7u94OFawi7OtLEFDmYNvSR0kD4QxcaHS1XigeZS6KIfgHYFMnGpSqK8QzNaBcwrEtMguM6O4GrieTfcimOTpOVbskNDmoZylsiX7Ks5cJErGyghw8C6SgDREQLBIHa-SIyPBXNAOK9hapPOAJhbd9XMDX8ig2YyQ-3154V7En61eAv-H5KXXxXjsmGWKUMIibjtD-PspXPxUqMbazn2sJ4_MLA00mcZO5qIMiHhiOvJRUyWmcOef6WSPQvq75IIbp8JV5JSfII0dz7FFllz8xu-62ra3E_IhsLea7FW56yYVRxbN0CYsudFbrmndkLig%26flowName%3DGeneralOAuthFlow%26as%3DS1863630010%253A1777644188926004%26client_id%3D258013614557-nema0dumfbottebi6to7aqi85qot9pvs.apps.googleusercontent.com%26requestPath%3D%252Fsignin%252Foauth%252Fconsent%23&app_domain=https%3A%2F%2Fvercel.com&rart=ANgoxcfhZuFR6vttssIxsDOfo1yfAhgVrH_cfvkgwITncEpCqV6u5fcMOPjieI1ADapH4Lyup0mP2IuF3IwQlTS4W3kUVB5FtKP53zlqs-xcA7pgcmU3fY0:1
+[   28275ms] [VERBOSE] [DOM] Password field is not contained in a form: (More info: https://goo.gl/9p2vKq) %o @ https://accounts.google.com/v3/signin/identifier?opparams=%253F&dsh=S1863630010%3A1777644188926004&client_id=258013614557-nema0dumfbottebi6to7aqi85qot9pvs.apps.googleusercontent.com&o2v=2&redirect_uri=https%3A%2F%2Fvercel.com%2Fapi%2Fregistration%2Fgoogle%2Fcallback&response_type=code&scope=openid+profile+email&service=lso&state=5881042c861c32f5e1bc6338da63adbe6a77b08b1f06c2b09d2da3464d34ab48e0b5cbcfeedba52c843797a3710c7711e97c151b5fb0c576c11f6e8f14f88ef8db3db81d0e05b29629a32aeed278a9a3a17ebbce4aee5fecc49e72dfd8a9357d4d84d8a7c2051c6144e786bca90dba8908e8170a364c64b43adf2751e331805704dde531c64b8e09b98b5a8dcc6cc31514f035a1028d67c1bb0a2f50b7b5505b8fcd03336a26c21d946582c629b42fa22d4b897a768516a72274a94eef969af27c2e16bdeea31288af0fff6872052df5dd276c53c1b95f87995fbaa6148c6f2ac56bf641434b59de3194e40993d7ac76c41b9287f0ac314ad62b7e2a696cbc8666163e001aa06f8475a15331e9c979a9f77a9e817902fa9cbbb8f06e0a20f22626b69b6fd4ae715eef280b48bee5e851d7102a75736b0c55aa83f04085a9be20477b3903e1040b8c0b6eba11f286ad940b676a4ec4d1b4ab81dc71c89b3a2e250bd55c22f252ec720bdf08&flowName=GeneralOAuthFlow&continue=https%3A%2F%2Faccounts.google.com%2Fsignin%2Foauth%2Fconsent%3Fauthuser%3Dunknown%26part%3DAJi8hAOvQvaOhRFikXbXDoJkG5tjeVogdBn_BaJpBUv16ucZLR8WBbMByCiLEG9JOfjLAxUXKAxEURoxohM4aOD5j1T2j0mDGJnzJIgRdgoDumhHsvBpB1pa-d32zXUCyNDEDemzxlXgLTKZSlGl229Ps2NT--o-do7u94OFawi7OtLEFDmYNvSR0kD4QxcaHS1XigeZS6KIfgHYFMnGpSqK8QzNaBcwrEtMguM6O4GrieTfcimOTpOVbskNDmoZylsiX7Ks5cJErGyghw8C6SgDREQLBIHa-SIyPBXNAOK9hapPOAJhbd9XMDX8ig2YyQ-3154V7En61eAv-H5KXXxXjsmGWKUMIibjtD-PspXPxUqMbazn2sJ4_MLA00mcZO5qIMiHhiOvJRUyWmcOef6WSPQvq75IIbp8JV5JSfII0dz7FFllz8xu-62ra3E_IhsLea7FW56yYVRxbN0CYsudFbrmndkLig%26flowName%3DGeneralOAuthFlow%26as%3DS1863630010%253A1777644188926004%26client_id%3D258013614557-nema0dumfbottebi6to7aqi85qot9pvs.apps.googleusercontent.com%26requestPath%3D%252Fsignin%252Foauth%252Fconsent%23&app_domain=https%3A%2F%2Fvercel.com&rart=ANgoxcfhZuFR6vttssIxsDOfo1yfAhgVrH_cfvkgwITncEpCqV6u5fcMOPjieI1ADapH4Lyup0mP2IuF3IwQlTS4W3kUVB5FtKP53zlqs-xcA7pgcmU3fY0:0
+[   28279ms] [LOG] %c%s color: red; background: yellow; font-size: 24px; 警告！ @ https://www.gstatic.com/_/mss/boq-identity/_/js/k=boq-identity.AccountsSignInUi.zh_CN.M-UzfDx4jkw.es5.O/am=Kd8AAAChEAVCBgDj__8HAAiAIGrg9SwATSAyAAAAAAAAAABgAQAAGgE/d=1/excm=_b,_tp,identifierview/ed=1/dg=0/wt=2/ujg=1/rs=AOaEmlFOvdrFFqGidhhvWR7AOi-g8ejxOQ/dti=1/m=_b,_tp:542
+[   28279ms] [LOG] %c%s font-size: 18px; 使用此控制台可能会导致攻击程序利用 Self-XSS 攻击冒充您并窃取您的信息。
+请勿输入或粘贴您不明白的代码。 @ https://www.gstatic.com/_/mss/boq-identity/_/js/k=boq-identity.AccountsSignInUi.zh_CN.M-UzfDx4jkw.es5.O/am=Kd8AAAChEAVCBgDj__8HAAiAIGrg9SwATSAyAAAAAAAAAABgAQAAGgE/d=1/excm=_b,_tp,identifierview/ed=1/dg=0/wt=2/ujg=1/rs=AOaEmlFOvdrFFqGidhhvWR7AOi-g8ejxOQ/dti=1/m=_b,_tp:542
+[   42920ms] [VERBOSE] [DOM] Password field is not contained in a form: (More info: https://goo.gl/9p2vKq) %o @ https://accounts.google.com/v3/signin/challenge/pwd?TL=APouJz7cihpgNIdUSJY6z3slmD-7MVVmPJe9NDdbgyC0_N5x8Shk7BnADUkyDev6&app_domain=https%3A%2F%2Fvercel.com&checkConnection=youtube%3A1619&checkedDomains=youtube&cid=2&client_id=258013614557-nema0dumfbottebi6to7aqi85qot9pvs.apps.googleusercontent.com&continue=https%3A%2F%2Faccounts.google.com%2Fsignin%2Foauth%2Fconsent%3Fauthuser%3Dunknown%26part%3DAJi8hAOvQvaOhRFikXbXDoJkG5tjeVogdBn_BaJpBUv16ucZLR8WBbMByCiLEG9JOfjLAxUXKAxEURoxohM4aOD5j1T2j0mDGJnzJIgRdgoDumhHsvBpB1pa-d32zXUCyNDEDemzxlXgLTKZSlGl229Ps2NT--o-do7u94OFawi7OtLEFDmYNvSR0kD4QxcaHS1XigeZS6KIfgHYFMnGpSqK8QzNaBcwrEtMguM6O4GrieTfcimOTpOVbskNDmoZylsiX7Ks5cJErGyghw8C6SgDREQLBIHa-SIyPBXNAOK9hapPOAJhbd9XMDX8ig2YyQ-3154V7En61eAv-H5KXXxXjsmGWKUMIibjtD-PspXPxUqMbazn2sJ4_MLA00mcZO5qIMiHhiOvJRUyWmcOef6WSPQvq75IIbp8JV5JSfII0dz7FFllz8xu-62ra3E_IhsLea7FW56yYVRxbN0CYsudFbrmndkLig%26flowName%3DGeneralOAuthFlow%26as%3DS1863630010%253A1777644188926004%26client_id%3D258013614557-nema0dumfbottebi6to7aqi85qot9pvs.apps.googleusercontent.com%26requestPath%3D%252Fsignin%252Foauth%252Fconsent%23&dsh=S1863630010%3A1777644188926004&flowName=GeneralOAuthFlow&o2v=2&opparams=%253F&pstMsg=1&rart=ANgoxcfhZuFR6vttssIxsDOfo1yfAhgVrH_cfvkgwITncEpCqV6u5fcMOPjieI1ADapH4Lyup0mP2IuF3IwQlTS4W3kUVB5FtKP53zlqs-xcA7pgcmU3fY0&redirect_uri=https%3A%2F%2Fvercel.com%2Fapi%2Fregistration%2Fgoogle%2Fcallback&response_type=code&scope=openid%20profile%20email&service=lso&state=5881042c861c32f5e1bc6338da63adbe6a77b08b1f06c2b09d2da3464d34ab48e0b5cbcfeedba52c843797a3710c7711e97c151b5fb0c576c11f6e8f14f88ef8db3db81d0e05b29629a32aeed278a9a3a17ebbce4aee5fecc49e72dfd8a9357d4d84d8a7c2051c6144e786bca90dba8908e8170a364c64b43adf2751e331805704dde531c64b8e09b98b5a8dcc6cc31514f035a1028d67c1bb0a2f50b7b5505b8fcd03336a26c21d946582c629b42fa22d4b897a768516a72274a94eef969af27c2e16bdeea31288af0fff6872052df5dd276c53c1b95f87995fbaa6148c6f2ac56bf641434b59de3194e40993d7ac76c41b9287f0ac314ad62b7e2a696cbc8666163e001aa06f8475a15331e9c979a9f77a9e817902fa9cbbb8f06e0a20f22626b69b6fd4ae715eef280b48bee5e851d7102a75736b0c55aa83f04085a9be20477b3903e1040b8c0b6eba11f286ad940b676a4ec4d1b4ab81dc71c89b3a2e250bd55c22f252ec720bdf08:0
+[  127646ms] [LOG] %c
+▲
+
+__  __                                     _            __
+\ \/ /___  __  __   _________ _____       (_)_  _______/ /_
+ \  / __ \/ / / /  / ___/ __ `/ __ \     / / / / / ___/ __/
+ / / /_/ / /_/ /  / /__/ /_/ / / / /    / / /_/ (__  ) /_
+/_/\____/\__,_/   \___/\__,_/_/ /_/  __/ /\__,_/____/\__/
+         __    _          __  __    /___/
+   _____/ /_  (_)___     / /_/ /_  (_)___  ____ ______
+  / ___/ __ \/ / __ \   / __/ __ \/ / __ \/ __ `/ ___/
+ (__  ) / / / / /_/ /  / /_/ / / / / / / / /_/ (__  )
+/____/_/ /_/_/ .___/   \__/_/ /_/_/_/ /_/\__, /____/
+            /_/                         /____/
+  
+
+Hello!
+
+- Open Source https://vercel.com/oss
+- Careers https://vercel.com/careers
+- Status https://vercel-status.com
+
+ font-family: "Geist Mono", monospace; white-space: pre; line-height: 1; @ https://vercel.com/_next/static/chunks/0-ql08uahvm61.js?dpl=dpl_FytX35esWCjMt1Gv3BuzwhpmzwUH:78
+[  152566ms] [WARNING] Deprecated API for given entry type. @ https://vercel.com/_next/static/chunks/0p4bfob-v5nr-.js?dpl=dpl_FytX35esWCjMt1Gv3BuzwhpmzwUH:18
+[  153839ms] [ERROR] Failed to load resource: the server responded with a status of 403 () @ https://vercel.com/api/jwt:0
+[  156446ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://vercel.com/_next/data/build-TfctsWXpff2fKS/wavyren/one-page-me.json:0
+[  160055ms] [LOG] %c
+▲
+
+    ____                               _ __
+   / __ \________  ____ _____ ___     (_) /_
+  / / / / ___/ _ \/ __ `/ __ `__ \   / / __/
+ / /_/ / /  /  __/ /_/ / / / / / /  / / /__
+/_____/_/   \___/\__,_/_/ /_/ /_/  /_/\__( )
+   _____ __    _          _ __           |/
+  / ___// /_  (_)___     (_) /_
+  \__ \/ __ \/ / __ \   / / __/
+ ___/ / / / / / /_/ /  / / /_
+/____/_/ /_/_/ .___/  /_/\__/
+            /_/
+  
+
+Hello!
+
+- Open Source https://vercel.com/oss
+- Careers https://vercel.com/careers
+- Status https://vercel-status.com
+
+ font-family: "Geist Mono", monospace; white-space: pre; line-height: 1; @ https://vercel.com/_next/static/chunks/1l29vw7u8_irq.js?dpl=dpl_FytX35esWCjMt1Gv3BuzwhpmzwUH:78
+[  160162ms] [WARNING] iso_swr: SSR fetch failed for "/api/v8/projects?includePermissions=false&latestDeployments=0&limit=10&search=&slug=wavyren" {error: iso_swr_fetch_error, message: Not authorized} @ https://vercel.com/wavyren/one-page-me:543
+[  160162ms] [WARNING] iso_swr: SSR fetch failed for "/api/v2/teams/wavyren" {error: iso_swr_fetch_error, message: Not authorized} @ https://vercel.com/wavyren/one-page-me:543
+[  160162ms] [WARNING] iso_swr: SSR fetch failed for "/v1/dashboard/projects/one-page-me?teamId=wavyren" {error: iso_swr_fetch_error, message: Not authorized} @ https://vercel.com/wavyren/one-page-me:543
+[  161042ms] [WARNING] iso_swr: SSR fetch failed for "/api/v6/deployments?limit=10&projectId=one-page-me&rollbackCandidate=true&teamId=wavyren" {error: iso_swr_fetch_error, message: Not authorized} @ https://vercel.com/wavyren/one-page-me:622
+[  161042ms] [WARNING] iso_swr: SSR fetch failed for "/api/v9/projects/one-page-me?activeBranches=1&latestDeployments=1&rollbackInfo=true&teamId=wavyren" {error: iso_swr_fetch_error, message: Not authorized} @ https://vercel.com/wavyren/one-page-me:701
+[  161042ms] [WARNING] iso_swr: SSR fetch failed for "/dashboard/projects/one-page-me/production-checklist?teamId=wavyren" {error: iso_swr_fetch_error, message: Not authorized} @ https://vercel.com/wavyren/one-page-me:701
+[  161088ms] [WARNING] iso_swr[warn] [client] fallback error for key: "/api/v2/teams/wavyren" {error: iso_swr_fetch_error, message: Not authorized} @ https://vercel.com/_next/static/chunks/3sa7hjtn52jp3.js?dpl=dpl_FytX35esWCjMt1Gv3BuzwhpmzwUH:6
+[  161182ms] [WARNING] iso_swr[warn] [client] fallback error for key: "/v1/dashboard/projects/one-page-me?teamId=wavyren" {error: iso_swr_fetch_error, message: Not authorized} @ https://vercel.com/_next/static/chunks/3sa7hjtn52jp3.js?dpl=dpl_FytX35esWCjMt1Gv3BuzwhpmzwUH:6
+[  161379ms] [WARNING] iso_swr[warn] [client] fallback error for key: "/api/v6/deployments?limit=10&projectId=one-page-me&rollbackCandidate=true&teamId=wavyren" {error: iso_swr_fetch_error, message: Not authorized} @ https://vercel.com/_next/static/chunks/3sa7hjtn52jp3.js?dpl=dpl_FytX35esWCjMt1Gv3BuzwhpmzwUH:6
+[  161383ms] [WARNING] iso_swr[warn] [client] fallback error for key: "/api/v9/projects/one-page-me?activeBranches=1&latestDeployments=1&rollbackInfo=true&teamId=wavyren" {error: iso_swr_fetch_error, message: Not authorized} @ https://vercel.com/_next/static/chunks/3sa7hjtn52jp3.js?dpl=dpl_FytX35esWCjMt1Gv3BuzwhpmzwUH:6
+[  161383ms] [WARNING] iso_swr[warn] [client] fallback error for key: "/dashboard/projects/one-page-me/production-checklist?teamId=wavyren" {error: iso_swr_fetch_error, message: Not authorized} @ https://vercel.com/_next/static/chunks/3sa7hjtn52jp3.js?dpl=dpl_FytX35esWCjMt1Gv3BuzwhpmzwUH:6
+[  162286ms] [WARNING] iso_swr: SSR fetch failed for "/api/v6/deployments?limit=10&projectId=one-page-me&state=INITIALIZING%2CREADY%2CERROR%2CBUILDING%2CQUEUED&target=preview&teamId=wavyren" {error: iso_swr_fetch_error, message: Not authorized} @ https://vercel.com/wavyren/one-page-me:870
+[  167241ms] [ERROR] Failed to load resource: the server responded with a status of 403 () @ https://vercel.com/api/v1/dashboard/projects/one-page-me?teamId=wavyren:0
+[  167308ms] [ERROR] Failed to load resource: the server responded with a status of 403 () @ https://vercel.com/api/recents?hydrateLimit=30&limit=7&teamId=wavyren&type=preview:0
+[  167308ms] [ERROR] Failed to load resource: the server responded with a status of 403 () @ https://vercel.com/api/v2/dashboard/projects?favorites=1&limit=25&teamId=wavyren:0
+[  167308ms] [ERROR] Failed to load resource: the server responded with a status of 403 () @ https://vercel.com/api/v1/projects/one-page-me/rolling-release?teamId=wavyren:0
+[  167308ms] [ERROR] Failed to load resource: the server responded with a status of 403 () @ https://vercel.com/api/v1/projects/one-page-me/production-deployment?teamId=wavyren:0
+[  167308ms] [ERROR] Failed to load resource: the server responded with a status of 403 () @ https://vercel.com/api/v6/deployments?limit=10&projectId=one-page-me&rollbackCandidate=true&teamId=wavyren:0
+[  167308ms] [ERROR] Failed to load resource: the server responded with a status of 403 () @ https://vercel.com/api/v2/teams/wavyren:0
+[  167309ms] [ERROR] Failed to load resource: the server responded with a status of 403 () @ https://vercel.com/api/dashboard/projects/one-page-me/production-checklist?teamId=wavyren:0
+[  167309ms] [ERROR] Failed to load resource: the server responded with a status of 403 () @ https://vercel.com/api/v9/projects/one-page-me/domains?limit=25&order=ASC&production=true&redirects=false&teamId=wavyren&verified=true:0
+[  167309ms] [ERROR] Failed to load resource: the server responded with a status of 403 () @ https://vercel.com/api/dashboard/projects/one-page-me/recommendations?teamId=wavyren:0
+[  167309ms] [ERROR] Failed to load resource: the server responded with a status of 403 () @ https://vercel.com/api/v9/projects/one-page-me?activeBranches=1&latestDeployments=1&rollbackInfo=true&teamId=wavyren:0
+[  167309ms] [ERROR] Failed to load resource: the server responded with a status of 403 () @ https://vercel.com/api/user/permissions?projectIdOrName=one-page-me&slug=wavyren:0
+[  167309ms] [ERROR] Failed to load resource: the server responded with a status of 403 () @ https://vercel.com/api/nav/sidebar/badges?scope=project&teamId=wavyren&projectId=one-page-me:0
+[  167309ms] [ERROR] Failed to load resource: the server responded with a status of 403 () @ https://vercel.com/api/v6/deployments?limit=10&projectId=one-page-me&state=INITIALIZING%2CREADY%2CERROR%2CBUILDING%2CQUEUED&target=preview&teamId=wavyren:0
+[  167311ms] [LOG] Ignored request error CustomFetchError: Not authorized
+    at d (https://vercel.com/_next/static/chunks/2ueqxpd12oitx.js?dpl=dpl_FytX35esWCjMt1Gv3BuzwhpmzwUH:2:22362)
+    at async t (https://vercel.com/_next/static/chunks/13ufb81s2naq9.js?dpl=dpl_FytX35esWCjMt1Gv3BuzwhpmzwUH:2:9031)
+    at async https://vercel.com/_next/static/chunks/13ufb81s2naq9.js?dpl=dpl_FytX35esWCjMt1Gv3BuzwhpmzwUH:2:9079
+    at async https://vercel.com/_next/static/chunks/2zp60u0qafzj7.js?dpl=dpl_FytX35esWCjMt1Gv3BuzwhpmzwUH:2:11862 @ https://vercel.com/_next/static/chunks/2yy9n1bucph70.js?dpl=dpl_FytX35esWCjMt1Gv3BuzwhpmzwUH:4
+[  167314ms] [LOG] Ignored request error CustomFetchError: Not authorized
+    at d (https://vercel.com/_next/static/chunks/2ueqxpd12oitx.js?dpl=dpl_FytX35esWCjMt1Gv3BuzwhpmzwUH:2:22362)
+    at async https://vercel.com/_next/static/chunks/2zp60u0qafzj7.js?dpl=dpl_FytX35esWCjMt1Gv3BuzwhpmzwUH:2:11862 @ https://vercel.com/_next/static/chunks/2yy9n1bucph70.js?dpl=dpl_FytX35esWCjMt1Gv3BuzwhpmzwUH:4
+[  167314ms] [LOG] Ignored request error CustomFetchError: Not authorized
+    at d (https://vercel.com/_next/static/chunks/2ueqxpd12oitx.js?dpl=dpl_FytX35esWCjMt1Gv3BuzwhpmzwUH:2:22362)
+    at async dedupingInterval (https://vercel.com/_next/static/chunks/2blp3nhmhhbsw.js?dpl=dpl_FytX35esWCjMt1Gv3BuzwhpmzwUH:2:33513)
+    at async https://vercel.com/_next/static/chunks/2zp60u0qafzj7.js?dpl=dpl_FytX35esWCjMt1Gv3BuzwhpmzwUH:2:11862 @ https://vercel.com/_next/static/chunks/2yy9n1bucph70.js?dpl=dpl_FytX35esWCjMt1Gv3BuzwhpmzwUH:4
+[  167315ms] [LOG] Ignored request error CustomFetchError: Not authorized
+    at d (https://vercel.com/_next/static/chunks/2ueqxpd12oitx.js?dpl=dpl_FytX35esWCjMt1Gv3BuzwhpmzwUH:2:22362)
+    at async https://vercel.com/_next/static/chunks/2zp60u0qafzj7.js?dpl=dpl_FytX35esWCjMt1Gv3BuzwhpmzwUH:2:11862 @ https://vercel.com/_next/static/chunks/2yy9n1bucph70.js?dpl=dpl_FytX35esWCjMt1Gv3BuzwhpmzwUH:4
+[  167315ms] [LOG] Ignored request error CustomFetchError: Not authorized
+    at d (https://vercel.com/_next/static/chunks/2ueqxpd12oitx.js?dpl=dpl_FytX35esWCjMt1Gv3BuzwhpmzwUH:2:22362)
+    at async https://vercel.com/_next/static/chunks/2zp60u0qafzj7.js?dpl=dpl_FytX35esWCjMt1Gv3BuzwhpmzwUH:2:11862 @ https://vercel.com/_next/static/chunks/2yy9n1bucph70.js?dpl=dpl_FytX35esWCjMt1Gv3BuzwhpmzwUH:4
+[  167315ms] [LOG] Ignored request error CustomFetchError: Not authorized
+    at d (https://vercel.com/_next/static/chunks/2ueqxpd12oitx.js?dpl=dpl_FytX35esWCjMt1Gv3BuzwhpmzwUH:2:22362)
+    at async t (https://vercel.com/_next/static/chunks/13ufb81s2naq9.js?dpl=dpl_FytX35esWCjMt1Gv3BuzwhpmzwUH:2:9031)
+    at async https://vercel.com/_next/static/chunks/13ufb81s2naq9.js?dpl=dpl_FytX35esWCjMt1Gv3BuzwhpmzwUH:2:9079
+    at async https://vercel.com/_next/static/chunks/2zp60u0qafzj7.js?dpl=dpl_FytX35esWCjMt1Gv3BuzwhpmzwUH:2:11862 @ https://vercel.com/_next/static/chunks/2yy9n1bucph70.js?dpl=dpl_FytX35esWCjMt1Gv3BuzwhpmzwUH:4
+[  167318ms] [ERROR] CustomFetchError: Not authorized
+    at d (https://vercel.com/_next/static/chunks/2ueqxpd12oitx.js?dpl=dpl_FytX35esWCjMt1Gv3BuzwhpmzwUH:2:22362) @ https://vercel.com/_next/static/chunks/1l29vw7u8_irq.js?dpl=dpl_FytX35esWCjMt1Gv3BuzwhpmzwUH:108
+[  167983ms] [ERROR] Failed to load resource: the server responded with a status of 403 () @ https://vercel.com/api/v1/dashboard/projects/one-page-me?teamId=wavyren:0
+[  167983ms] [ERROR] Failed to load resource: the server responded with a status of 403 () @ https://vercel.com/api/v9/projects/one-page-me?activeBranches=1&latestDeployments=1&rollbackInfo=true&teamId=wavyren:0
+[  167983ms] [ERROR] Failed to load resource: the server responded with a status of 403 () @ https://vercel.com/api/v1/projects/one-page-me/rolling-release?teamId=wavyren:0
+[  171914ms] [WARNING] Deprecated API for given entry type. @ https://vercel.com/_next/static/chunks/24660xudx800e.js?dpl=dpl_FytX35esWCjMt1Gv3BuzwhpmzwUH:18
+[  173800ms] [ERROR] Failed to load resource: the server responded with a status of 403 () @ https://vercel.com/api/dashboard/projects/one-page-me/activity?teamId=wavyren:0
+[  174424ms] [ERROR] Failed to load resource: the server responded with a status of 403 () @ https://vercel.com/api/user/permissions?projectIdOrName=one-page-me&slug=wavyren:0
+[  179440ms] [ERROR] Failed to load resource: the server responded with a status of 403 () @ https://vercel.com/api/user/permissions?projectIdOrName=one-page-me&slug=wavyren:0
+[  182442ms] [WARNING] The resource https://vercel.com/_next/static/chunks/3d792zqltro0t.css?dpl=dpl_FytX35esWCjMt1Gv3BuzwhpmzwUH was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://vercel.com/wavyren/one-page-me:0
+[  184812ms] [ERROR] Failed to load resource: the server responded with a status of 403 () @ https://vercel.com/api/user/permissions?projectIdOrName=one-page-me&slug=wavyren:0
+[  185317ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_CLOSED @ https://m.stripe.com/6:0
+[  188318ms] [WARNING] The resource https://vercel.com/_next/static/chunks/3d792zqltro0t.css?dpl=dpl_FytX35esWCjMt1Gv3BuzwhpmzwUH was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://vercel.com/wavyren/one-page-me:0
