@@ -1,35 +1,17 @@
 import { type NextRequest, NextResponse } from "next/server";
 
-// Routes that require authentication
-const protectedRoutes = ["/chat", "/profile"];
-// Routes that should redirect authenticated users
-const authRoutes = ["/login"];
-
 export default async function middleware(request: NextRequest) {
-  const response = NextResponse.next();
-  const pathname = request.nextUrl.pathname;
+  const { pathname, searchParams } = request.nextUrl;
 
-  // Skip RSC requests to avoid redirect loops
-  const isRSC = request.headers.get("rsc") === "1";
-  if (isRSC) {
-    return response;
+  // OAuth callback fallback: if Supabase redirects to root with code,
+  // forward to the proper callback handler
+  if (pathname === "/" && searchParams.has("code")) {
+    const callbackUrl = request.nextUrl.clone();
+    callbackUrl.pathname = "/auth/callback";
+    return NextResponse.redirect(callbackUrl);
   }
 
-  // Check if route is protected
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const isProtectedRoute = protectedRoutes.some((route) =>
-    pathname.startsWith(route)
-  );
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const isAuthRoute = authRoutes.some((route) =>
-    pathname.startsWith(route)
-  );
-
-  // TEMP: Edge Runtime auth detection is unreliable.
-  // Let pages handle their own auth redirects for now.
-  // Phase 7 will add proper permission gating.
-
-  return response;
+  return NextResponse.next();
 }
 
 export const config = {
