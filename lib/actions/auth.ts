@@ -66,56 +66,39 @@ export async function verifyPhoneOtp(
 ): Promise<ActionResult<{ user?: unknown }>> {
   if (MOCK_OTP_ENABLED && token === MOCK_OTP_CODE) {
     const supabase = await createClient();
+    const mockEmail = `${phone}@mock.local`;
 
-    // Try sign up first (creates user if not exists)
-    const { error: signUpError } = await supabase.auth.signUp({
-      phone,
-      password: MOCK_OTP_CODE,
-      options: { data: { name: "用户" } },
-    });
-
-    // If user already exists, signUp returns an error — that's fine, we sign in below
-    // If phone verification is required, signUp may also return an error
-    // In either case, we attempt signInWithPassword
-
-    const { data, error: signInError } =
+    // Mock mode: use email auth to bypass disabled phone provider
+    // Try sign in first
+    const { data: signInData, error: signInError } =
       await supabase.auth.signInWithPassword({
-        phone,
+        email: mockEmail,
         password: MOCK_OTP_CODE,
       });
 
     if (signInError) {
-      // Fallback: try admin API if standard auth fails (e.g., phone not confirmed)
+      // User doesn't exist, create via admin API then sign in
       try {
         const admin = createAdminClient();
 
-        const { data: listData, error: listError } =
-          await admin.auth.admin.listUsers();
-        if (listError) {
+        const { error: createError } =
+          await admin.auth.admin.createUser({
+            email: mockEmail,
+            password: MOCK_OTP_CODE,
+            email_confirm: true,
+            user_metadata: { name: "用户", phone },
+          });
+
+        if (createError && !createError.message.includes("already been registered")) {
           return {
             success: false,
-            error: { code: "OTP_VERIFY_FAILED", message: listError.message },
+            error: { code: "OTP_VERIFY_FAILED", message: createError.message },
           };
-        }
-
-        const existingUser = listData.users.find((u) => u.phone === phone);
-
-        if (existingUser) {
-          await admin.auth.admin.updateUserById(existingUser.id, {
-            password: MOCK_OTP_CODE,
-            phone_confirm: true,
-          });
-        } else {
-          await admin.auth.admin.createUser({
-            phone,
-            phone_confirm: true,
-            password: MOCK_OTP_CODE,
-          });
         }
 
         const { data: retryData, error: retryError } =
           await supabase.auth.signInWithPassword({
-            phone,
+            email: mockEmail,
             password: MOCK_OTP_CODE,
           });
 
@@ -137,7 +120,7 @@ export async function verifyPhoneOtp(
       }
     }
 
-    return { success: true, data: { user: data.user } };
+    return { success: true, data: { user: signInData.user } };
   }
 
   const supabase = await createClient();

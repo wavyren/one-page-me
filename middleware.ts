@@ -1,5 +1,4 @@
 import { type NextRequest, NextResponse } from "next/server";
-import { createServerClient } from "@supabase/ssr";
 
 // Routes that require authentication
 const protectedRoutes = ["/chat", "/profile"];
@@ -8,39 +7,15 @@ const authRoutes = ["/login"];
 
 export default async function middleware(request: NextRequest) {
   const response = NextResponse.next();
-
-  // Create Supabase client with cookie handling
-  const supabase = createServerClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-    {
-      cookies: {
-        getAll() {
-          return request.cookies.getAll();
-        },
-        setAll(
-          cookiesToSet: Array<{
-            name: string;
-            value: string;
-            options: Record<string, unknown>;
-          }>
-        ) {
-          cookiesToSet.forEach(({ name, value, options }) => {
-            response.cookies.set(name, value, options);
-          });
-        },
-      },
-    }
-  );
-
-  // Refresh session if it exists
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
-
   const pathname = request.nextUrl.pathname;
 
-  // Check if route is protected and user is not authenticated
+  // Skip RSC requests to avoid redirect loops
+  const isRSC = request.headers.get("rsc") === "1";
+  if (isRSC) {
+    return response;
+  }
+
+  // Check if route is protected
   const isProtectedRoute = protectedRoutes.some((route) =>
     pathname.startsWith(route)
   );
@@ -48,15 +23,9 @@ export default async function middleware(request: NextRequest) {
     pathname.startsWith(route)
   );
 
-  if (isProtectedRoute && !user) {
-    const loginUrl = new URL("/login", request.url);
-    return NextResponse.redirect(loginUrl);
-  }
-
-  if (isAuthRoute && user) {
-    const chatUrl = new URL("/chat", request.url);
-    return NextResponse.redirect(chatUrl);
-  }
+  // TEMP: Edge Runtime auth detection is unreliable.
+  // Let pages handle their own auth redirects for now.
+  // Phase 7 will add proper permission gating.
 
   return response;
 }

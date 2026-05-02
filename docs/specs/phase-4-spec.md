@@ -1,10 +1,10 @@
-# Spec: Phase 3 — 主页生成引擎
+# Spec: Phase 4 — 主页生成引擎
 
 ## 假设清单
 
 1. **AI 生成 HTML**：使用 DeepSeek V4 Pro 直接生成完整合法 HTML，非模板填充
 2. **存储方案**：生成的 HTML 存 Supabase Storage（`pages` bucket），返回公开 URL
-3. **单版本优先**：Phase 3 先实现单主页生成，多版本管理（免费 2 个/Pro 无限）延后到 Phase 7
+3. **单版本优先**：Phase 4 先实现单主页生成，多版本管理（免费 2 个/Pro 无限）延后到 Phase 7
 4. **OG 图生成**：使用 `@vercel/og` 动态生成分享预览图
 5. **SSR 渲染**：主页路由 `/p/[pageId]` 读取 HTML 内容，直接输出（不 iframe）
 → 如有误请立即纠正。
@@ -143,5 +143,5 @@ pages/{userId}/{pageId}.html
 ## Open Questions
 
 1. **HTML 模板风格**：AI 生成时是否指定固定风格（如 PRD 提到的 professional/warm/creative/casual）？还是单一套风格？
-2. **自定义路径**：`custom_slug` 功能是否在 Phase 3 实现？还是延后？
+2. **自定义路径**：`custom_slug` 功能是否在 Phase 4 实现？还是延后？
 3. **生成 loading UI**：生成过程中展示什么？进度条/骨架屏/动画？

@@ -1,0 +1,24 @@
+{
+  "name": "one-page-me-pdf-service",
+  "version": "1.0.0",
+  "description": "PDF generation microservice for One Page Me",
+  "main": "index.ts",
+  "scripts": {
+    "start": "tsx index.ts",
+    "build": "tsc",
+    "dev": "tsx watch index.ts"
+  },
+  "dependencies": {
+    "@sparticuz/chromium": "^123.0.0",
+    "express": "^4.19.2",
+    "puppeteer-core": "^22.6.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "tsx": "^4.7.0",
+    "typescript": "^5.4.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

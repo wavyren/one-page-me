@@ -90,16 +90,23 @@ If the user says "I don't know", "anything is fine", or similar — offer quick-
 export const EXTRACTION_PROMPT = `从以下对话历史中，提取用户的个人信息。以 JSON 格式输出，不要任何其他文字。
 
 字段说明：
-- name: string | null
-- tagline: string | null（你来提炼）
-- bio: string | null（2-3句话的个人简介）
-- skills: string[] | null
-- highlights: string[] | null（每条以"动词+结果"格式，优先包含数字）
-- contact: { email?: string, wechat?: string, phone?: string } | null
-- use_case: "job_seeking" | "freelance" | "student" | "founder" | "personal_story" | "other" | null
-- tone: "professional" | "warm" | "creative" | "casual"
-- language: "zh" | "en"
-- is_ready: boolean（true = 信息足够生成主页）
+- name: string | null — 用户姓名或昵称
+- tagline: string | null — 一句话定位，由你根据对话提炼
+- bio: string | null — 2-3句话的个人简介
+- skills: string[] | null — 技能/专长列表
+- highlights: string[] | null — 成就/亮点，每条以"动词+结果"格式，优先包含数字
+- contact: { email?: string, wechat?: string, phone?: string } | null — 联系方式
+- use_case: "job_seeking" | "freelance" | "student" | "founder" | "personal_story" | "other" | null — 使用场景
+- tone: "professional" | "warm" | "creative" | "casual" — 语气风格
+- language: "zh" | "en" — 语言
+- is_ready: boolean — 用户是否明确表示可以生成主页
+
+is_ready 判断规则（严格按以下顺序）：
+1. 如果用户说了"可以了"、"确认"、"生成"、"没问题"、"就这样"、"开始生成"、"ok"、"OK"、"好的"等确认生成的话 → is_ready = true
+2. 如果用户说"还不够"、"再问问"、"继续"、"还没好"等 → is_ready = false
+3. 如果用户没有明确表态是否生成 → is_ready = false（不要猜测，不要根据信息完整度判断）
+
+关键：is_ready 只取决于用户是否有明确的"确认生成"表态，不取决于信息是否完整。
 
 只输出 JSON，不要解释。`;
 

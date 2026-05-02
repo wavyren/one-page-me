@@ -1,4 +1,4 @@
-# Plan: Phase 3 — 主页生成引擎
+# Plan: Phase 4 — 主页生成引擎
 
 ## 依赖图
 

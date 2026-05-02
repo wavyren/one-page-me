@@ -2,6 +2,8 @@ import { cache } from "react";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { createClient } from "@/lib/supabase/server";
+import { ExportSection } from "@/components/export/export-section";
+import type { PageData as ExtractedData } from "@/lib/ai/page-generator";
 
 interface PageProps {
   params: Promise<{ pageId: string }>;
@@ -11,6 +13,7 @@ interface PageData {
   html: string;
   name: string;
   tagline: string;
+  extractedData: ExtractedData;
 }
 
 const getPageData = cache(async (pageId: string): Promise<PageData | null> => {
@@ -43,6 +46,7 @@ const getPageData = cache(async (pageId: string): Promise<PageData | null> => {
     html,
     name: (extracted?.name as string) || "One Page Me",
     tagline: (extracted?.tagline as string) || "你的个人主页",
+    extractedData: (extracted as ExtractedData) || {},
   };
 });
 
@@ -76,9 +80,12 @@ export default async function Page({ params }: PageProps) {
   }
 
   return (
-    <main
-      dangerouslySetInnerHTML={{ __html: data.html }}
-      className="w-full min-h-screen"
-    />
+    <>
+      <main
+        dangerouslySetInnerHTML={{ __html: data.html }}
+        className="w-full min-h-screen"
+      />
+      <ExportSection pageId={pageId} extractedData={data.extractedData} />
+    </>
   );
 }

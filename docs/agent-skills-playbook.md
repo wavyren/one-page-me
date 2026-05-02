@@ -12,8 +12,8 @@
 |------|------|
 | PRD v2.0（产品方案） | ✅ 已完成，`prds/one-page-me-plan-v2.md` |
 | UI 交互原型 | ✅ 已完成，`prds/one_page_me_ui_interaction_demo.html` |
-| 代码仓库 | ❌ 尚未初始化（无 `package.json`、无源码目录） |
-| 当前阶段 | **Phase 0：项目初始化** |
+| 代码仓库 | ✅ 已初始化，Phase 0~4 基础功能代码已完成 |
+| 当前阶段 | **Phase 5：导出功能（已完成），Phase 6：分享与传播待开始** |
 
 **技术栈确认**：Next.js 15 (App Router) + shadcn/ui + Tailwind CSS v4 + Zustand + Supabase + DeepSeek API + next-intl
 

@@ -1,4 +1,5 @@
 import OpenAI from "openai";
+import { EXTRACTION_PROMPT } from "./prompts";
 
 const client = new OpenAI({
   apiKey: process.env.DEEPSEEK_API_KEY || "dummy-key",
@@ -20,8 +21,7 @@ export async function extractFields(messages: OpenAI.Chat.ChatCompletionMessageP
       ...messages,
       {
         role: "user",
-        content:
-          '请从以上对话中提取用户信息，只输出 JSON，不要任何其他文字。格式：{"name":..., "tagline":..., "bio":..., "skills":..., "highlights":..., "contact":..., "use_case":..., "tone":..., "language":..., "is_ready":...}',
+        content: EXTRACTION_PROMPT,
       },
     ],
     temperature: 0,

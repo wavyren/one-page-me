@@ -49,6 +49,13 @@ export function ChatContainer({
     async (message: string) => {
       if (isLoading || isReadyToGenerate) return;
 
+      // 如果用户明确说可以生成，直接标记为 ready，不依赖后端 AI 判断
+      const readyKeywords = ["可以了", "确认", "生成", "没问题", "就这样", "开始生成", "ok", "OK", "好的"];
+      const isUserExplicitReady = readyKeywords.some((kw) => message.includes(kw));
+      if (isUserExplicitReady) {
+        setIsReadyToGenerate(true);
+      }
+
       setError(null);
       addMessage({ role: "user", content: message });
       setIsLoading(true);
