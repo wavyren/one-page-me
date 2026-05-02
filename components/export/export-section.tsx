@@ -18,7 +18,10 @@ import {
   ImageIcon,
   FileDown,
   ArrowRight,
+  Link2,
+  Check,
 } from "lucide-react";
+import { EmbedModal } from "@/components/share/embed-modal";
 
 interface ExportSectionProps {
   pageId: string;
@@ -40,12 +43,23 @@ interface ExportOption {
 export function ExportSection({ pageId, extractedData }: ExportSectionProps) {
   const [open, setOpen] = useState(false);
   const [activeTab, setActiveTab] = useState<ExportTab>(null);
+  const [copied, setCopied] = useState(false);
 
   const appUrl =
     process.env.NEXT_PUBLIC_APP_URL || "https://one-page-me.vercel.app";
   const pageUrl = `${appUrl}/p/${pageId}`;
 
   const handleBack = () => setActiveTab(null);
+
+  const handleCopyLink = async () => {
+    try {
+      await navigator.clipboard.writeText(pageUrl);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      /* ignore */
+    }
+  };
 
   const options: ExportOption[] = [
     {
@@ -104,19 +118,36 @@ export function ExportSection({ pageId, extractedData }: ExportSectionProps) {
           选择格式，分享给更多人
         </p>
 
-        <Dialog
-          open={open}
-          onOpenChange={(isOpen) => {
-            setOpen(isOpen);
-            if (!isOpen) setActiveTab(null);
-          }}
-        >
-          <DialogTrigger asChild>
-            <Button className="bg-brand hover:bg-brand-dark text-white">
-              <Download className="w-4 h-4 mr-2" />
-              导出
-            </Button>
-          </DialogTrigger>
+        <div className="flex items-center justify-center gap-3">
+          <Button
+            variant="outline"
+            size="sm"
+            className="h-9 gap-1.5"
+            onClick={handleCopyLink}
+          >
+            {copied ? (
+              <Check className="w-4 h-4 text-green-600" />
+            ) : (
+              <Link2 className="w-4 h-4" />
+            )}
+            {copied ? "已复制" : "复制链接"}
+          </Button>
+
+          <EmbedModal pageId={pageId} appUrl={appUrl} />
+
+          <Dialog
+            open={open}
+            onOpenChange={(isOpen) => {
+              setOpen(isOpen);
+              if (!isOpen) setActiveTab(null);
+            }}
+          >
+            <DialogTrigger asChild>
+              <Button className="bg-brand hover:bg-brand-dark text-white h-9">
+                <Download className="w-4 h-4 mr-2" />
+                导出
+              </Button>
+            </DialogTrigger>
 
           <DialogContent className="sm:max-w-[400px] p-0 overflow-hidden">
             <DialogHeader className="px-6 pt-5 pb-0">
@@ -170,6 +201,7 @@ export function ExportSection({ pageId, extractedData }: ExportSectionProps) {
             )}
           </DialogContent>
         </Dialog>
+      </div>
       </div>
     </section>
   );

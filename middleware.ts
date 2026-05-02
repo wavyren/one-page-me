@@ -16,9 +16,11 @@ export default async function middleware(request: NextRequest) {
   }
 
   // Check if route is protected
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const isProtectedRoute = protectedRoutes.some((route) =>
     pathname.startsWith(route)
   );
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const isAuthRoute = authRoutes.some((route) =>
     pathname.startsWith(route)
   );
