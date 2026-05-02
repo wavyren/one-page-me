@@ -20,17 +20,11 @@ export function OAuthButtons() {
   };
 
   return (
-    <div className="w-full max-w-md space-y-4">
-      <div className="flex items-center gap-4">
-        <Separator className="flex-1" />
-        <span className="text-sm text-muted-foreground">或使用以下方式登录</span>
-        <Separator className="flex-1" />
-      </div>
-
+    <div className="w-full space-y-4">
       <Button
         onClick={handleGoogleSignIn}
         variant="outline"
-        className="w-full"
+        className="w-full h-10"
         aria-label="使用 Google 账号登录"
       >
         <svg className="mr-2 h-4 w-4" viewBox="0 0 24 24">
@@ -53,6 +47,12 @@ export function OAuthButtons() {
         </svg>
         使用 Google 登录
       </Button>
+
+      <div className="flex items-center gap-3">
+        <Separator className="flex-1" />
+        <span className="text-xs text-muted-foreground">或使用邮箱</span>
+        <Separator className="flex-1" />
+      </div>
     </div>
   );
 }

@@ -1,11 +1,7 @@
 "use server";
 
 import { createClient } from "@/lib/supabase/server";
-import { createAdminClient } from "@/lib/supabase/admin";
 import { redirect } from "next/navigation";
-
-const MOCK_OTP_ENABLED = process.env.MOCK_OTP_ENABLED === "true";
-const MOCK_OTP_CODE = process.env.MOCK_OTP_CODE || "123456";
 
 export interface ActionError {
   code: string;
@@ -38,16 +34,58 @@ export async function signOut() {
   redirect("/login");
 }
 
-export async function sendPhoneOtp(
-  phone: string
-): Promise<ActionResult<{ mock?: boolean; mockCode?: string }>> {
-  if (MOCK_OTP_ENABLED) {
-    return { success: true, data: { mock: true, mockCode: MOCK_OTP_CODE } };
+export async function emailSignUp(
+  email: string,
+  password: string
+): Promise<ActionResult> {
+  const supabase = await createClient();
+  const { error } = await supabase.auth.signUp({
+    email,
+    password,
+    options: {
+      data: { name: email.split("@")[0] },
+    },
+  });
+
+  if (error) {
+    return {
+      success: false,
+      error: { code: "SIGNUP_FAILED", message: error.message },
+    };
   }
 
+  return { success: true };
+}
+
+export async function emailSignIn(
+  email: string,
+  password: string
+): Promise<ActionResult> {
+  const supabase = await createClient();
+  const { error } = await supabase.auth.signInWithPassword({
+    email,
+    password,
+  });
+
+  if (error) {
+    return {
+      success: false,
+      error: { code: "LOGIN_FAILED", message: error.message },
+    };
+  }
+
+  return { success: true };
+}
+
+export async function sendEmailOtp(
+  email: string
+): Promise<ActionResult> {
   const supabase = await createClient();
   const { error } = await supabase.auth.signInWithOtp({
-    phone,
+    email,
+    options: {
+      shouldCreateUser: true,
+    },
   });
 
   if (error) {
@@ -60,74 +98,15 @@ export async function sendPhoneOtp(
   return { success: true };
 }
 
-export async function verifyPhoneOtp(
-  phone: string,
+export async function verifyEmailOtp(
+  email: string,
   token: string
 ): Promise<ActionResult<{ user?: unknown }>> {
-  if (MOCK_OTP_ENABLED && token === MOCK_OTP_CODE) {
-    const supabase = await createClient();
-    const mockEmail = `${phone}@mock.local`;
-
-    // Mock mode: use email auth to bypass disabled phone provider
-    // Try sign in first
-    const { data: signInData, error: signInError } =
-      await supabase.auth.signInWithPassword({
-        email: mockEmail,
-        password: MOCK_OTP_CODE,
-      });
-
-    if (signInError) {
-      // User doesn't exist, create via admin API then sign in
-      try {
-        const admin = createAdminClient();
-
-        const { error: createError } =
-          await admin.auth.admin.createUser({
-            email: mockEmail,
-            password: MOCK_OTP_CODE,
-            email_confirm: true,
-            user_metadata: { name: "用户", phone },
-          });
-
-        if (createError && !createError.message.includes("already been registered")) {
-          return {
-            success: false,
-            error: { code: "OTP_VERIFY_FAILED", message: createError.message },
-          };
-        }
-
-        const { data: retryData, error: retryError } =
-          await supabase.auth.signInWithPassword({
-            email: mockEmail,
-            password: MOCK_OTP_CODE,
-          });
-
-        if (retryError) {
-          return {
-            success: false,
-            error: { code: "OTP_VERIFY_FAILED", message: retryError.message },
-          };
-        }
-
-        return { success: true, data: { user: retryData.user } };
-      } catch (adminErr) {
-        const message =
-          adminErr instanceof Error ? adminErr.message : "验证失败";
-        return {
-          success: false,
-          error: { code: "OTP_VERIFY_FAILED", message },
-        };
-      }
-    }
-
-    return { success: true, data: { user: signInData.user } };
-  }
-
   const supabase = await createClient();
   const { data, error } = await supabase.auth.verifyOtp({
-    phone,
+    email,
     token,
-    type: "sms",
+    type: "email",
   });
 
   if (error) {

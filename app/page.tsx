@@ -1,8 +1,23 @@
 import Link from "next/link";
+import { redirect } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles } from "lucide-react";
 
-export default function Home() {
+interface HomeProps {
+  searchParams: Promise<{ code?: string; next?: string }>;
+}
+
+export default async function Home({ searchParams }: HomeProps) {
+  const { code, next } = await searchParams;
+
+  // OAuth callback fallback: if Supabase redirects to root with code,
+  // forward to the proper callback handler
+  if (code) {
+    const params = new URLSearchParams({ code });
+    if (next) params.set("next", next);
+    redirect(`/auth/callback?${params.toString()}`);
+  }
+
   return (
     <main className="flex min-h-screen flex-col items-center justify-center px-4 bg-preview-bg">
       <div className="text-center max-w-lg">

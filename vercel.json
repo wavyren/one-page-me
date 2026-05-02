@@ -3,8 +3,6 @@
   "buildCommand": "pnpm build",
   "installCommand": "pnpm install",
   "env": {
-    "MOCK_OTP_ENABLED": "true",
-    "MOCK_OTP_CODE": "123456",
     "NEXT_PUBLIC_APP_URL": "https://one-page-me.vercel.app"
   }
 }

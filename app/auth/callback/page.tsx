@@ -1,12 +1,14 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
 import { syncAuthUser } from "@/lib/actions/auth";
+import { AlertCircle } from "lucide-react";
 
 export default function AuthCallbackPage() {
   const router = useRouter();
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const handleCallback = async () => {
@@ -15,18 +17,22 @@ export default function AuthCallbackPage() {
       const code = searchParams.get("code");
       const next = searchParams.get("next") || "/chat";
 
-      if (code) {
-        const { error } = await supabase.auth.exchangeCodeForSession(code);
-        if (error) {
-          console.error("Exchange code error:", error);
-          router.push("/login");
-          return;
-        }
+      if (!code) {
+        setError("登录链接无效，请返回重试");
+        return;
+      }
+
+      const { error: exchangeError } = await supabase.auth.exchangeCodeForSession(code);
+      if (exchangeError) {
+        console.error("Exchange code error:", exchangeError);
+        setError("登录验证失败，请返回重试");
+        return;
       }
 
       const result = await syncAuthUser();
       if (!result.success) {
         console.error("Sync user error:", result.error);
+        // Non-blocking: still redirect even if sync fails
       }
 
       router.push(next);
@@ -36,9 +42,32 @@ export default function AuthCallbackPage() {
     handleCallback();
   }, [router]);
 
+  if (error) {
+    return (
+      <main className="flex min-h-screen flex-col items-center justify-center bg-preview-bg px-4">
+        <div className="w-full max-w-sm bg-background rounded-xl border border-border shadow-sm p-6 text-center">
+          <div className="w-12 h-12 rounded-full bg-red-50 flex items-center justify-center mx-auto mb-4">
+            <AlertCircle className="w-6 h-6 text-red-600" />
+          </div>
+          <h1 className="text-lg font-semibold text-foreground mb-2">登录遇到问题</h1>
+          <p className="text-sm text-muted-foreground mb-4">{error}</p>
+          <button
+            onClick={() => router.push("/login")}
+            className="text-sm text-brand hover:underline"
+          >
+            返回登录页
+          </button>
+        </div>
+      </main>
+    );
+  }
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center">
-      <p className="text-muted-foreground">登录中...</p>
+    <main className="flex min-h-screen flex-col items-center justify-center bg-preview-bg">
+      <div className="flex flex-col items-center gap-3">
+        <div className="w-8 h-8 border-2 border-brand/20 border-t-brand rounded-full animate-spin" />
+        <p className="text-sm text-muted-foreground">登录中...</p>
+      </div>
     </main>
   );
 }
