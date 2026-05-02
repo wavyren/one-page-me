@@ -9,24 +9,40 @@ export function createClient() {
         getAll() {
           return document.cookie.split(";").map((cookie) => {
             const [name, ...rest] = cookie.split("=");
-            return { name: name.trim(), value: rest.join("=") };
+            return { name: name?.trim() || "", value: rest.join("=").trim() };
           });
         },
         setAll(cookiesToSet) {
           cookiesToSet.forEach(({ name, value, options }) => {
-            const cookieParts = [`${name}=${value}`];
+            if (!name) return;
+            let cookie = `${encodeURIComponent(name)}=${encodeURIComponent(value)}`;
+
             if (options) {
-              Object.entries(options).forEach(([key, val]) => {
-                if (val === true) {
-                  cookieParts.push(key);
-                } else if (val !== false && val !== undefined && val !== null) {
-                  cookieParts.push(`${key}=${val}`);
-                }
-              });
+              if (options.path) cookie += `; Path=${options.path}`;
+              if (options.maxAge !== undefined && options.maxAge !== null)
+                cookie += `; Max-Age=${options.maxAge}`;
+              if (options.expires)
+                cookie += `; Expires=${
+                  typeof options.expires === "number"
+                    ? new Date(options.expires).toUTCString()
+                    : options.expires.toUTCString()
+                }`;
+              if (options.domain) cookie += `; Domain=${options.domain}`;
+              if (options.sameSite)
+                cookie += `; SameSite=${options.sameSite}`;
+              if (options.secure) cookie += `; Secure`;
+              if (options.httpOnly) cookie += `; HttpOnly`;
             }
-            document.cookie = cookieParts.join("; ");
+
+            document.cookie = cookie;
           });
         },
+      },
+      auth: {
+        flowType: "pkce",
+        autoRefreshToken: true,
+        detectSessionInUrl: true,
+        persistSession: true,
       },
     }
   );
