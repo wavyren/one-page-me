@@ -7,15 +7,15 @@ import { createClient } from "@/lib/supabase/client";
 export function OAuthButtons() {
   const handleGoogleSignIn = async () => {
     const supabase = createClient();
+    const redirectTo = `${window.location.origin}/auth/callback`;
     const { error } = await supabase.auth.signInWithOAuth({
       provider: "google",
-      options: {
-        redirectTo: `${window.location.origin}/auth/callback`,
-      },
+      options: { redirectTo },
     });
 
     if (error) {
       console.error("Google sign in error:", error);
+      alert("Google 登录初始化失败：" + error.message);
     }
   };
 
