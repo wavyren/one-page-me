@@ -18,21 +18,29 @@ export default function AuthCallbackPage() {
       const next = searchParams.get("next") || "/chat";
 
       if (!code) {
-        setError("登录链接无效，请返回重试");
+        setError("登录链接无效（缺少授权码），请返回重试");
         return;
       }
 
       const { error: exchangeError } = await supabase.auth.exchangeCodeForSession(code);
       if (exchangeError) {
         console.error("Exchange code error:", exchangeError);
-        setError("登录验证失败，请返回重试");
+        // Show specific error message for common cases
+        let msg = "登录验证失败，请返回重试";
+        if (exchangeError.message?.includes("expired")) {
+          msg = "授权码已过期，请重新登录";
+        } else if (exchangeError.message?.includes("invalid")) {
+          msg = "授权码无效，请重新登录";
+        } else if (exchangeError.message) {
+          msg = `登录失败：${exchangeError.message}`;
+        }
+        setError(msg);
         return;
       }
 
       const result = await syncAuthUser();
       if (!result.success) {
         console.error("Sync user error:", result.error);
-        // Non-blocking: still redirect even if sync fails
       }
 
       router.push(next);
