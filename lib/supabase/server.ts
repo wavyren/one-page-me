@@ -21,10 +21,7 @@ export async function createClient() {
         ) {
           try {
             cookiesToSet.forEach(({ name, value, options }) => {
-              cookieStore.set(name, value, {
-                ...options,
-                secure: process.env.NODE_ENV === "production",
-              });
+              cookieStore.set(name, value, options);
             });
           } catch {
             // Server Component 中无法设置 cookie，这是预期行为。

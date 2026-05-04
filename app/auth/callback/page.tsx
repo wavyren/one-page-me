@@ -12,7 +12,7 @@ export default function AuthCallbackPage() {
 
   useEffect(() => {
     const handleCallback = async () => {
-      const supabase = createClient();
+      const supabase = createClient({ detectSessionInUrl: false });
       const searchParams = new URL(window.location.href).searchParams;
       const code = searchParams.get("code");
       const next = searchParams.get("next") || "/chat";

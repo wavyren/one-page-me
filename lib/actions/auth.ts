@@ -149,7 +149,7 @@ export async function syncAuthUser(): Promise<ActionResult> {
     const { error: updateError } = await supabase
       .from("users")
       .update({
-        phone: user.phone,
+        phone: user.phone || null,
         email: user.email,
         name: name || existingUser.name,
       })
@@ -164,7 +164,7 @@ export async function syncAuthUser(): Promise<ActionResult> {
   } else {
     const { error: insertError } = await supabase.from("users").insert({
       id: user.id,
-      phone: user.phone,
+      phone: user.phone || null,
       email: user.email,
       name,
       preferred_language: "zh",
