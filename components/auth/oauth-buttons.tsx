@@ -8,13 +8,18 @@ export function OAuthButtons() {
   const handleGoogleSignIn = async () => {
     const supabase = createClient();
     const redirectTo = `${window.location.origin}/auth/callback`;
+    console.log("[OAuth] redirectTo:", redirectTo);
+    console.log("[OAuth] cookies before signIn:", document.cookie.split(";").map(c => c.trim().split("=")[0]).filter(Boolean));
+
     const { error } = await supabase.auth.signInWithOAuth({
       provider: "google",
       options: { redirectTo },
     });
 
+    console.log("[OAuth] cookies after signIn:", document.cookie.split(";").map(c => c.trim().split("=")[0]).filter(Boolean));
+
     if (error) {
-      console.error("Google sign in error:", error);
+      console.error("[OAuth] Google sign in error:", error);
       alert("Google 登录初始化失败：" + error.message);
     }
   };

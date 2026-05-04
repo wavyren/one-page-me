@@ -7,18 +7,32 @@ export function createClient() {
     {
       cookies: {
         getAll() {
-          return document.cookie.split(";").map((cookie) => {
-            const [name, ...rest] = cookie.split("=");
-            return { name: name?.trim() || "", value: rest.join("=").trim() };
-          });
+          if (!document.cookie) {
+            console.log("[SupabaseCookie] getAll: no cookies");
+            return [];
+          }
+          const cookies = document.cookie
+            .split(";")
+            .map((cookie) => {
+              const [name, ...rest] = cookie.split("=");
+              return {
+                name: name?.trim() || "",
+                value: rest.join("=").trim(),
+              };
+            })
+            .filter((c) => c.name);
+          console.log("[SupabaseCookie] getAll:", cookies.map((c) => c.name));
+          return cookies;
         },
         setAll(cookiesToSet) {
+          console.log(
+            "[SupabaseCookie] setAll:",
+            cookiesToSet.map((c) => c.name)
+          );
           cookiesToSet.forEach(({ name, value, options }) => {
             if (!name) return;
 
             const cookieParts: string[] = [`${name}=${value}`];
-
-            // Default path to root so cookies are available on all pages
             cookieParts.push("Path=/");
 
             if (options) {
@@ -40,6 +54,7 @@ export function createClient() {
             }
 
             const cookieString = cookieParts.join("; ");
+            console.log("[SupabaseCookie] setting:", cookieString);
             document.cookie = cookieString;
           });
         },

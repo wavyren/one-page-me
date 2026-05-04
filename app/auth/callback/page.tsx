@@ -17,20 +17,28 @@ export default function AuthCallbackPage() {
       const code = searchParams.get("code");
       const next = searchParams.get("next") || "/chat";
 
+      console.log("[Callback] code:", code ? `${code.slice(0, 10)}...` : "missing");
+      console.log("[Callback] all cookies:", document.cookie.split(";").map(c => c.trim().split("=")[0]).filter(Boolean));
+
       if (!code) {
         setError("登录链接无效（缺少授权码），请返回重试");
         return;
       }
 
+      // Wait a tick for client to fully init
+      await new Promise((r) => setTimeout(r, 100));
+
       const { error: exchangeError } = await supabase.auth.exchangeCodeForSession(code);
       if (exchangeError) {
-        console.error("Exchange code error:", exchangeError);
-        // Show specific error message for common cases
+        console.error("[Callback] Exchange code error:", exchangeError);
+        console.error("[Callback] Full error message:", exchangeError.message);
         let msg = "登录验证失败，请返回重试";
         if (exchangeError.message?.includes("expired")) {
           msg = "授权码已过期，请重新登录";
         } else if (exchangeError.message?.includes("invalid")) {
           msg = "授权码无效，请重新登录";
+        } else if (exchangeError.message?.includes("verifier")) {
+          msg = "安全验证失败：PKCE 验证器丢失。请确保浏览器允许第三方 Cookie 后重试。";
         } else if (exchangeError.message) {
           msg = `登录失败：${exchangeError.message}`;
         }
@@ -40,7 +48,7 @@ export default function AuthCallbackPage() {
 
       const result = await syncAuthUser();
       if (!result.success) {
-        console.error("Sync user error:", result.error);
+        console.error("[Callback] Sync user error:", result.error);
       }
 
       router.push(next);
