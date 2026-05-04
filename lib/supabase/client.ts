@@ -15,26 +15,32 @@ export function createClient() {
         setAll(cookiesToSet) {
           cookiesToSet.forEach(({ name, value, options }) => {
             if (!name) return;
-            let cookie = `${encodeURIComponent(name)}=${encodeURIComponent(value)}`;
+
+            const cookieParts: string[] = [`${name}=${value}`];
+
+            // Default path to root so cookies are available on all pages
+            cookieParts.push("Path=/");
 
             if (options) {
-              if (options.path) cookie += `; Path=${options.path}`;
               if (options.maxAge !== undefined && options.maxAge !== null)
-                cookie += `; Max-Age=${options.maxAge}`;
+                cookieParts.push(`Max-Age=${options.maxAge}`);
               if (options.expires)
-                cookie += `; Expires=${
-                  typeof options.expires === "number"
-                    ? new Date(options.expires).toUTCString()
-                    : options.expires.toUTCString()
-                }`;
-              if (options.domain) cookie += `; Domain=${options.domain}`;
+                cookieParts.push(
+                  `Expires=${
+                    typeof options.expires === "number"
+                      ? new Date(options.expires).toUTCString()
+                      : options.expires.toUTCString()
+                  }`
+                );
+              if (options.domain) cookieParts.push(`Domain=${options.domain}`);
               if (options.sameSite)
-                cookie += `; SameSite=${options.sameSite}`;
-              if (options.secure) cookie += `; Secure`;
-              if (options.httpOnly) cookie += `; HttpOnly`;
+                cookieParts.push(`SameSite=${options.sameSite}`);
+              if (options.secure) cookieParts.push("Secure");
+              if (options.httpOnly) cookieParts.push("HttpOnly");
             }
 
-            document.cookie = cookie;
+            const cookieString = cookieParts.join("; ");
+            document.cookie = cookieString;
           });
         },
       },
